@@ -12,13 +12,15 @@
         <link rel="stylesheet" href="../css/reset.css">
         <link rel="stylesheet" href="../css/base.css">
         <link rel="stylesheet" href="../css/aboutus.css">
-        <script src="main.js"></script>
     </head>
 
     <body>
+
         <header>
             <div class="logo">
-                <img src="../images/logo.png" alt="Logo">
+                <div class="logo-image">
+                    <img src="../images/logo.png" alt="Logo">
+                </div>
                 <div class="title">
                     <h1>Veggie Bliss</h1>
                 </div>
@@ -50,89 +52,90 @@
                     </li>
                 </ul>
             </nav>
+        
             <div class="buttons">
                 <button>Log In</button>
                 <button>Order Now!</button>
             </div>
-            <button class="menu-toggle">
-                <div class="bar">5</div>
-                <div class="bar">5</div>
-                <div class="bar">5</div>
-            </button>
+
+            <div class="button-toggle">
+                <button class="menu-toggle">
+                    <img src="../images/desplegable.png" alt="desplegable">
+                </button>
+            </div>
         </header>
+
         <main class="main">
-            <main>
-                <div class="video-background">
-                    <video autoplay muted loop id="video-bg">
-                        <source src="../images/setas.mp4" type="video/mp4">
-                </div>
-                </div>
-                <div class="explanation">
-                    <div class="who-we">
-                        <div class="paragraph first-text">
-                            <h2>Who we are</h2>
-                            <p>We are a team passionate about vegan gastronomy and committed to creating a fairer and more
-                                sustainable world. We are dedicated to offering delicious vegan food options made with
-                                fresh, local and organic ingredients. Supporting local commerce and boosting the small
-                                economy.</p>
-                        </div>
-                        <div class="ligth">
-                            <img src="../images/bombilla.jpg" alt="ligth">
-                        </div>
+            <div class="video-background">
+                <video autoplay muted loop id="video-bg">
+                    <source src="../images/setas.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="explanation">
+                <div class="who-we">
+                    <div class="paragraph first-text">
+                        <h2>Who we are</h2>
+                        <p>We are a team passionate about vegan gastronomy and committed tocreating a fairer and more
+                            sustainable world. We are dedicated to offering delicious veganfood options made with
+                            fresh, local and organic ingredients. Supporting local commerceand boosting the small
+                            economy.</p>
                     </div>
-                    <div class="what-do">
-                        <div class="paragraph second-text">
-                            <h2>What do we do</h2>
-                            <p>We decided to open our vegan restaurant with the purpose of promoting a healthier and more
-                                respectful lifestyle with the planet and the beings that inhabit it. We believe in the power
-                                of vegan food for our health as well as for our mind and environment. We want to offer our
-                                customers a unique culinary experience, where they can enjoy delicious and nutritious dishes
-                                without compromising their ethical values.</p>
-                        </div>
-                        <div class="letters">
-                            <img src="../images/letters.jpg" alt="letter">
-                        </div>
-                    </div>
-                    <div class="who-work">
-                        <div class="paragraph third-text">
-                            <h2>Who we work with</h2>
-                            <p>We work closely with local producers and organic food suppliers to ensure that our
-                                ingredients are fresh, high quality and environmentally friendly. We support fair trade and
-                                value direct relationships with our suppliers, ensuring an ethical and transparent supply
-                                chain.</p>
-                        </div>
-                        <div class="fruit">
-                            <img src="../images/mercadito.jpg" alt="fruit">
-                        </div>
-                    </div>
-                    <div class="ethical">
-                        <div class="paragraph fourth-text">
-                            <h2>Ethical delivery</h2>
-                            <p>Our commitment to sustainability goes beyond our kitchen. We are proud to offer an ethical
-                                delivery service, where our riders use bicycles to make deliveries. In this way, we reduce
-                                our carbon footprint. In addition, we guarantee fair and respectful working conditions for
-                                our delivery team thus promoting dignified work.</p>
-                        </div>
-                        <div class="bike">
-                            <img src="../images/reparto.jpg" alt="bike">
-                        </div>
-                    </div>
-                    <div class="why-us">
-                        <div class="paragraph fifth-text">
-                            <h2>Why us</h2>
-                            <p>We believe that every little choice matters. From the selecting our ingredients, to the way
-                                we prepare and cook them with care, to the way we serve and deliver our dishes. We strive to
-                                make consistent and responsible choices that reflect our values as a company. In our
-                                restaurant, we not only offer delicious food, but also a genuine commitment to respect for
-                                the planet and all life forms that inhabit it. We invite you to join us in this delicious
-                                adventure!</p>
-                        </div>
-                        <div class="frog">
-                            <img src="../images/rana.jpg" alt="frog">
-                        </div>
+                    <div class="ligth">
+                        <img src="../images/bombilla.jpg" alt="ligth">
                     </div>
                 </div>
-            </main>
+                <div class="what-do">
+                    <div class="paragraph second-text">
+                        <h2>What do we do</h2>
+                        <p>We decided to open our vegan restaurant with the purpose ofpromoting a healthier and more
+                            respectful lifestyle with the planet and the beings that inhabitit. We believe in the power
+                            of vegan food for our health as well as for our mind andenvironment. We want to offer our
+                            customers a unique culinary experience, where they can enjoydelicious and nutritious dishes
+                            without compromising their ethical values.</p>
+                    </div>
+                    <div class="letters">
+                        <img src="../images/letters.jpg" alt="letter">
+                    </div>
+                </div>
+                <div class="who-work">
+                    <div class="paragraph third-text">
+                        <h2>Who we work with</h2>
+                        <p>We work closely with local producers and organic food suppliersto ensure that our
+                            ingredients are fresh, high quality and environmentallyfriendly. We support fair trade and
+                            value direct relationships with our suppliers, ensuring anethical and transparent supply
+                            chain.</p>
+                    </div>
+                    <div class="fruit">
+                        <img src="../images/mercadito.jpg" alt="fruit">
+                    </div>
+                </div>
+                <div class="ethical">
+                    <div class="paragraph fourth-text">
+                        <h2>Ethical delivery</h2>
+                        <p>Our commitment to sustainability goes beyond our kitchen. We areproud to offer an ethical
+                            delivery service, where our riders use bicycles to makedeliveries. In this way, we reduce
+                            our carbon footprint. In addition, we guarantee fair andrespectful working conditions for
+                            our delivery team thus promoting dignified work.</p>
+                    </div>
+                    <div class="bike">
+                        <img src="../images/reparto.jpg" alt="bike">
+                    </div>
+                </div>
+                <div class="why-us">
+                    <div class="paragraph fifth-text">
+                        <h2>Why us</h2>
+                        <p>We believe that every little choice matters. From the selectingour ingredients, to the way
+                            we prepare and cook them with care, to the way we serve anddeliver our dishes. We strive to
+                            make consistent and responsible choices that reflect our valuesas a company. In our
+                            restaurant, we not only offer delicious food, but also a genuinecommitment to respect for
+                            the planet and all life forms that inhabit it. We invite you tojoin us in this delicious
+                            adventure!</p>
+                    </div>
+                    <div class="frog">
+                        <img src="../images/rana.jpg" alt="frog">
+                    </div>
+                </div>
+            </div>
         </main>
         <footer>
             <div class="resources">

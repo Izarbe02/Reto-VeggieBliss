@@ -7,18 +7,8 @@ h2{
     font-size:larger;
     font-weight: 600;
 }
-.main {
-    padding: 20px;
-    background: url('images/fondo2.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.8;
-}
 
-
-
-video { width: 100%; }
+video { width: 100%;}
 
 .paragraph
 {
@@ -132,6 +122,7 @@ video { width: 100%; }
 .why-us
 {
     padding-top: 3%;
+    padding-bottom: 3%;
     padding-left: 10%;
     display: grid;
     grid-template-columns: 50% 50%;
@@ -146,11 +137,111 @@ video { width: 100%; }
 
 .fifth-text { grid-area: fifth-text; }
 
-.frog { grid-area: image; }
+.frog { grid-area: image;}
 
 .frog img
 {
     width: 60%;
     border-radius: 20px;
     max-height: 450px;
+}
+
+@media (width <= 1523px)
+{
+    .paragraph { width: 70%; }
+
+    .explanation img { width: 70%; }
+
+}
+
+@media (width < 920px)
+{
+    .paragraph { width: 90%; }
+
+    .explanation img { width: 90%; }
+
+    .who-we { padding-left: 5%;}
+
+    .what-do { padding-left: 5%;}
+
+    .who-work { padding-left: 5%;}
+
+    .ethical { padding-left: 5%;}
+
+    .why-us { padding-left: 5%;}
+}
+
+@media (width < 660px)
+{
+    .paragraph p {font-size: small;}
+
+    .who-we
+    {
+        padding-top: 5%;
+        grid-template-columns: 20% 55%;
+        grid-template-rows: 50% 60%;
+        grid-template-areas:
+        ". first-text"  
+        ". image";
+    }
+
+    .ligth { padding-left: 12%; }
+
+    .ligth img { width: 80%; }
+
+    .what-do
+    {
+        padding-top: 5%;
+        grid-template-columns: 20% 55%;
+        grid-template-rows: 60% 50%;
+        grid-template-areas:
+        ". second-text"  
+        ". image";
+    }
+
+    .letters { padding-left: 12%; }
+
+    .letters img { width: 80%; }
+
+    .who-work
+    {
+        padding-top: 5%;
+        grid-template-columns: 20% 55%;
+        grid-template-rows: 50% 60%;
+        grid-template-areas:
+        ". third-text"  
+        ". image";
+    }
+    
+    .fruit { padding-left: 12%; }
+
+    .fruit img { width: 80%; }
+
+    .ethical
+    {
+        padding-top: 5%;
+        grid-template-columns: 20% 55%;
+        grid-template-rows: 50% 60%;
+        grid-template-areas:
+        ". fourth-text"  
+        ". image";
+    }
+    
+    .bike { padding-left: 12%; }
+
+    .bike img { width: 80%; }
+
+    .why-us
+    {
+        padding-top: 5%;
+        grid-template-columns: 20% 55%;
+        grid-template-rows: 50% 60%;
+        grid-template-areas:
+        ". fifth-text"  
+        ". image";
+    }
+    
+    .frog { padding-left: 12%; }
+
+    .frog img { width: 80%; }
 }
