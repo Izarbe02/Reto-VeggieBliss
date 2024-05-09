@@ -240,7 +240,7 @@ footer p a:hover::after {
     .logo-image { width: 50%; }
 }
 
-@media only screen and (max-width: 860px) 
+@media only screen and (max-width: 860px)
 {
     header 
     {
@@ -251,9 +251,16 @@ footer p a:hover::after {
     
     .logo-image { width: 60%; }
 
-    .primary-menu 
+    .menu 
     {
+        width: 100%;
+        left: 0;
         display: none;
+        position: absolute;
+        top: 15.5%;
+        box-shadow: 0px 2px 2px whitesmoke;
+        z-index: 3;
+        
     }
 
     .secondary-menu 
@@ -319,5 +326,70 @@ footer p a:hover::after {
 
     .menu-toggle.open+.secondary-menu {
         display: block;
+    }
+}
+
+@media (width < 650px)
+{
+    header { grid-template-columns: 55% 35% 10%; }
+
+    .buttons button { width: 45%; }
+    
+    .button-toggle
+    {
+        width: 85%;
+        padding-left: 25%;
+    }
+}
+
+@media (width < 540px)
+{
+    .title h1 { font-size: 250%; }
+
+    .logo-image { width: 50%; }
+
+    .button-toggle
+    {
+        width: 100%;
+        padding-left: 25%;
+    }
+}
+
+@media (width < 500px)
+{
+    header{
+        grid-template-areas: "logo menu";
+        grid-template-columns: 80% 15%;
+    }
+    .buttons{
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 15%;
+        z-index: 3;
+        width: 100%;
+    }
+    .buttons button{
+        width: 30%;
+        background: transparent;
+        color: white;
+        text-decoration: none;
+        font-size: 20px;
+    }
+    .menu{
+        top: 23%;
+    }
+}
+
+@media (width < 315px)
+{
+    .title h1 { font-size: 150%; }
+
+    .logo-image { width: 50%; }
+
+    .button-toggle
+    {
+        width: 100%;
+        padding-left: 25%;
     }
 }
