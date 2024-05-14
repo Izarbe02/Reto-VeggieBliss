@@ -1,7 +1,7 @@
 create table departments
 (
     department_id varchar2(4) primary key,
-    manager_id varchar2(4) primary key,
+   
     department_name varchar2(50)
 );
 
@@ -17,14 +17,21 @@ create table employees
     first_name varchar2(50),
     last_name varchar2(50),
     mail varchar2(100),
+    employee_password varchar2(18) not null,
     phone_number varchar2(12),
     department_id varchar2(4),
     foreign key (department_id) references departments(department_id),
     manager_id varchar2(4),
-    foreign key (manager_id) references departments(manager_id),
+    foreign key (manager_id) references employees(employee_id),
     job_id varchar2(4),
     foreign key (job_id) references jobs(job_id)
 );
+
+ALTER TABLE departments
+ADD (
+    manager_id varchar2(4),
+    foreign key (manager_id) references employees (employee_id)
+    );
 
 create table clients
 (
@@ -69,8 +76,8 @@ create table products
 
 create table allergensproduct
 (
-    product_id varchar2(4) primary key,
-    allergen_id varchar2(4) primary key
+    product_id varchar2(4) foreign key,
+    allergen_id varchar2(4) foreign key
 );
 
 create table orderdetails
