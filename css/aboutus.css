@@ -18,6 +18,14 @@ video { width: 100%;}
     background-color: #AFF1A9;
 }
 
+.paragraph h2 
+{ 
+    padding-bottom: 3%;
+    padding-left: 3%;
+}
+
+.paragraph p { padding-left: 5%;}
+
 .who-we
 {
     padding-top: 3%;
@@ -28,10 +36,6 @@ video { width: 100%;}
     "first-text image";
     align-items: center;
 }
-
-.who-we h2 { padding-bottom: 2%; }
-
-.who-we p { padding-left: 3%; }
 
 .first-text { grid-area: first-text;}
 
@@ -54,10 +58,6 @@ video { width: 100%;}
     align-items: center;
 }
 
-.what-do h2 { padding-bottom: 2%; }
-
-.what-do p { padding-left: 3%; }
-
 .second-text { grid-area: second-text; }
 
 .letters { grid-area: image; }
@@ -78,10 +78,6 @@ video { width: 100%;}
     "third-text image";
     align-items: center;
 }
-
-.who-work h2 { padding-bottom: 2%; }
-
-.who-work p { padding-left: 3%; }
 
 .third-text { grid-area: third-text; }
 
@@ -105,10 +101,6 @@ video { width: 100%;}
     align-items: center;
 }
 
-.ethical h2 { padding-bottom: 2%; }
-
-.ethical p { padding-left: 3%; }
-
 .fourth-text { grid-area: fourth-text; }
 
 .bike { grid-area: image; }
@@ -131,10 +123,6 @@ video { width: 100%;}
     align-items: center;
 }
 
-.why-us h2 { padding-bottom: 2%; }
-
-.why-us p { padding-left: 3%; }
-
 .fifth-text { grid-area: fifth-text; }
 
 .frog { grid-area: image;}
@@ -154,9 +142,16 @@ video { width: 100%;}
 
 }
 
+@media (width <= 1005px)
+{
+    .paragraph p { font-size: 80%; }
+}
+
 @media (width < 920px)
 {
     .paragraph { width: 90%; }
+
+    .paragraph p { font-size: medium;}
 
     .explanation img { width: 90%; }
 
@@ -177,7 +172,7 @@ video { width: 100%;}
 
     .who-we
     {
-        padding-top: 5%;
+        padding-top: 1%;
         grid-template-columns: 20% 55%;
         grid-template-rows: 50% 60%;
         grid-template-areas:
@@ -185,9 +180,13 @@ video { width: 100%;}
         ". image";
     }
 
-    .ligth { padding-left: 12%; }
+    .ligth 
+    {
+        padding-left: 3%; 
+        padding-bottom: 5%;
+    }
 
-    .ligth img { width: 80%; }
+    .ligth img { width: 90%; }
 
     .what-do
     {
@@ -199,9 +198,13 @@ video { width: 100%;}
         ". image";
     }
 
-    .letters { padding-left: 12%; }
+    .letters 
+    {
+        padding-left: 3%; 
+        padding-bottom: 5%;
+    }
 
-    .letters img { width: 80%; }
+    .letters img { width: 90%; }
 
     .who-work
     {
@@ -213,9 +216,13 @@ video { width: 100%;}
         ". image";
     }
     
-    .fruit { padding-left: 12%; }
+    .fruit 
+    {
+        padding-left: 3%; 
+        padding-bottom: 5%;
+    }
 
-    .fruit img { width: 80%; }
+    .fruit img { width: 90%; }
 
     .ethical
     {
@@ -227,9 +234,13 @@ video { width: 100%;}
         ". image";
     }
     
-    .bike { padding-left: 12%; }
+    .bike 
+    {
+        padding-left: 3%; 
+        padding-bottom: 5%;
+    }
 
-    .bike img { width: 80%; }
+    .bike img { width: 90%; }
 
     .why-us
     {
@@ -241,7 +252,105 @@ video { width: 100%;}
         ". image";
     }
     
-    .frog { padding-left: 12%; }
+    .frog 
+    {
+        padding-left: 3%; 
+        padding-bottom: 5%;
+    }
 
-    .frog img { width: 80%; }
+    .frog img { width: 90%; }
+}
+
+@media (width <= 500px)
+{
+    video { display: none;}
+
+    .video-background 
+    { 
+        background-color: #24412d44;
+        height: 120px;
+    }
+
+    .who-we { padding-top: 5%; }
+
+    .paragraph { width: 100%; }
+
+    .ligth img { width: 100%; }
+
+    .letters img { width: 100%; }
+
+    .fruit img { width: 100%; }
+
+    .bike img { width: 100%; }
+
+    .frog img { width: 100%; }
+}
+
+@media (width < 405px)
+{
+    .paragraph { width: 100%; }
+
+    .paragraph h2 { font-size: 17px;}
+
+    .paragraph p {font-size: 15px;}
+
+    .who-we 
+    {
+        padding-top: 5%;
+        grid-template-columns: 90%;
+        grid-template-rows: 50% 60%;
+        grid-template-areas:
+            "first-text"
+            "image";
+    }
+
+    .ligth img { width: 100%; }
+
+    .what-do 
+    {
+        padding-top: 15%;
+        grid-template-columns: 90%;
+        grid-template-rows: 50% 60%;
+        grid-template-areas:
+            "second-text"
+            "image";
+    }
+
+    .letters img { width: 100%; }
+
+    .who-work
+    {
+        padding-top: 2%;
+        grid-template-columns: 90%;
+        grid-template-rows: 50% 60%;
+        grid-template-areas:
+            "third-text"
+            "image";
+    }
+
+    .fruit img { width: 100%; }
+
+    .ethical
+    {
+        padding-top: 8%;
+        grid-template-columns: 90%;
+        grid-template-rows: 50% 60%;
+        grid-template-areas:
+            "fourth-text"
+            "image";
+    }
+
+    .bike img { width: 100%; }
+
+    .why-us 
+    {
+        padding-top: 8%;
+        grid-template-columns: 90%;
+        grid-template-rows: 50% 60%;
+        grid-template-areas:
+            "fifth-text"
+            "image";
+    }
+
+    .frog img { width: 100%; }
 }
