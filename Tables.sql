@@ -58,7 +58,7 @@ CREATE TABLE categories (
 
 CREATE TABLE products (
     product_id VARCHAR2(4) PRIMARY KEY,
-    product_image BLOB,
+    product_image VARCHAR2(200),
     product_name VARCHAR2(50),
     product_description VARCHAR2(300),
     price NUMBER(5,2),
