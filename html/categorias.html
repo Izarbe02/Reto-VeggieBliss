@@ -1,68 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Veggie Bliss</title>
-  <link rel="icon" type="image/x-icon" href="/images/logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/reset.css">
-  <link rel="stylesheet" href="../css/categorias.css">
-  <script src="main.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Veggie Bliss</title>
+        <link rel="icon" type="image/x-icon" href="../images/logo.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/base.css">
+        <link rel="stylesheet" href="../css/categorias.css">
+        <script src="../js/base.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <div class="logo-image">
+                    <img src="../images/logo.png" alt="Logo">
+                </div>
+                <div class="title">
+                    <h1>Veggie Bliss</h1>
+                </div>
+            </div>
 
-<body>
- 
-  <main class="main">
-    <h1>Treat yourself...</h1>
-    <div class="container">
-      <div class="category-card">
-        <div class="category-header">
-          <h2>Postres</h2>
-        </div>
-        <img src="images/tarta-queso.jpg" alt="Postres">
-        <div class="description">
-          <p>Descripción del postre...</p>
-        </div>
-        <button class="orange-button">+</button>
+            <nav class="menu">
+                <ul class="primary-menu">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">About Us</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../html/aboutus.html#whowe">Who we are</a></li>
+                            <li><a href="../html/aboutus.html#whatdo">What do we do??</a></li>
+                            <li><a href="../html/aboutus.html#whowework">Who we work with</a></li>
+                            <li><a href="../html/aboutus.html#ethical">Ethical delivery</a></li>
+                            <li><a href="../html/aboutus.html#whowe">What makes us special?</a></li>
+                            <li><a href="../html/aboutus.html#whyus">Work with us!!</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Chart</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../html/categorias.html#hamburguesas">Burguers!!</a></li>
+                            <li><a href="../html/categorias.html#raciones">Razziones</a></li>
+                            <li><a href="../html/categorias.html#desserts">Sweety desserts</a></li>
+                            <li><a href="../html/categorias.html#drinks">Drinks</a></li>
+                            <li><a href="../html/categorias.html#menus">Menus</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        
+            <div class="buttons">
+              <button><a href="../html/login.html">Log In</a></button>
+              <button><a href="../html/categorias.html">Order now!</a></button>
+          </div>
+
+            <div class="button-toggle">
+                <button class="menu-toggle">
+                    <img src="../images/desplegable.png" alt="desplegable">
+                </button>
+            </div>
+        </header>
+
+    <main class="main">
+      <div class="name">
+          <h1>Treat yourself...</h1>
       </div>
-
-
-      <div class="category-card">
-        <div class="category-header">
-          <h2>Postres</h2>
+      <div class="categories">
+        <div class="container burgers">
+          <div class="category-card">
+            <div class="category-header">
+              <h2>Burgers</h2>
+            </div>
+            <img src="images/tarta-queso.jpg" alt="Postres">
+            <div class="description">
+              <p>Descripción del postre...</p>
+            </div>
+            <button class="orange-button">+</button>
+          </div>
         </div>
-        <img src="images/lemon-pie.jpg" alt="Postres">
-        <div class="description">
-          <p>Descripción del postre...</p>
+
+        <div class="container salads">
+          <div class="category-card">
+            <div class="category-header">
+              <h2>Salads</h2>
+            </div>
+            <img src="images/lemon-pie.jpg" alt="Postres">
+            <div class="description">
+              <p>Descripción del postre...</p>
+            </div>
+            <button class="orange-button">+</button>
+          </div>
         </div>
-        <button class="orange-button">+</button>
+        
+        <div class="container portions">
+          <div class="category-card">
+            <div class="category-header">
+              <h2>Portions</h2>
+            </div>
+            <img src="images/crepes.jpeg" alt="Postres">
+            <div class="description">
+              <p>Descripción del postre...</p>
+            </div>
+            <button class="orange-button">+</button>
+          </div>
+        </div>
+        
+        <div class="container menus">
+          <div class="category-card">
+            <div class="category-header">
+              <h2>Menu</h2>
+            </div>
+            <img src="images/tarta-queso.jpg" alt="Postres">
+            <div class="description">
+              <p>Descripción del postre...</p>
+            </div>
+            <button class="orange-button">+</button>
+          </div>
+        </div>
+
+        <div class="container desserts">
+          <div class="category-card">
+            <div class="category-header">
+              <h2>Desserts</h2>
+            </div>
+            <img src="images/tarta-queso.jpg" alt="Postres">
+            <div class="description">
+              <p>Descripción del postre...</p>
+            </div>
+              <button class="orange-button">+</button>
+          </div>
+        </div>
+        
+        <div class="container drinks">
+          <div class="category-card">
+            <div class="category-header">
+              <h2>Drinks</h2>
+            </div>
+            <img src="images/tarta-queso.jpg" alt="Postres">
+            <div class="description">
+              <p>Descripción del postre...</p>
+            </div>
+            <button class="orange-button">+</button>
+          </div>
+        </div>
+    </main>
+    <footer>
+      <div class="resources">
+          <h2>Resources</h2><br>
+          <p>Privacy Policy</p>
       </div>
-
-      <div class="category-card">
-        <div class="category-header">
-          <h2>Postres</h2>
-        </div>
-        <img src="images/crepes.jpeg" alt="Postres">
-        <div class="description">
-          <p>Descripción del postre...</p>
-        </div>
-        <button class="orange-button">+</button>
+      <div class="company">
+          <a href="../html/aboutus.html"><h2>The Company</h2><br></a>
+          <a href="../html/contactus.html"><p>Contact us</p><br></a>
+        <a href="../html/workwithus.html">  <p>Work with us</p></a>
       </div>
-
-      <div class="category-card">
-        <div class="category-header">
-          <h2>Postres</h2>
-        </div>
-        <img src="images/tarta-queso.jpg" alt="Postres">
-        <div class="description">
-          <p>Descripción del postre...</p>
-        </div>
-        <button class="orange-button">+</button>
+      <div class="social">
+          <div class="logo-footer">
+              <a target="_blank" href="../html/home.html"><img src="../images/logo.png" alt="logo"></a>
+          </div>
+          <div class="tiktok">
+             <a target="_blank" href="https://www.tiktok.com/upload?lang=es"><img src="../images/tik-tok.png" alt="tiktok"></a>
+          </div>
+          <div class="insta">
+              <a target="_blank" href="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2F&hl=es-es&aa_click=8891933284028179&aa_click=8891933284028179"><img src="../images/instagram.png" alt="instagram"></a>
+          </div>
+          <div class="twitter">
+              <a target="_blank" href="https://twitter.com/iniciarsesion?lang=es"><img src="../images\twitter.png" alt="twitter"></a>
+          </div>
+          <div class="linkedin"><a target="_blank" href="https://www.google.com/aclk?sa=l&ai=DChcSEwie9s_R1ZKGAxUWr4MHHS07BqgYABAAGgJlZg&ase=2&gclid=Cj0KCQjw3ZayBhDRARIsAPWzx8oG78Pat--oGIxz4Jyjai3r6WngQmU89ua2mWwXswcJeZGIEropKPMaAlIEEALw_wcB&sig=AOD64_0RuxaCLwoLsL2Sja1zon90KeoGWg&q&nis=4&adurl&ved=2ahUKEwjZ_cfR1ZKGAxVV8gIHHbxxDNUQ0Qx6BAgHEAE"><img src="../images/linkedin.png" alt="linkedin"></a>
+          
+          </div>
       </div>
-  </main>
-</body>
+  </footer>
+  </body>
+
 </html>

@@ -1,0 +1,158 @@
+
+.title h1 {
+    font-size: 1.5em;
+    color: white;
+    margin: 0;
+}
+
+body{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+}
+.menu ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+.menu ul li a:hover {
+    color: #f8911c;
+}
+
+.buttons button {
+    background-color: #fff;
+    color: #5eb58f;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+    background-color: #9ddf9f;
+}
+
+.main {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+   width: 50%;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.inputs {
+    margin-bottom: 15px;
+    margin-left: 5;
+}
+
+.inputs label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1em;
+}
+
+.inputs input {
+    background-color: #cae7db;
+    width: 90%;
+   padding: 1.5% 0% 1.5% 0%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 2;
+}
+
+.card-image img {
+    width: 40px;
+    margin-top: 10px;
+}
+
+.submit-button {
+    width: 50%;
+    padding: 10px;
+    background-color: orange;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: rgb(228, 73, 34);
+}
+
+footer {
+    background-color: #24412d;
+    color: #c5a78c;
+    text-align: center;
+    padding: 2%;
+}
+
+.resources,
+.company,
+.social 
+{
+    margin-bottom: 20px;
+}
+
+.resources h2,
+.company h2 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.resources p,
+.company p {
+    color: #daf3d9;
+    margin-bottom: 5px;
+}
+
+.social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.social img {
+    width: 30px;
+    margin: 0 5px;
+}
+
+footer p a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: orange;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+footer p a:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+}

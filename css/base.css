@@ -17,6 +17,10 @@ header
     padding: 1%;
 }
 
+a{
+    text-decoration: none;
+}
+
 .logo
 {
     grid-area: logo;
@@ -392,6 +396,7 @@ footer p a:hover::after {
         text-decoration: none;
         font-size: 17px;
     }
+
     .menu { top: 17%; }
 }
 

@@ -1,145 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Veggie Bliss</title>
-        <link rel="icon" type="image/x-icon" href="/images/logo.png">
+        <link rel="icon" type="image/x-icon" href="../images/logo.png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/base.css">
         <link rel="stylesheet" href="../css/aboutus.css">
-        <script src="main.js"></script>
-       </head><body>
-          <header>
+        <script src="../js/base.js"></script>
+    </head>
+    <body>
+        <header>
             <div class="logo">
-              <img src="images\logo.png" alt="Logo">
-              <span>Veggie Bliss</span>
+                <div class="logo-image">
+                    <img src="../images/logo.png" alt="Logo">
+                </div>
+                <div class="title">
+                    <h1>Veggie Bliss</h1>
+                </div>
             </div>
-        
+
             <nav class="menu">
-              <ul class="primary-menu">
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle">About Us</a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Who we are</a></li>
-                    <li><a href="#">What do we do??</a></li>
-                    <li><a href="#">Who we work with</a></li>
-                    <li><a href="#">Ethical delivery</a></li>
-                    <li><a href="#">Ethical delivery</a></li>
-                    <li><a href="#">What makes us special?</a></li>
-                    <li><a href="#">Work with us!!</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle">Chart</a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Burguers!!</a></li>
-                    <li><a href="#">Razziones</a></li>
-                    <li><a href="#">Sweety desserts</a></li>
-                    <li><a href="#">Drinks</a></li>
-                    <li><a href="#">Menus</a></li>
-                  </ul>
-                </li>
-              </ul>
+                <ul class="primary-menu">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">About Us</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../html/aboutus.html#whowe">Who we are</a></li>
+                            <li><a href="../html/aboutus.html#whatdo">What do we do??</a></li>
+                            <li><a href="../html/aboutus.html#whowework">Who we work with</a></li>
+                            <li><a href="../html/aboutus.html#ethical">Ethical delivery</a></li>
+                            <li><a href="../html/aboutus.html#whowe">What makes us special?</a></li>
+                            <li><a href="../html/aboutus.html#whyus">Work with us!!</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle">Chart</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../html/categorias.html#hamburguesas">Burguers!!</a></li>
+                            <li><a href="../html/categorias.html#raciones">Razziones</a></li>
+                            <li><a href="../html/categorias.html#desserts">Sweety desserts</a></li>
+                            <li><a href="../html/categorias.html#drinks">Drinks</a></li>
+                            <li><a href="../html/categorias.html#menus">Menus</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </nav>
+        
             <div class="buttons">
-              <button>Log In</button>
-              <button>Order Now!</button>
+                <button><a href="../html/login.html">Log In</a></button>
+                <button><a href="../html/categorias.html">Order now!</a></button>
             </div>
-            <button class="menu-toggle">
-              <div class="bar">5</div>
-              <div class="bar">5</div>
-              <div class="bar">5</div>
-            </button>
-          </header>
-          <main class="main">
-            <main>
-                <div class="video-background">
-                        <video autoplay muted loop id="video-bg">
-                            <source src="images\setas.mp4" type="video/mp4">
+
+            <div class="button-toggle">
+                <button class="menu-toggle">
+                    <img src="../images/desplegable.png" alt="desplegable">
+                </button>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="video-background">
+                <video autoplay muted loop id="video-bg">
+                    <source src="../images/setas.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="explanation">
+                <div class="who-we">
+                    <div class="paragraph first-text">
+                        <h2 id="whowe">Who we are</h2>
+                        <p>We are a team passionate about vegan gastronomy and committed tocreating a fairer and more
+                            sustainable world. We are dedicated to offering delicious veganfood options made with
+                            fresh, local and organic ingredients. Supporting local commerceand boosting the small
+                            economy.</p>
+                    </div>
+                    <div class="ligth">
+                        <img src="../images/bombilla.jpg" alt="ligth">
                     </div>
                 </div>
-                <div class="explanation">
-                    <div class="who-we">
-                        <div class="paragraph first-text">
-                            <h2>Who we are</h2>
-                            <p>We are a team passionate about vegan gastronomy and committed to creating a fairer and more sustainable world. We are dedicated to offering delicious vegan food options made with fresh, local and organic ingredients. Supporting local commerce and boosting the small economy.</p>
-                        </div>
-                        <div class="ligth">
-                            <img src="images\bombilla.jpg" alt="ligth">
-                        </div>
+                <div class="what-do">
+                    <div class="paragraph second-text">
+                        <h2 id="whatdo">What do we do</h2>
+                        <p>We decided to open our vegan restaurant with the purpose ofpromoting a healthier and more
+                            respectful lifestyle with the planet and the beings that inhabitit. We believe in the power
+                            of vegan food for our health as well as for our mind andenvironment. We want to offer our
+                            customers a unique culinary experience, where they can enjoydelicious and nutritious dishes
+                            without compromising their ethical values.</p>
                     </div>
-                    <div class="what-do">
-                        <div class="paragraph second-text">
-                            <h2>What do we do</h2>
-                            <p>We decided to open our vegan restaurant with the purpose of promoting a healthier and more respectful lifestyle with the planet and the beings that inhabit it. We believe in the power of vegan food for our health as well as for our mind and environment. We want to offer our customers a unique culinary experience, where they can enjoy delicious and nutritious dishes without compromising their ethical values.</p>
-                        </div>
-                        <div class="letters">
-                            <img src="images\letters.jpg" alt="letter">
-                        </div>
-                    </div>
-                    <div class="who-work">
-                        <div class="paragraph third-text">
-                            <h2>Who we work with</h2>
-                            <p>We work closely with local producers and organic food suppliers to ensure that our ingredients are fresh, high quality and environmentally friendly. We support fair trade and value direct relationships with our suppliers, ensuring an ethical and transparent supply chain.</p>
-                        </div>
-                        <div class="fruit">
-                            <img src="images\mercadito.jpg" alt="fruit">
-                        </div>
-                    </div>
-                    <div class="ethical">
-                        <div class="paragraph fourth-text">
-                            <h2>Ethical delivery</h2>
-                            <p>Our commitment to sustainability goes beyond our kitchen. We are proud to offer an ethical delivery service, where our riders use bicycles to make deliveries. In this way, we reduce our carbon footprint. In addition, we guarantee fair and respectful working conditions for our delivery team thus promoting dignified work.</p>
-                        </div>
-                        <div class="bike">
-                            <img src="images\reparto.jpg" alt="bike">
-                        </div>
-                    </div>
-                    <div class="why-us">
-                        <div class="paragraph fifth-text">
-                            <h2>Why us</h2>
-                            <p>We believe that every little choice matters. From the selecting our ingredients, to the way we prepare and cook them with care, to the way we serve and deliver our dishes. We strive to make consistent and responsible choices that reflect our values as a company. In our restaurant, we not only offer delicious food, but also a genuine commitment to respect for the planet and all life forms that inhabit it. We invite you to join us in this delicious adventure!</p>
-                        </div>
-                        <div class="frog">
-                            <img src="images\rana.jpg" alt="frog">
-                        </div>
+                    <div class="letters">
+                        <img src="../images/letters.jpg" alt="letter">
                     </div>
                 </div>
-            </main>
-          </main>
-          <footer>
+                <div class="who-work">
+                    <div class="paragraph third-text">
+                        <h2 id="whowework">Who we work with</h2>
+                        <p>We work closely with local producers and organic food suppliersto ensure that our
+                            ingredients are fresh, high quality and environmentallyfriendly. We support fair trade and
+                            value direct relationships with our suppliers, ensuring anethical and transparent supply
+                            chain.</p>
+                    </div>
+                    <div class="fruit">
+                        <img src="../images/mercadito.jpg" alt="fruit">
+                    </div>
+                </div>
+                <div class="ethical">
+                    <div class="paragraph fourth-text">
+                        <h2 id="ethical">Ethical delivery</h2>
+                        <p>Our commitment to sustainability goes beyond our kitchen. We areproud to offer an ethical
+                            delivery service, where our riders use bicycles to makedeliveries. In this way, we reduce
+                            our carbon footprint. In addition, we guarantee fair andrespectful working conditions for
+                            our delivery team thus promoting dignified work.</p>
+                    </div>
+                    <div class="bike">
+                        <img src="../images/reparto.jpg" alt="bike">
+                    </div>
+                </div>
+                <div class="why-us">
+                    <div class="paragraph fifth-text">
+                        <h2 id="whyus">Why us</h2>
+                        <p>We believe that every little choice matters. From the selectingour ingredients, to the way
+                            we prepare and cook them with care, to the way we serve anddeliver our dishes. We strive to
+                            make consistent and responsible choices that reflect our valuesas a company. In our
+                            restaurant, we not only offer delicious food, but also a genuine commitment to respect for
+                            the planet and all life forms that inhabit it. We invite you to join us in this delicious
+                            adventure!</p>
+                    </div>
+                    <div class="frog">
+                        <img src="../images/rana.jpg" alt="frog">
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
             <div class="resources">
                 <h2>Resources</h2><br>
                 <p>Privacy Policy</p>
             </div>
             <div class="company">
-                <h2>The Company</h2><br>
-                <p>Contact us</p><br>
-                <p>Work with us</p>
+                <a href="../html/aboutus.html"><h2>The Company</h2><br></a>
+                <a href="../html/contactus.html"><p>Contact us</p><br></a>
+              <a href="../html/workwithus.html">  <p>Work with us</p></a>
             </div>
             <div class="social">
                 <div class="logo-footer">
-                    <img src="images\logo.png" alt="logo">
+                    <a target="_blank" href="../html/home.html"><img src="../images/logo.png" alt="logo"></a>
                 </div>
                 <div class="tiktok">
-                    <img src="images\tik-tok.png" alt="tiktok">
+                   <a target="_blank" href="https://www.tiktok.com/upload?lang=es"><img src="../images/tik-tok.png" alt="tiktok"></a>
                 </div>
                 <div class="insta">
-                    <img src="images\instagram.png" alt="instagram">
+                    <a target="_blank" href="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2F&hl=es-es&aa_click=8891933284028179&aa_click=8891933284028179"><img src="../images/instagram.png" alt="instagram"></a>
                 </div>
                 <div class="twitter">
-                    <img src="images\twitter.png" alt="twitter">
+                    <a target="_blank" href="https://twitter.com/iniciarsesion?lang=es"><img src="../images\twitter.png" alt="twitter"></a>
                 </div>
-                <div class="linkedin">
-                    <img src="images\linkedin.png" alt="linkedin">
+                <div class="linkedin"><a target="_blank" href="https://www.google.com/aclk?sa=l&ai=DChcSEwie9s_R1ZKGAxUWr4MHHS07BqgYABAAGgJlZg&ase=2&gclid=Cj0KCQjw3ZayBhDRARIsAPWzx8oG78Pat--oGIxz4Jyjai3r6WngQmU89ua2mWwXswcJeZGIEropKPMaAlIEEALw_wcB&sig=AOD64_0RuxaCLwoLsL2Sja1zon90KeoGWg&q&nis=4&adurl&ved=2ahUKEwjZ_cfR1ZKGAxVV8gIHHbxxDNUQ0Qx6BAgHEAE"><img src="../images/linkedin.png" alt="linkedin"></a>
+                
                 </div>
             </div>
         </footer>
     </body>
-    </html>
-        </body>
-        </html>
-        
+</html>
