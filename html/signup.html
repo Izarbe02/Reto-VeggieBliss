@@ -11,51 +11,57 @@
   <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/reset.css">
   <link rel="stylesheet" href="../css/signup.css">
-  <script src="main.js"></script>
+  <script src="base.js"></script>
 </head>
 
 <body>
   <header>
     <div class="logo">
-      <img src="images\logo.png" alt="Logo">
-      <span>Veggie Bliss</span>
+      <div class="logo-image">
+        <a href="../html/home.html"> <img src="../images/logo.png" alt="Logo"></a>
+     </div>
+        <div class="title">
+            <h1>Veggie Bliss</h1>
+        </div>
     </div>
+
     <nav class="menu">
-      <ul class="primary-menu">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle">About Us</a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Who we are</a></li>
-            <li><a href="#">What do we do??</a></li>
-            <li><a href="#">Who we work with</a></li>
-            <li><a href="#">Ethical delivery</a></li>
-            <li><a href="#">Ethical delivery</a></li>
-            <li><a href="#">What makes us special?</a></li>
-            <li><a href="#">Work with us!!</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle">Chart</a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Burguers!!</a></li>
-            <li><a href="#">Razziones</a></li>
-            <li><a href="#">Sweety desserts</a></li>
-            <li><a href="#">Drinks</a></li>
-            <li><a href="#">Menus</a></li>
-          </ul>
-        </li>
-      </ul>
+        <ul class="primary-menu">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">About Us</a>
+                <ul class="dropdown-menu">
+                    <li><a href="../html/aboutus.html#whowe">Who we are</a></li>
+                    <li><a href="../html/aboutus.html#whatdo">What do we do??</a></li>
+                    <li><a href="../html/aboutus.html#whowework">Who we work with</a></li>
+                    <li><a href="../html/aboutus.html#ethical">Ethical delivery</a></li>
+                    <li><a href="../html/aboutus.html#whowe">What makes us special?</a></li>
+                    <li><a href="../html/aboutus.html#whyus">Work with us!!</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Chart</a>
+                <ul class="dropdown-menu">
+                    <li><a href="../html/categorias.html#hamburguesas">Burguers!!</a></li>
+                    <li><a href="../html/categorias.html#raciones">Razziones</a></li>
+                    <li><a href="../html/categorias.html#desserts">Sweety desserts</a></li>
+                    <li><a href="../html/categorias.html#drinks">Drinks</a></li>
+                    <li><a href="../html/categorias.html#menus">Menus</a></li>
+                </ul>
+            </li>
+        </ul>
     </nav>
+
     <div class="buttons">
-      <button>Log In</button>
-      <button>Order Now!</button>
+        <button><a href="../html/login.html">Log In</a></button>
+        <button><a href="../html/categorias.html">Order now!</a></button>
     </div>
-    <button class="menu-toggle">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </button>
-  </header>
+
+    <div class="button-toggle">
+        <button class="menu-toggle">
+            <img src="../images/desplegable.png" alt="desplegable">
+        </button>
+    </div>
+</header>
   <main class="main">
     <div class="signup-container dib">
         <h2>Sign Up for an Account</h2>

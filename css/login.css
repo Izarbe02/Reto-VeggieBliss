@@ -1,3 +1,4 @@
+
 body {
     font-family: 'Courier New', Courier, monospace;
     font-size: medium;
@@ -5,7 +6,7 @@ body {
 
 .main {
     padding: 20px;
-    background: url('images/fondo.png');
+    background: url('../images/fondo.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -16,28 +17,26 @@ header {
     background-color: #90e7ad;
     color: white;
     display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 2%;
 }
 
-.logo
-{
-    grid-area: logo;
-    display: grid;
-    grid-template-columns: 25% 75%;
-    grid-template-areas: 
-    "logo title";
-}
-
-.image-logo{grid-area: logo;}
-
-.image-logo img {
-    width: 100%;
+.logo {
+    display: flex;
+    align-items: flex-start;
 }
 
 .logo h1 {
-    grid-area: title;
+  justify-content: center;
+  margin-left: -15%;
+}
+
+.logo-image img {
+   width: 16%;
+    margin: 0%; 
+}
+
+.logo h1 {
+ 
     text-shadow: 2px 2px 2px rgb(89, 126, 121);
     font-family: "Jaro", sans-serif;
     font-size: 65px;
@@ -45,10 +44,7 @@ header {
     font-style: normal;
     color: white;
 }
-
 .login-container {
-  
- 
     text-align: center;
     margin-top: 190px;
     margin-bottom: 190px;
@@ -177,4 +173,15 @@ footer p a::after {
 footer p a:hover::after {
     visibility: visible;
     transform: scaleX(1);
+}
+@media (width < 969px)
+{
+    .title h1 { font-size: 300%; }
+    .logo-image { width: 50%; }
+}
+
+@media (width <= 540px)
+{
+    .logo-image { width: 50%; }
+
 }

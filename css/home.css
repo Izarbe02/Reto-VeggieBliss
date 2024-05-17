@@ -55,6 +55,9 @@ a{
 
 .title {grid-area: title;}
 
+.involved{
+    margin-bottom: 7%;
+}
 .title h1
 {  
     font-size: 450%;

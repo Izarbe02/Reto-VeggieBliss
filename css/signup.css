@@ -3,60 +3,79 @@ body {
     font-size: medium;
 }
 
+* a {
+    text-decoration:none ;
+}
 .main {
     padding: 20px;
-    background: url('images/fondo.png');
+    background: url('../images/fondo.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0.8;
 }
 
-header {
+h1
+{
+    font-size: x-large;
+    font-family: "Jaro", sans-serif;
+    margin-top: 3%;
+    margin-bottom: 3%;
+ }
+
+header 
+{
     background-color: #90e7ad;
     color: white;
+    display: grid;
+    grid-template-columns: 40% 35% 25%;
+    grid-template-areas: 
+    "logo menu buttons";
+    padding: 1%;
+}
+
+.logo
+{
+    grid-area: logo;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-areas: 
+    "logo title";
+}
+
+.logo-image 
+{
+    grid-area: logo;
+    width: 40%;
+    padding-left: 15%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-}
-
-.logo-container {
-    display: flex;
     align-items: center;
 }
 
-.logo img {
-    width: 60px;
-    height: 60px;
-    margin-right: 10px;
-}
+.logo-image img {width: 100%;}
 
-.logo span {
-    text-shadow: 2px 2px 2px rgb(89, 126, 121);
-    font-family: "Jaro", sans-serif;
-    font-size: 65px;
-    font-weight: 400;
-    font-style: normal;
+.title {grid-area: title;}
+
+.title h1
+{  
+    font-size: 450%;
     color: white;
+    text-shadow: 2px 2px 2px rgb(89, 126, 121);
 }
 
-.title {
-    margin-left: 20px;
-    color: aliceblue;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: bolder;
-}
-
-nav.menu {
+.menu
+{
+    grid-area: menu;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-nav.menu ul {
+.primary-menu {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
 }
 
 nav.menu ul li {
@@ -73,11 +92,7 @@ nav.menu ul li a {
     text-decoration: none;
     font-size: 20px;
     transition: color 0.3s;
-    position: relative; 
-}
-
-nav.menu ul li a:hover {
-    color: #5eb58f;
+    position: relative;
 }
 
 .dropdown-menu {
@@ -89,7 +104,13 @@ nav.menu ul li a:hover {
     z-index: 1;
 }
 
-.dropdown-toggle:hover + .dropdown-menu {
+.dropdown-toggle:hover+.dropdown-menu{
+    display: block;
+}
+nav.menu ul li a:hover {
+    color: #f8911c;
+}
+.dropdown-menu:hover{
     display: block;
 }
 
@@ -118,16 +139,20 @@ nav.menu ul li a:hover {
 }
 
 .buttons {
+    grid-area: buttons;
     display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .buttons button {
     background-color: #fff;
     color: #5eb58f;
     border: none;
-    padding: 10px 20px;
+    width: 25%;
+    height: 30px;
     border-radius: 50px;
-    margin-left: 10px;
+    padding: 1%;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -135,6 +160,25 @@ nav.menu ul li a:hover {
 .buttons button:hover {
     background-color: #9ddf9f;
 }
+
+nav.menu ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: orange;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+nav.menu ul li a:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
 
 .signup-container {
     text-align: center;
@@ -205,16 +249,18 @@ nav.menu ul li a:hover {
     margin-top: 10px;
 }
 
+
 footer {
     background-color: #24412d;
     color: #c5a78c;
     text-align: center;
-    padding: 20px 0;
+    padding: 2%;
 }
 
 .resources,
 .company,
-.social {
+.social 
+{
     margin-bottom: 20px;
 }
 
@@ -243,24 +289,6 @@ footer {
     margin: 0 5px;
 }
 
-nav.menu ul li a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: orange;
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.3s ease-in-out;
-}
-
-nav.menu ul li a:hover::after {
-    visibility: visible;
-    transform: scaleX(1);
-}
-
 footer p a::after {
     content: '';
     position: absolute;
@@ -279,22 +307,48 @@ footer p a:hover::after {
     transform: scaleX(1);
 }
 
-@media only screen and (max-width: 860px) {
-    .logo img {
-        display: inline;
-        width: 50px;
-        height: 50px;
-    }
+@media (width < 1209px)
+{
+    .buttons button { width: 35%; }
+    .logo-image { width: 50%; }
+}
 
-    .logo span {
-        font-size: 35px;
-    }
+@media (width <= 1055px)
+{
+    .title h1 { font-size: 380%; }
+}
 
-    .primary-menu {
+@media (width < 969px)
+{
+    .title h1 { font-size: 300%; }
+    .logo-image { width: 50%; }
+}
+
+@media only screen and (max-width: 860px)
+{
+    header 
+    {
+        grid-template-columns: 50% 35% 15%;
+        grid-template-areas: 
+        "logo buttons menu";
+    }
+    
+    .logo-image { width: 60%; }
+
+    .menu 
+    {
+        width: 100%;
+        left: 0;
         display: none;
+        position: absolute;
+        top: 15.5%;
+        box-shadow: 0px 2px 2px whitesmoke;
+        z-index: 3;
+        
     }
 
-    .secondary-menu {
+    .secondary-menu 
+    {
         display: block;
         position: absolute;
         top: 100%;
@@ -304,7 +358,17 @@ footer p a:hover::after {
         border: 1px solid #ddd;
     }
 
-    .menu-toggle {
+    .button-toggle
+    { 
+        grid-area: menu;
+        width: 45%;
+        display: flex;
+        align-items: center;
+        padding-left: 50%;
+    }
+
+    .menu-toggle 
+    {
         display: block;
         background: none;
         border: none;
@@ -312,6 +376,8 @@ footer p a:hover::after {
         font-size: 24px;
         color: white;
     }
+
+    .menu-toggle img {width: 100%;}
 
     .menu-toggle:hover {
         color: #ddd;
@@ -342,7 +408,90 @@ footer p a:hover::after {
         transform: rotate(45deg) translate(-5px, -6px);
     }
 
-    .menu-toggle.open + .secondary-menu {
+    .menu-toggle.open+.secondary-menu {
         display: block;
+    }
+}
+
+@media (width < 650px)
+{
+    header { grid-template-columns: 55% 35% 10%; }
+
+    .buttons button { width: 45%; }
+    
+    .button-toggle
+    {
+        width: 85%;
+        padding-left: 25%;
+    }
+
+    .menu { top: 10.5%;}
+
+    nav.menu ul li a { font-size: 17px;}
+}
+
+@media (width <= 540px)
+{
+    .title h1 { font-size: 250%; }
+
+    .logo-image { width: 50%; }
+
+    .button-toggle
+    {
+        width: 100%;
+        padding-left: 25%;
+    }
+}
+
+@media (width < 500px)
+{
+    header{
+        grid-template-areas: "logo menu";
+        grid-template-columns: 80% 15%;
+    }
+
+    .title h1 { font-size: 300%; }
+
+    .logo-image { width: 50%; }
+
+    .buttons{
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 10%;
+        z-index: 3;
+        width: 100%;
+    }
+
+    .buttons button{
+        width: 30%;
+        background: transparent;
+        color: white;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .menu { top: 17%; }
+}
+
+@media (width < 372px)
+{
+    .title h1 { font-size: 250%; }
+
+    .logo-image { width: 60%; }
+
+    .button-toggle { width: 90%; }
+}
+
+@media (width < 315px)
+{
+    .title h1 { font-size: 150%; }
+
+    .logo-image { width: 50%; }
+
+    .button-toggle
+    {
+        width: 100%;
+        padding-left: 25%;
     }
 }

@@ -46,6 +46,9 @@ body{
 }
 
 .form-container {
+    align-items:  center;
+    justify-content: center;
+    align-items: center;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
@@ -55,13 +58,16 @@ body{
 }
 
 .form-container h1 {
-    text-align: center;
+    align-items:  center;
+    justify-content: center;
     margin-bottom: 20px;
 }
 
 .inputs {
+    align-items:  center;
+    justify-content: center;
     margin-bottom: 15px;
-    margin-left: 5;
+    margin-left: 5.5%;
 }
 
 .inputs label {
@@ -85,6 +91,7 @@ body{
 }
 
 .submit-button {
+    margin-left: 21%;
     width: 50%;
     padding: 10px;
     background-color: orange;

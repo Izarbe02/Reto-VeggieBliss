@@ -30,7 +30,7 @@ header
     padding: 1%;
 }
 
-a{
+* a{
     text-decoration: none;
 }
 
@@ -180,7 +180,7 @@ nav.menu ul li a:hover::after {
 }
 
 .buttons button {
-    background-color: #fff;
+    background-color: #ffffff;
     color: #5eb58f;
     border: none;
     padding: 10px 20px;
