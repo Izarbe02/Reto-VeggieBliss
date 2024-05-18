@@ -16,17 +16,9 @@ CREATE TABLE employees (
     employee_password VARCHAR2(18) NOT NULL,
     phone_number VARCHAR2(12),
     department_id VARCHAR2(4),
-    manager_id VARCHAR2(4),
     job_id VARCHAR2(4),
     FOREIGN KEY (department_id) REFERENCES departments(department_id),
-    FOREIGN KEY (manager_id) REFERENCES employees(employee_id),
     FOREIGN KEY (job_id) REFERENCES jobs(job_id)
-);
-
-ALTER TABLE departments
-ADD (
-    manager_id VARCHAR2(4),
-    FOREIGN KEY (manager_id) REFERENCES employees(employee_id)
 );
 
 CREATE TABLE clients (
@@ -48,39 +40,41 @@ CREATE TABLE orders (
 
 CREATE TABLE allergens (
     allergen_id VARCHAR2(4) PRIMARY KEY,
-    allergen_name VARCHAR2(20)
+    allergen_name VARCHAR2(20) NOT NULL
 );
 
 CREATE TABLE categories (
     category_id VARCHAR2(4) PRIMARY KEY,
-    category_name VARCHAR2(20)
+    category_name VARCHAR2(20) NOT NULL
 );
 
 CREATE TABLE products (
     product_id VARCHAR2(4) PRIMARY KEY,
     product_image VARCHAR2(200),
-    product_name VARCHAR2(50),
+    product_name VARCHAR2(50) NOT NULL,
     product_description VARCHAR2(300),
-    price NUMBER(5,2),
+    price NUMBER(5,2) NOT NULL,
     category_id VARCHAR2(4),
     FOREIGN KEY (category_id) REFERENCES categories(category_id)
 );
 
-CREATE TABLE allergensproduct (
-    product_id VARCHAR2(4),
-    allergen_id VARCHAR2(4),
+
+
+CREATE TABLE allergens_products (
+    product_id VARCHAR2(4) NOT NULL,
+    allergen_id VARCHAR2(4) NOT NULL,
     FOREIGN KEY (product_id) REFERENCES products(product_id),
     FOREIGN KEY (allergen_id) REFERENCES allergens(allergen_id)
 );
 
-CREATE TABLE orderdetails (
-    orderdetail_id VARCHAR2(4) PRIMARY KEY,
-    product_name VARCHAR2(50),
-    quantity_product NUMBER(2),
-    sales_price NUMBER(5,2),
-    product_id VARCHAR2(4),
-    employee_id VARCHAR2(4),
-    order_id VARCHAR2(4),
+
+CREATE TABLE order_details (
+    order_detail_id VARCHAR2(4) PRIMARY KEY,
+    quantity_product NUMBER(2) NOT NULL,
+    sales_price NUMBER(5,2) NOT NULL,
+    product_id VARCHAR2(4) NOT NULL,
+    employee_id VARCHAR2(4) NOT NULL,
+    order_id VARCHAR2(4) NOT NULL,
     FOREIGN KEY (product_id) REFERENCES products(product_id),
     FOREIGN KEY (employee_id) REFERENCES employees(employee_id),
     FOREIGN KEY (order_id) REFERENCES orders(order_id)

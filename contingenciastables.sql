@@ -1,5 +1,6 @@
-DROP TABLE orderdetails;
-DROP TABLE allergensproduct;
+
+DROP TABLE order_details;
+DROP TABLE allergens_products;
 DROP TABLE products;
 DROP TABLE categories;
 DROP TABLE allergens;
