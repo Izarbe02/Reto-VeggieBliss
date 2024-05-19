@@ -88,7 +88,9 @@ h2{
 }
 
 .description {
-    padding: 2%;
+    border-radius: 0% 0% 15px 15px;
+    background-color: azure;
+    padding: 5%;
     padding-bottom: 7%;
 }
 

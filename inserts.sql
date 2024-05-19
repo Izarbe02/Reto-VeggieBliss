@@ -204,15 +204,15 @@ END;
 
 BEGIN
 
-INSERT INTO categories VALUES(1,'Bebidas');
+INSERT INTO categories VALUES(1,'Drinks');
 
-INSERT INTO categories VALUES(2,'Hamburguesas');
+INSERT INTO categories VALUES(2,'Burguers');
 
-INSERT INTO categories VALUES(3,'Postres');
+INSERT INTO categories VALUES(3,'Desserts');
 
-INSERT INTO categories VALUES(4,'Ensaladas');
+INSERT INTO categories VALUES(4,'Salads');
 
-INSERT INTO categories VALUES(5,'Raciones');
+INSERT INTO categories VALUES(5,'Razziones');
 
 COMMIT;
 
@@ -271,7 +271,7 @@ BEGIN
     
     INSERT INTO products VALUES(23,'Falafel Fiesta','Enjoy a flavorful mix of semolina, fresh cucumber, juicy cherry tomatoes, creamy hummus, and hearty pumpkin falafel. A delicious and satisfying salad that brings a taste of the Mediterranean to your table.','../images/ensalada-falafel.jpg',8.50,4);
     
-    INSERT INTO products VALUES(24,'Beet & Lentil Harmony','A nourishing bowl of peppery arugula, tender lentils, crisp broccoli, savory tofu with soy sauce, earthy mushrooms, and sweet beets, all brought together with a creamy tahini dressing. A symphony of flavors and textures.','../images/ensalada-remolacha.jpg',6.50,4);
+    INSERT INTO products VALUES(24,'Beet and Lentil Harmony','A nourishing bowl of peppery arugula, tender lentils, crisp broccoli, savory tofu with soy sauce, earthy mushrooms, and sweet beets, all brought together with a creamy tahini dressing. A symphony of flavors and textures.','../images/ensalada-remolacha.jpg',6.50,4);
     
     INSERT INTO products VALUES(25,'Sweet Potato Bliss Balls','Indulge in two sweet potato dumplings stuffed with melty vegan cheese and topped with a fresh tomato sauce. A delightful and comforting treat.','../images/bolas-boniato.jpg',4.50,5);
     
