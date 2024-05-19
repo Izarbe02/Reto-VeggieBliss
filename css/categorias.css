@@ -1,7 +1,13 @@
-
-
-.main 
-{
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+}
+h2{
+    font-family: 'Courier New', Courier, monospace;
+    font-size:larger;
+    font-weight: 600;
+}
+.main {
     background: url('../images/fondo2.jpg');
     background-size: cover;
     background-position: center;
@@ -9,14 +15,33 @@
     opacity: 0.8;
 }
 
-.name 
-{
+.name {
     display: flex;
     justify-content: center;
     padding: 1%;
 }
 
-.name h1 { font-size: 50px; }
+.name h1 {
+    font-size: 50px;
+}
+
+.category-section {
+    margin-bottom: 40px;
+}
+
+.category-title {
+    text-align: center;
+    font-size: 36px;
+    margin: 20px 0;
+    color: #f3851e;
+}
+
+.category-divider {
+    border: 0;
+    height: 2px;
+    background: green;
+    margin: 20px 0;
+}
 
 .categories {
     display: flex;
@@ -26,8 +51,8 @@
     padding: 1%;
 }
 
-.container 
-{
+.container {
+    
     padding: 2%;
     width: 29%;
 }
@@ -39,6 +64,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.185);
     width: 100%;
 }
+
 .category-card:hover {
     transform: scale(1.05);
 }
@@ -56,14 +82,12 @@
 }
 
 .category-card img {
-
-    width: 90%;
+    width: 100%;
     height: 200px;
     object-fit: cover;
 }
 
-.description 
-{
+.description {
     padding: 2%;
     padding-bottom: 7%;
 }
@@ -80,7 +104,20 @@
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
 }
+
 .orange-button:hover {
     background-color: rgb(199, 40, 0);
     transform: scale(1.05);
+}
+
+@media (max-width: 700px) {
+    .categories {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .container {
+        width: 45%; /* Para que las hamburguesas ocupen menos espacio */
+        margin: 2.5%; /* Espacio entre las tarjetas */
+    }
 }
