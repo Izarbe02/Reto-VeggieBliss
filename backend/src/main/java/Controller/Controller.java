@@ -2,6 +2,7 @@ package Controller;
 
 import Controller.IAction.CategoriesAction;
 import Controller.IAction.DepartmentsAction;
+import Controller.IAction.EmployeesAction;
 import Controller.IAction.ProductsAction;
 
 import javax.servlet.ServletException;
@@ -41,6 +42,11 @@ public class Controller extends HttpServlet{
             case "departments":
             {
                 out.print(new DepartmentsAction().execute(resp, req, arrAction[1]));
+                break;
+            }
+            case "employees":
+            {
+                out.print(new EmployeesAction().execute(resp, req, arrAction[1]));
                 break;
             }
             case "products":
