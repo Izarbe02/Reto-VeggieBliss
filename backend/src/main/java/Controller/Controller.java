@@ -66,6 +66,11 @@ public class Controller extends HttpServlet{
                 out.print(new ClientsAction().execute(resp, req, arrAction[1]));
                 break;
             }
+            case "orders":
+            {
+                out.print(new OrdersAction().execute(resp, req, arrAction[1]));
+                break;
+            }
             default:
             {
                 System.out.println(arrAction[0]);
