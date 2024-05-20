@@ -1,9 +1,6 @@
 package Controller;
 
-import Controller.IAction.CategoriesAction;
-import Controller.IAction.DepartmentsAction;
-import Controller.IAction.EmployeesAction;
-import Controller.IAction.ProductsAction;
+import Controller.IAction.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -42,6 +39,11 @@ public class Controller extends HttpServlet{
             case "departments":
             {
                 out.print(new DepartmentsAction().execute(resp, req, arrAction[1]));
+                break;
+            }
+            case "jobs":
+            {
+                out.print(new JobsAction().execute(resp, req, arrAction[1]));
                 break;
             }
             case "employees":
