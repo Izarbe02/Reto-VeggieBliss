@@ -25,10 +25,6 @@ h2{
     font-size: 50px;
 }
 
-.category-section {
-    margin-bottom: 40px;
-}
-
 .category-title {
     text-align: center;
     font-size: 36px;
@@ -92,11 +88,18 @@ h2{
     background-color: azure;
     padding: 5%;
     padding-bottom: 7%;
+    height: 130px;
+    align-items: center;
+    display: flex;
 }
-
-.orange-button {
+.botones{
+    display: flex;
+    flex-direction: column-reverse;
+}
+.botones button{width: 100%;}
+.orange-button  {
     display: block;
-    width: 100%;
+    width: 50%;
     height: 50px;
     background-color: orange;
     border: none;
@@ -107,6 +110,18 @@ h2{
     transition: transform 0.3s ease-in-out;
 }
 
+.precio  {
+    display: block;
+    width: 50%;
+    height: 50px;
+    background-color: rgb(245, 60, 28);
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
 .orange-button:hover {
     background-color: rgb(199, 40, 0);
     transform: scale(1.05);

@@ -57,7 +57,10 @@ const printBurguerData = (burguerData) =>
                 <div class="description">
                     <p>${burguer.product_description}</p>
                 </div>
-                <button class="orange-button">+</button>
+                    <div class="botones">
+                        <button class="orange-button">+</button>
+                        <button class="precio">${burguer.price.toFixed(2)}€</button>
+                    </div>
                 </div>
             `
         })
@@ -82,7 +85,10 @@ const printRazzionesData = (razzionesData) =>
                     <p>${razziones.product_description}</p>
                     <p></p>
                 </div>
-                <button class="orange-button">+</button>
+                    <div class="botones">
+                        <button class="orange-button">+</button>
+                        <button class="precio">${razziones.price.toFixed(2)}€</button>
+                    </div>
                 </div>
             `
         })
@@ -106,7 +112,10 @@ const printSaladsData = (saladsData) =>
                 <div class="description">
                     <p>${salads.product_description}</p>
                 </div>
-                <button class="orange-button">+</button>
+                    <div class="botones">
+                        <button class="orange-button">+</button>
+                        <button class="precio">${salads.price.toFixed(2)}€</button>
+                    </div>
                 </div>
             `
         })
@@ -129,7 +138,10 @@ const printDessertsData = (dessertsData) =>
                 <div class="description">
                     <p>${desserts.product_description}</p>
                 </div>
-                <button class="orange-button">+</button>
+                    <div class="botones">
+                        <button class="orange-button">+</button>
+                        <button class="precio">${desserts.price.toFixed(2)}€</button>
+                    </div>
                 </div>
             `
         })
@@ -153,7 +165,10 @@ const printDrinksData = (drinksData) =>
                 <div class="description">
                     <p>${drinks.product_description}</p>
                 </div>
-                <button class="orange-button">+</button>
+                    <div class="botones">
+                        <button class="orange-button">+</button>
+                        <button class="precio">${drinks.price.toFixed(2)}€</button>
+                    </div>
                 </div>
             `
         })
