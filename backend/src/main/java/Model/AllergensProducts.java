@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class AllergensProducts {
 
 //product_id  allergen_id
+
     private String product_id;
     public void setProduct_id(String sProduct_id)
     {
@@ -28,7 +29,7 @@ public class AllergensProducts {
         return allergen_id;
     }
 
-    public AllergensProducts(String sProduct_id, String sAllergen_id;)
+    public AllergensProducts(String sProduct_id, String sAllergen_id)
     {
         product_id = sProduct_id;
         allergen_id = sAllergen_id;
@@ -36,7 +37,7 @@ public class AllergensProducts {
 
     public AllergensProducts(){}
 
-    public static String toArrayJson(ArrayList<AllergensProducts> allergensProducts) {
+    public static String toArrayJson(ArrayList<AllergensProducts>allergensProducts) {
         GsonBuilder builder = new GsonBuilder();
         builder.setPrettyPrinting();
 

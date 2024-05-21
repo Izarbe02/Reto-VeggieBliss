@@ -76,6 +76,11 @@ public class Controller extends HttpServlet{
                 out.print(new AllergensAction().execute(resp, req, arrAction[1]));
                 break;
             }
+            case "allergens_products":
+            {
+                out.print(new AllergensProductsAction().execute(resp, req, arrAction[1]));
+                break;
+            }
             default:
             {
                 System.out.println(arrAction[0]);
