@@ -1,5 +1,6 @@
 package Model.IDAO;
 
+import Model.AllergensProducts;
 import Model.Categories;
 import Model.MotorSQL;
 
@@ -27,7 +28,7 @@ public class AllergensProductsDao implements IDao <AllergensProducts, Integer> {
     @Override
     public ArrayList<AllergensProducts> findAll(AllergensProducts object)
     {
-        ArrayList<Model.AllergensProducts> AllergensProducts = new ArrayList<>();
+        ArrayList<Model.AllergensProducts> allergensProducts = new ArrayList<>();
         MotorSQL motor = new MotorSQL();
 
         try{
@@ -36,7 +37,7 @@ public class AllergensProductsDao implements IDao <AllergensProducts, Integer> {
             while (rs.next())
             {
                 //product_id  allergen_id
-                AllergensProducts allergensProducts = new AllergensProducts();
+                AllergensProducts allergenProduct = new AllergensProducts();
                 allergenProduct.setProduct_id(rs.getString("product_id"));
                 allergenProduct.setAllergen_id(rs.getString("allergen_id"));
                 allergensProducts.add(allergenProduct);
@@ -49,6 +50,6 @@ public class AllergensProductsDao implements IDao <AllergensProducts, Integer> {
             motor.disconnect();
         }
 
-        return allergensProduct;
+        return allergensProducts;
     }
 }
