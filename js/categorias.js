@@ -33,6 +33,10 @@ const fetchData = async() =>
         console.log("Data --> ", drinkData)
 
         printBurguerData(burgerData)
+        printRazzionesData(razzionData)
+        printSaladsData(saladData)
+        printDessertsData(dessertData)
+        printDrinksData(drinkData)
     }
 
 const printBurguerData = (burguerData) =>
@@ -59,89 +63,99 @@ const printBurguerData = (burguerData) =>
         })
     }
 
-    
-const printSaladData = (saladData) => {
-    const category = document.getElementsByClassName('categories')[0];
-    Array.from(saladData).forEach(salad => {
-        const container = document.createElement("div");
-        container.classList.add("container", "salads");
-        category.appendChild(container);
-        container.innerHTML = `
-            <div class="category-card">
+const printRazzionesData = (razzionesData) =>
+    {
+        const category = document.getElementsByClassName('categories')[1]
+        Array.from(razzionesData).forEach(razziones => {
+            const container = document.createElement("div")
+            container.classList.add("container")
+            container.classList.add("razziones")
+            category.appendChild(container)
+            container.innerHTML = 
+            `
+                <div class="category-card">
                 <div class="category-header">
-                    <h2>${salad.product_name}</h2>
+                    <h2>${razziones.product_name}</h2>
                 </div>
-                <img src="${salad.product_image}" alt="${salad.product_name}">
+                <img src= "${razziones.product_image}" alt= "${razziones.product_name}">
                 <div class="description">
-                    <p>${salad.product_description}</p>
+                    <p>${razziones.product_description}</p>
+                    <p></p>
                 </div>
                 <button class="orange-button">+</button>
-            </div>
-        `;
-    });
-}
-
-const printRazzionData = (razzionData) => {
-    const category = document.getElementsByClassName('categories')[0];
-    Array.from(razzionData).forEach(razzion => {
-        const container = document.createElement("div");
-        container.classList.add("container", "razzions");
-        category.appendChild(container);
-        container.innerHTML = `
-            <div class="category-card">
-                <div class="category-header">
-                    <h2>${razzion.product_name}</h2>
                 </div>
-                <img src="${razzion.product_image}" alt="${razzion.product_name}">
+            `
+        })
+    }
+
+const printSaladsData = (saladsData) =>
+    {
+        const category = document.getElementsByClassName('categories')[2]
+        Array.from(saladsData).forEach(salads => {
+            const container = document.createElement("div")
+            container.classList.add("container")
+            container.classList.add("salads")
+            category.appendChild(container)
+            container.innerHTML = 
+            `
+                <div class="category-card">
+                <div class="category-header">
+                    <h2>${salads.product_name}</h2>
+                </div>
+                <img src= "${salads.product_image}" alt= "${salads.product_name}">
                 <div class="description">
-                    <p>${razzion.product_description}</p>
+                    <p>${salads.product_description}</p>
                 </div>
                 <button class="orange-button">+</button>
-            </div>
-        `;
-    });
-}
-
-const printDessertData = (dessertData) => {
-    const category = document.getElementsByClassName('categories')[0];
-    Array.from(dessertData).forEach(dessert => {
-        const container = document.createElement("div");
-        container.classList.add("container", "desserts");
-        category.appendChild(container);
-        container.innerHTML = `
-            <div class="category-card">
-                <div class="category-header">
-                    <h2>${dessert.product_name}</h2>
                 </div>
-                <img src="${dessert.product_image}" alt="${dessert.product_name}">
+            `
+        })
+    }
+const printDessertsData = (dessertsData) =>
+    {
+        const category = document.getElementsByClassName('categories')[3]
+        Array.from(dessertsData).forEach(desserts => {
+            const container = document.createElement("div")
+            container.classList.add("container")
+            container.classList.add("desserts")
+            category.appendChild(container)
+            container.innerHTML = 
+            `
+                <div class="category-card">
+                <div class="category-header">
+                    <h2>${desserts.product_name}</h2>
+                </div>
+                <img src= "${desserts.product_image}" alt= "${desserts.product_name}">
                 <div class="description">
-                    <p>${dessert.product_description}</p>
+                    <p>${desserts.product_description}</p>
                 </div>
                 <button class="orange-button">+</button>
-            </div>
-        `;
-    });
-}
-
-
-const printDrinkData = (drinkData) => {
-    const category = document.getElementsByClassName('categories')[0];
-    Array.from(drinkData).forEach(drink => {
-        const container = document.createElement("div");
-        container.classList.add("container", "drinks");
-        category.appendChild(container);
-        container.innerHTML = `
-            <div class="category-card">
-                <div class="category-header">
-                    <h2>${drink.product_name}</h2>
                 </div>
-                <img src="${drink.product_image}" alt="${drink.product_name}">
+            `
+        })
+    }
+
+const printDrinksData = (drinksData) =>
+    {
+        const category = document.getElementsByClassName('categories')[4]
+        Array.from(drinksData).forEach(drinks => {
+            const container = document.createElement("div")
+            container.classList.add("container")
+            container.classList.add("drinks")
+            category.appendChild(container)
+            container.innerHTML = 
+            `
+                <div class="category-card">
+                <div class="category-header">
+                    <h2>${drinks.product_name}</h2>
+                </div>
+                <img src= "${drinks.product_image}" alt= "${drinks.product_name}">
                 <div class="description">
-                    <p>${drink.product_description}</p>
+                    <p>${drinks.product_description}</p>
                 </div>
                 <button class="orange-button">+</button>
-            </div>
-        `;
-    });
-}
+                </div>
+            `
+        })
+    }
 fetchData()
