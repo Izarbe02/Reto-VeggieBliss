@@ -24,6 +24,27 @@ h2{
 .name h1 {
     font-size: 50px;
 }
+.treat{
+    margin-top: 15%;
+}
+
+.allergens{
+    align-items: center;
+    justify-content: center;
+  
+    background-color: rgba(251, 252, 222, 0.966);
+    border-radius: 15px;
+    padding: 3%;
+    width: 20%;
+
+
+}
+.allergens-text{
+    color: rgb(37, 8, 3);
+    font-size: x-large;
+
+}
+
 
 .category-section {
     margin-bottom: 40px;
