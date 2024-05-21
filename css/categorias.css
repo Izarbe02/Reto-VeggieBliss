@@ -7,6 +7,10 @@ h2{
     font-size:larger;
     font-weight: 600;
 }
+button{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+}
 .main {
     background: url('../images/fondo2.jpg');
     background-size: cover;
@@ -25,6 +29,79 @@ h2{
     font-size: 50px;
 }
 
+@keyframes cart {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.2);
+    }    
+}
+@keyframes desplegable {
+    0%{width: 0%;}
+    100%{width: 30%;}
+}
+@keyframes desplegableInverso {
+    0%{width: 30%;}
+    100%{width: 0%;}
+}
+.cart-button{
+    color: white;
+    font-size: x-large;
+    font-weight: 600;
+    padding: 2% 3%;
+    position: fixed;
+    padding: 0.5% 1%;
+    top: 17%;
+    right: 1%;
+    cursor: pointer;
+    z-index: 10;
+    background-color: rgb(255, 67, 34);
+    border: none;
+    border-radius: 15px;
+}
+.cart-button:hover{
+    animation: cart 1s;
+    transform: scale(1.2);
+}
+.cart-display{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    width: 30%;
+    right: 0%;
+    background-color: wheat;
+    opacity: 0.9;
+    height: 82%;
+    border-radius: 15px 0px 0px 15px;
+    top: 16%;
+}
+.cart-order{
+    opacity: 1;
+    font-size: x-large;
+    font-weight: 600;
+    position: absolute;
+    background-color: orange;
+    border: none;
+    border-radius: 15px;
+    padding: 2% 3%;
+    bottom: 3%;
+}
+.cart-order:hover{
+    animation: cart 1s;
+    transform: scale(1.2);
+}
+.cart-text{
+    padding-top: 2%;
+}
+.cart-title{
+    font-size: x-large;
+    font-weight: 600;
+    font-size: x-large;
+    padding-top: 3%;
+}
 .category-title {
     text-align: center;
     font-size: 36px;
@@ -48,7 +125,6 @@ h2{
 }
 
 .container {
-    
     padding: 2%;
     width: 29%;
 }
@@ -134,7 +210,7 @@ h2{
     }
 
     .container {
-        width: 45%; /* Para que las hamburguesas ocupen menos espacio */
-        margin: 2.5%; /* Espacio entre las tarjetas */
+        width: 45%;
+        margin: 2.5%; 
     }
 }

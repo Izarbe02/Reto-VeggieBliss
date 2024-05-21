@@ -1,3 +1,27 @@
+// carrito
+let cartDisplay
+let cartButton 
+
+document.addEventListener("DOMContentLoaded", (event) => {
+    cartDisplay = document.getElementsByClassName("cart-display") [0]
+    cartButton = document.getElementsByClassName("cart-button") [0]
+
+    cartButton.addEventListener("click", ()=>{
+        if (cartDisplay.style.display != "flex")
+        {
+            cartDisplay.style.animation = "desplegable 1.5s"
+            cartDisplay.style.display = "flex"
+        } else {
+            cartDisplay.style.animation = "none"
+            cartDisplay.style.display = "none"
+        }
+    })
+})
+
+
+
+//
+//fetch
 const productsURL = "http://localhost:8080/VeggieBliss/Controller?action=products.find_all"
 
 const burgerURL = "http://localhost:8080/VeggieBliss/Controller?action=products.burgers"
@@ -38,6 +62,8 @@ const fetchData = async() =>
         printDessertsData(dessertData)
         printDrinksData(drinkData)
     }
+
+
 
 const printBurguerData = (burguerData) =>
     {
@@ -164,6 +190,8 @@ const printDrinksData = (drinksData) =>
                 <img src= "${drinks.product_image}" alt= "${drinks.product_name}">
                 <div class="description">
                     <p>${drinks.product_description}</p>
+                    
+                    
                 </div>
                     <div class="botones">
                         <button class="orange-button">+</button>
