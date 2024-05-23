@@ -1,0 +1,170 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+  }
+a{
+    text-decoration: none;
+}
+  .main {
+    padding: 20px;
+    background: url('../images/fondo.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.8;
+    opacity: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    padding: 20px;
+    
+  }
+
+  header {
+    background-color: #90e7ad;
+    color: white;
+    display: flex;
+    padding: 2%;
+  }
+
+  .logo {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .logo h1 {
+    justify-content: center;
+    margin-left: -15%;
+  }
+
+  .logo-image img {
+    width: 16%;
+    margin: 0%;
+  }
+
+  .logo h1 {
+    text-shadow: 2px 2px 2px rgb(89, 126, 121);
+    font-family: "Jaro", sans-serif;
+    font-size: 65px;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+  }
+
+
+  .order-completed-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+
+  .order-completed-card h1 {
+    font-weight: 550;
+    font-size: 40px;
+    color: #2f8f2f;
+    margin-bottom: 10px;
+  }
+
+  .order-completed-card p {
+    font-size: 24px;
+    color: #24412d;
+    margin-bottom: 20px;
+  }
+
+  .order-completed-card img {
+    font-weight: 400;
+    max-width: 36%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  footer {
+    background-color: #24412d;
+    color: #c5a78c;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .resources,
+  .company,
+  .social {
+    margin-bottom: 20px;
+  }
+
+  .resources h2,
+  .company h2 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .resources p,
+  .company p {
+    color: #daf3d9;
+    margin-bottom: 5px;
+  }
+
+  .social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .social img {
+    width: 30px;
+    margin: 0 5px;
+  }
+
+  nav.menu ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: orange;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+  }
+
+  nav.menu ul li a:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+
+  footer p a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: orange;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+  }
+
+  footer p a:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+  }
+
+  @media (width < 969px) {
+    .title h1 {
+      font-size: 300%;
+    }
+
+    .logo-image {
+      width: 50%;
+    }
+  }
+
+  @media (width <= 540px) {
+    .logo-image {
+      width: 50%;
+    }
+  }

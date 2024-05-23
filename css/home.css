@@ -3,10 +3,13 @@ h2{
     font-size:larger;
     font-weight: 600;
 }
+li, p{
+    font-size:large;
+    font-family: 'Courier New', Courier, monospace;
+}
 strong
 {
     font-weight: bold;
-    /*font-style: italic;*/
 }
 ul {list-style-type: circle; }
 
