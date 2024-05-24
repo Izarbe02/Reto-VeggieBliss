@@ -160,7 +160,17 @@ button{
     flex-wrap: wrap;
     padding: 1%;
 }
-
+.allergen_products_span {
+    float: right;
+    font-weight: 900;
+    border: solid;
+    border-color: red;
+    padding: 2%;
+    font-weight: 900;
+    border-width: 1.5px;
+   border-radius: 25%;
+    color: red;
+}
 .container {
     padding: 2%;
     width: 29%;
@@ -239,7 +249,9 @@ button{
         flex-wrap: wrap;
         justify-content: center;
     }
-
+button{
+    padding: 50px
+}
     .container {
         width: 45%;
         margin: 2.5%; 
