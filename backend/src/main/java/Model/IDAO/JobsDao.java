@@ -1,10 +1,6 @@
 package Model.IDAO;
-
-
-import Model.Categories;
 import Model.Jobs;
 import Model.MotorSQL;
-
 import java.sql.ResultSet;
 import java.util.ArrayList;
 

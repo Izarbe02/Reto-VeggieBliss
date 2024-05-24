@@ -1,12 +1,11 @@
 package Controller.IAction;
 
 
-import Model.Categories;
+
 import Model.Clients;
-import Model.IDAO.CategoriesDao;
+
 import Model.IDAO.ClientsDao;
-import Model.IDAO.OrdersDao;
-import Model.Orders;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonParser;
 

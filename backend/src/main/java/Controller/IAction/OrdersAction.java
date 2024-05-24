@@ -1,14 +1,9 @@
 package Controller.IAction;
 
-import Model.Categories;
-import Model.IDAO.CategoriesDao;
-import Model.IDAO.OrderDetailsDao;
 import Model.IDAO.OrdersDao;
-import Model.OrderDetails;
 import Model.Orders;
 import com.google.gson.Gson;
 import com.google.gson.JsonParser;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;

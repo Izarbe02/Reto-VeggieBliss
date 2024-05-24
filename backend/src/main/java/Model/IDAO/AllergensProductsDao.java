@@ -1,7 +1,7 @@
 package Model.IDAO;
 
 import Model.AllergensProducts;
-import Model.Categories;
+
 import Model.MotorSQL;
 
 import java.sql.ResultSet;
