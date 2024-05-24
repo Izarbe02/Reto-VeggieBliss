@@ -2,6 +2,7 @@ package Model.IDAO;
 
 import Model.Clients;
 import Model.MotorSQL;
+import Model.OrderDetails;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -10,10 +11,34 @@ public class ClientsDao implements IDao <Clients, Integer>{
 
 
 private final String SQL_FIND_ALL = "select * from clients";
+
+private final String SQL_ADD = "insert into clients values (";
+
 @Override
 public int add(Clients clients) {
-        return 0;
+        int response = 0;
+        MotorSQL motor = new MotorSQL();
+        try {
+               // client_id,first_name,last_name,mail,phone_number,client_password
+                motor.connect();
+                String sql_add = SQL_ADD +
+                        clients.getClient_id()+","+
+                        clients.getFirst_name()+","+
+                        clients.getLast_name()+","+
+                        clients.getMail()+","+
+                        clients.getPhone_number()+","+
+                        clients.getClient_password()+")";
+
+                response= motor.executeUpdate(sql_add);
+
+        } catch (Exception exception){
+                response= 0;
         }
+        finally {
+                motor.disconnect();
+        }
+        return response;
+}
 
 @Override
 public int delete(Integer i) {
@@ -52,7 +77,6 @@ public ArrayList<Clients> findAll(Clients object)
         finally {
         motor.disconnect();
         }
-
         return clients;
         }
 }
