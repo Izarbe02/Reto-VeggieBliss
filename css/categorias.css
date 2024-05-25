@@ -165,11 +165,12 @@ button{
     font-weight: 900;
     border: solid;
     border-color: red;
-    padding: 2%;
+    padding: 1%;
     font-weight: 900;
     border-width: 1.5px;
    border-radius: 25%;
     color: red;
+    margin-bottom: 5px;
 }
 .container {
     padding: 2%;

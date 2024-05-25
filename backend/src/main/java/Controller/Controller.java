@@ -14,7 +14,7 @@ import java.io.PrintWriter;
 
 public class Controller extends HttpServlet{
 
-    //http//localhost:8080/VeggieBliss/Controler?action=x.y
+    //http//localhost:8080/VeggieBliss/Controller?action=x.y
 
     private void processRequest(HttpServletRequest req, HttpServletResponse resp)
         throws ServletException, IOException
