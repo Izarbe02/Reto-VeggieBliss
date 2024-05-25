@@ -1,14 +1,14 @@
 // carrito
 let cartDisplay
-let cartButton 
+let cartButton
+let totalPriceContainer
 
 document.addEventListener("DOMContentLoaded", (event) => {
-    cartDisplay = document.getElementsByClassName("cart-display") [0]
-    cartButton = document.getElementsByClassName("cart-button") [0]
-
-    cartButton.addEventListener("click", ()=>{
-        if (cartDisplay.style.display != "flex")
-        {
+    cartDisplay = document.getElementsByClassName("cart-display")[0]
+    cartButton = document.getElementsByClassName("cart-button")[0]
+totalPriceContainer = document.getElementsByClassName("order-total-price")
+    cartButton.addEventListener("click", () => {
+        if (cartDisplay.style.display != "flex") {
             cartDisplay.style.animation = "desplegable 1.5s"
             cartDisplay.style.display = "flex"
         } else {
@@ -18,7 +18,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     })
 })
 
-
+let orderTotalPrice = 0
+ 
 
 //
 //fetch
@@ -38,11 +39,13 @@ const allergenURL = "http://localhost:8080/VeggieBliss/Controller?action=allerge
 
 const allergenProductURL = "http://localhost:8080/VeggieBliss/Controller?action=allergens_products.find_all"
 
-const orderPostURL = "" // añadir 
+/*const orderPostURL = "http://localhost:8080/VeggieBliss/Controller?action=orders.add"
 
-const detailsPostURL = ""// añadir  es . add cambia en java
+const detailPostURL = "http://localhost:8080/VeggieBliss/Controller?action=order_details.add"
 
-const orderPostFetch =  async(data) => {
+const updatePost = "http://localhost:8080/VeggieBliss/Controller?action=order_details.update"*/
+
+/*const orderPostFetch =  async(data) => {
     await fetch(orderPostURL,
         {
             method: "POST",
@@ -54,69 +57,74 @@ const orderPostFetch =  async(data) => {
 
    
 
-const detailsPostFetch =  async() => 
-{}
-
-
-
-const fetchData = async() => 
+const detailsPostFetch =  async(data) => 
+{  await fetch(detailPostURL,
     {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json" }
+        
+    })
+}*/
 
-        const [burgerRes, saladRes, razzionRes, dessertRes, drinkRes, allergenRes, allergenProductRes] = await Promise.all([fetch(burgerURL), fetch(saladURL), fetch(razzionURL), fetch(dessertURL), fetch(drinkURL), fetch(allergenURL), fetch(allergenProductURL)])
 
-        const burgerData = await burgerRes.json()
-        console.log("Data --> ", burgerData)
 
-        const saladData = await saladRes.json()
-        console.log("Data --> ", saladData)
+const fetchData = async () => {
 
-        const razzionData = await razzionRes.json()
-        console.log("Data --> ", razzionData)
+    const [burgerRes, saladRes, razzionRes, dessertRes, drinkRes, allergenRes, allergenProductRes] = await Promise.all([fetch(burgerURL), fetch(saladURL), fetch(razzionURL), fetch(dessertURL), fetch(drinkURL), fetch(allergenURL), fetch(allergenProductURL)])
 
-        const dessertData = await dessertRes.json()
-        console.log("Data --> ", dessertData)
+    const burgerData = await burgerRes.json()
+    console.log("Data --> ", burgerData)
 
-        const drinkData = await drinkRes.json()
-        console.log("Data --> ", drinkData)
+    const saladData = await saladRes.json()
+    console.log("Data --> ", saladData)
 
-        const allergenData = await allergenRes.json()
-        console.log("Data --> ", allergenData)
+    const razzionData = await razzionRes.json()
+    console.log("Data --> ", razzionData)
 
-        const allergenProductData = await allergenProductRes.json()
-        console.log("Data --> ", allergenProductData)
+    const dessertData = await dessertRes.json()
+    console.log("Data --> ", dessertData)
 
-        printAllergenData(allergenData)
-        printBurguerData(burgerData, allergenProductData)
-        printRazzionesData(razzionData, allergenProductData)
-        printSaladsData(saladData, allergenProductData)
-        printDessertsData(dessertData, allergenProductData)
-        printDrinksData(drinkData, allergenProductData)
-    }
+    const drinkData = await drinkRes.json()
+    console.log("Data --> ", drinkData)
 
-const printAllergenData = (allergenData) =>
-    {
-        const category = document.getElementsByClassName('allergens')[0].getElementsByTagName("table")[0]
-        Array.from(allergenData).forEach(allergen => {
-            const container = document.createElement("tr")
-            container.classList.add("allergen")
-            category.appendChild(container)
-            container.innerHTML = 
+    const allergenData = await allergenRes.json()
+    console.log("Data --> ", allergenData)
+
+    const allergenProductData = await allergenProductRes.json()
+    console.log("Data --> ", allergenProductData)
+
+    printAllergenData(allergenData)
+    printBurguerData(burgerData, allergenProductData)
+    printRazzionesData(razzionData, allergenProductData)
+    printSaladsData(saladData, allergenProductData)
+    printDessertsData(dessertData, allergenProductData)
+    printDrinksData(drinkData, allergenProductData)
+}
+
+const printAllergenData = (allergenData) => {
+    const category = document.getElementsByClassName('allergens')[0].getElementsByTagName("table")[0]
+    Array.from(allergenData).forEach(allergen => {
+        const container = document.createElement("tr")
+        container.classList.add("allergen")
+        category.appendChild(container)
+        container.innerHTML =
             `
                     <td>${allergen.allergen_id}</td>
                     <td>${allergen.allergen_name}</td>
             `
-        })
-    }
-    const orangeButton = container.getElementsByClassName("orange-button")[0]
-const printBurguerData = (burguerData, allergenProductData) =>
-    {
-        const category = document.getElementsByClassName('categories')[0]
-        Array.from(burguerData).forEach((burguer, i) => {
-            const container = document.createElement("div")
-            container.classList.add("container")
-            container.classList.add("burgers")
-            category.appendChild(container)
-            container.innerHTML = 
+    })
+}
+
+const printBurguerData = (burguerData, allergenProductData) => {
+    const category = document.getElementsByClassName('categories')[0]
+    Array.from(burguerData).forEach((burguer, i) => {
+        const container = document.createElement("div")
+        container.classList.add("container")
+        container.classList.add("burgers")
+        category.appendChild(container)
+        container.innerHTML =
+        
             `
                 <div class="category-card">
                 <div class="category-header">
@@ -133,43 +141,80 @@ const printBurguerData = (burguerData, allergenProductData) =>
                     </div>
                 </div>
             `
-            const allergen_span = container.getElementsByClassName('allergen_products_span')[0]
+        const orangeButton = container.getElementsByClassName("orange-button")[0]
+        const allergen_span = container.getElementsByClassName('allergen_products_span')[0]
 
-            Array.from(allergenProductData.filter(product=>product.product_id===burguer.product_id)).forEach(allergen_product => {
-                allergen_span.innerText +=
+        Array.from(allergenProductData.filter(product => product.product_id === burguer.product_id)).forEach(allergen_product => {
+            allergen_span.innerText +=
                 `${allergen_product.allergen_id} `
-            })
         })
-        ///order listener
-        addToOrder. addEventListener("click" ,() => {
-            let currentOrder = 
-            {  order_id: 1,
-                order_date: new Date(),
-                direction: null,
-                client_id: 1
-
-            }
-            let CurrentDetail = 
-            {
-                order_detail_id : 1,
-                quantity_product: 0 ,
-                sales_price: 0 ,
-                product_id: null ,
-                employee_id: 1 ,
-                order_id: 1 ,
-            }
-        })
+        
+    let currentdetail = {
+        existence: false,
+        product_name: null,
+        product_quantity: 0,
+        unitPrice: 0,
+        totalPrice: 0
     }
+    
 
-const printRazzionesData = (razzionesData, allergenProductData) =>
-    {
-        const category = document.getElementsByClassName('categories')[1]
-        Array.from(razzionesData).forEach((razziones, i) => {
-            const container = document.createElement("div")
-            container.classList.add("container")
-            container.classList.add("razziones")
-            category.appendChild(container)
-            container.innerHTML = 
+    //order listener
+    orangeButton.addEventListener("click", () => {
+        /*let currentOrder = 
+        {  order_id: 1,
+            order_date: new Date(),
+            direction: null,
+            client_id: 1
+
+        }
+        let CurrentDetail = 
+        {
+            order_detail_id : 1,
+            quantity_product: 0 ,
+            sales_price: 0 ,
+            product_id: null ,
+            employee_id: 1 ,
+            order_id: 1 ,
+        }*/
+
+        if (currentdetail.existence == false){
+                currentdetail.existence = true
+                currentdetail.product_name = burguer.product_name
+                currentdetail.product_quantity = 1
+                currentdetail.unitPrice = burguer.price
+                currentdetail.totalPrice = currentdetail.unitPrice * currentdetail.product_quantity
+        }
+        else {
+                currentdetail.product_quantity += 1
+                currentdetail.totalPrice = currentdetail.unitPrice * currentdetail.product_quantity
+        }
+        const detail = document.createElement("div")
+        detail.classList.add("order-card")
+        cartDisplay.appendChild(detail)  
+        detail.innerHTML = `
+                <div class="card-photo">
+                <img src="../images/flor.png" alt="order-image">
+            </div>
+        <div class="card-info">
+            <p class="cart-text">${currentdetail.product_name}</p><br>
+            <div class="price-quantity">
+            <p class="card-price"> <strong>${currentdetail.totalPrice}</strong></p>
+            <p class="product-quantity">${currentdetail.product_quantity}</p>
+            </div>
+        </div>`
+    })
+    })
+}
+    
+
+const printRazzionesData = (razzionesData, allergenProductData) => {
+    const category = document.getElementsByClassName('categories')[1]
+    Array.from(razzionesData).forEach((razziones, i) => {
+        const container = document.createElement("div")
+        container.classList.add("container")
+        container.classList.add("razziones")
+        category.appendChild(container)
+        container.innerHTML =
             `
                 <div class="category-card">
                 <div class="category-header">
@@ -187,24 +232,23 @@ const printRazzionesData = (razzionesData, allergenProductData) =>
                     </div>
                 </div>
             `
-            const allergen_span = container.getElementsByClassName('allergen_products_span')[0]
+        const allergen_span = container.getElementsByClassName('allergen_products_span')[0]
 
-            Array.from(allergenProductData.filter(product=>product.product_id===razziones.product_id)).forEach(allergen_product => {
-                allergen_span.innerText +=
+        Array.from(allergenProductData.filter(product => product.product_id === razziones.product_id)).forEach(allergen_product => {
+            allergen_span.innerText +=
                 `${allergen_product.allergen_id} `
-            })
         })
-    }
+    })
+}
 
-const printSaladsData = (saladsData, allergenProductData) =>
-    {
-        const category = document.getElementsByClassName('categories')[2]
-        Array.from(saladsData).forEach((salads, i) => {
-            const container = document.createElement("div")
-            container.classList.add("container")
-            container.classList.add("salads")
-            category.appendChild(container)
-            container.innerHTML = 
+const printSaladsData = (saladsData, allergenProductData) => {
+    const category = document.getElementsByClassName('categories')[2]
+    Array.from(saladsData).forEach((salads, i) => {
+        const container = document.createElement("div")
+        container.classList.add("container")
+        container.classList.add("salads")
+        category.appendChild(container)
+        container.innerHTML =
             `
                 <div class="category-card">
                 <div class="category-header">
@@ -221,23 +265,22 @@ const printSaladsData = (saladsData, allergenProductData) =>
                     </div>
                 </div>
             `
-            const allergen_span = container.getElementsByClassName('allergen_products_span')[0]
+        const allergen_span = container.getElementsByClassName('allergen_products_span')[0]
 
-            Array.from(allergenProductData.filter(product=>product.product_id===salads.product_id)).forEach(allergen_product => {
-                allergen_span.innerText +=
+        Array.from(allergenProductData.filter(product => product.product_id === salads.product_id)).forEach(allergen_product => {
+            allergen_span.innerText +=
                 `${allergen_product.allergen_id} `
-            })
         })
-    }
-const printDessertsData = (dessertsData, allergenProductData) =>
-    {
-        const category = document.getElementsByClassName('categories')[3]
-        Array.from(dessertsData).forEach((desserts, i) => {
-            const container = document.createElement("div")
-            container.classList.add("container")
-            container.classList.add("desserts")
-            category.appendChild(container)
-            container.innerHTML = 
+    })
+}
+const printDessertsData = (dessertsData, allergenProductData) => {
+    const category = document.getElementsByClassName('categories')[3]
+    Array.from(dessertsData).forEach((desserts, i) => {
+        const container = document.createElement("div")
+        container.classList.add("container")
+        container.classList.add("desserts")
+        category.appendChild(container)
+        container.innerHTML =
             `
                 <div class="category-card">
                 <div class="category-header">
@@ -254,24 +297,23 @@ const printDessertsData = (dessertsData, allergenProductData) =>
                     </div>
                 </div>
             `
-            const allergen_span = container.getElementsByClassName('allergen_products_span')[0]
+        const allergen_span = container.getElementsByClassName('allergen_products_span')[0]
 
-            Array.from(allergenProductData.filter(product=>product.product_id===desserts.product_id)).forEach(allergen_product => {
-                allergen_span.innerText +=
+        Array.from(allergenProductData.filter(product => product.product_id === desserts.product_id)).forEach(allergen_product => {
+            allergen_span.innerText +=
                 `${allergen_product.allergen_id} `
-            })
         })
-    }
+    })
+}
 
-const printDrinksData = (drinksData, allergenProductData) =>
-    {
-        const category = document.getElementsByClassName('categories')[4]
-        Array.from(drinksData).forEach((drinks, i) => {
-            const container = document.createElement("div")
-            container.classList.add("container")
-            container.classList.add("drinks")
-            category.appendChild(container)
-            container.innerHTML = 
+const printDrinksData = (drinksData, allergenProductData) => {
+    const category = document.getElementsByClassName('categories')[4]
+    Array.from(drinksData).forEach((drinks, i) => {
+        const container = document.createElement("div")
+        container.classList.add("container")
+        container.classList.add("drinks")
+        category.appendChild(container)
+        container.innerHTML =
             `
                 <div class="category-card">
                 <div class="category-header">
@@ -288,12 +330,12 @@ const printDrinksData = (drinksData, allergenProductData) =>
                     </div>
                 </div>
             `
-            const allergen_span = container.getElementsByClassName('allergen_products_span')[0]
+        const allergen_span = container.getElementsByClassName('allergen_products_span')[0]
 
-            Array.from(allergenProductData.filter(product=>product.product_id===drinks.product_id)).forEach(allergen_product => {
-                allergen_span.innerText +=
+        Array.from(allergenProductData.filter(product => product.product_id === drinks.product_id)).forEach(allergen_product => {
+            allergen_span.innerText +=
                 `${allergen_product.allergen_id} `
-            })
         })
-    }
+    })
+}
 fetchData()
