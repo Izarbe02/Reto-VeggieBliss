@@ -34,41 +34,63 @@ const dessertURL = "http://localhost:8080/VeggieBliss/Controller?action=products
 
 const drinkURL = "http://localhost:8080/VeggieBliss/Controller?action=products.drinks"
 
+const allergenURL = "http://localhost:8080/VeggieBliss/Controller?action=allergens.find_all"
+
+const allergenProductURL = "http://localhost:8080/VeggieBliss/Controller?action=allergens_products.find_all"
+
 const fetchData = async() => 
     {
-        const burgerRes = await fetch(burgerURL)
+
+        const [burgerRes, saladRes, razzionRes, dessertRes, drinkRes, allergenRes, allergenProductRes] = await Promise.all([fetch(burgerURL), fetch(saladURL), fetch(razzionURL), fetch(dessertURL), fetch(drinkURL), fetch(allergenURL), fetch(allergenProductURL)])
+
         const burgerData = await burgerRes.json()
         console.log("Data --> ", burgerData)
 
-        const saladRes = await fetch(saladURL)
         const saladData = await saladRes.json()
         console.log("Data --> ", saladData)
 
-        const razzionRes = await fetch(razzionURL)
         const razzionData = await razzionRes.json()
         console.log("Data --> ", razzionData)
 
-        const dessertRes = await fetch(dessertURL)
         const dessertData = await dessertRes.json()
         console.log("Data --> ", dessertData)
 
-        const drinkRes = await fetch(drinkURL)
         const drinkData = await drinkRes.json()
         console.log("Data --> ", drinkData)
 
-        printBurguerData(burgerData)
-        printRazzionesData(razzionData)
-        printSaladsData(saladData)
-        printDessertsData(dessertData)
-        printDrinksData(drinkData)
+        const allergenData = await allergenRes.json()
+        console.log("Data --> ", allergenData)
+
+        const allergenProductData = await allergenProductRes.json()
+        console.log("Data --> ", allergenProductData)
+
+        printAllergenData(allergenData)
+        printBurguerData(burgerData, allergenProductData)
+        printRazzionesData(razzionData, allergenProductData)
+        printSaladsData(saladData, allergenProductData)
+        printDessertsData(dessertData, allergenProductData)
+        printDrinksData(drinkData, allergenProductData)
     }
 
+const printAllergenData = (allergenData) =>
+    {
+        const category = document.getElementsByClassName('allergens')[0].getElementsByTagName("table")[0]
+        Array.from(allergenData).forEach(allergen => {
+            const container = document.createElement("tr")
+            container.classList.add("allergen")
+            category.appendChild(container)
+            container.innerHTML = 
+            `
+                    <td>${allergen.allergen_id}</td>
+                    <td>${allergen.allergen_name}</td>
+            `
+        })
+    }
 
-
-const printBurguerData = (burguerData) =>
+const printBurguerData = (burguerData, allergenProductData) =>
     {
         const category = document.getElementsByClassName('categories')[0]
-        Array.from(burguerData).forEach(burguer => {
+        Array.from(burguerData).forEach((burguer, i) => {
             const container = document.createElement("div")
             container.classList.add("container")
             container.classList.add("burgers")
@@ -82,6 +104,7 @@ const printBurguerData = (burguerData) =>
                 <img src= "${burguer.product_image}" alt= "${burguer.product_name}">
                 <div class="description">
                     <p>${burguer.product_description}</p>
+                    <span class = "allergen_products_span"></span>
                 </div>
                     <div class="botones">
                         <button class="orange-button">+</button>
@@ -89,13 +112,19 @@ const printBurguerData = (burguerData) =>
                     </div>
                 </div>
             `
+            const allergen_span = container.getElementsByClassName('allergen_products_span')[0]
+
+            Array.from(allergenProductData.filter(product=>product.product_id===burguer.product_id)).forEach(allergen_product => {
+                allergen_span.innerText +=
+                `${allergen_product.allergen_id} `
+            })
         })
     }
 
-const printRazzionesData = (razzionesData) =>
+const printRazzionesData = (razzionesData, allergenProductData) =>
     {
         const category = document.getElementsByClassName('categories')[1]
-        Array.from(razzionesData).forEach(razziones => {
+        Array.from(razzionesData).forEach((razziones, i) => {
             const container = document.createElement("div")
             container.classList.add("container")
             container.classList.add("razziones")
@@ -109,6 +138,7 @@ const printRazzionesData = (razzionesData) =>
                 <img src= "${razziones.product_image}" alt= "${razziones.product_name}">
                 <div class="description">
                     <p>${razziones.product_description}</p>
+                    <span class = "allergen_products_span"></span>
                     <p></p>
                 </div>
                     <div class="botones">
@@ -117,13 +147,19 @@ const printRazzionesData = (razzionesData) =>
                     </div>
                 </div>
             `
+            const allergen_span = container.getElementsByClassName('allergen_products_span')[0]
+
+            Array.from(allergenProductData.filter(product=>product.product_id===razziones.product_id)).forEach(allergen_product => {
+                allergen_span.innerText +=
+                `${allergen_product.allergen_id} `
+            })
         })
     }
 
-const printSaladsData = (saladsData) =>
+const printSaladsData = (saladsData, allergenProductData) =>
     {
         const category = document.getElementsByClassName('categories')[2]
-        Array.from(saladsData).forEach(salads => {
+        Array.from(saladsData).forEach((salads, i) => {
             const container = document.createElement("div")
             container.classList.add("container")
             container.classList.add("salads")
@@ -137,6 +173,7 @@ const printSaladsData = (saladsData) =>
                 <img src= "${salads.product_image}" alt= "${salads.product_name}">
                 <div class="description">
                     <p>${salads.product_description}</p>
+                    <span class = "allergen_products_span"></span>
                 </div>
                     <div class="botones">
                         <button class="orange-button">+</button>
@@ -144,12 +181,18 @@ const printSaladsData = (saladsData) =>
                     </div>
                 </div>
             `
+            const allergen_span = container.getElementsByClassName('allergen_products_span')[0]
+
+            Array.from(allergenProductData.filter(product=>product.product_id===salads.product_id)).forEach(allergen_product => {
+                allergen_span.innerText +=
+                `${allergen_product.allergen_id} `
+            })
         })
     }
-const printDessertsData = (dessertsData) =>
+const printDessertsData = (dessertsData, allergenProductData) =>
     {
         const category = document.getElementsByClassName('categories')[3]
-        Array.from(dessertsData).forEach(desserts => {
+        Array.from(dessertsData).forEach((desserts, i) => {
             const container = document.createElement("div")
             container.classList.add("container")
             container.classList.add("desserts")
@@ -163,6 +206,7 @@ const printDessertsData = (dessertsData) =>
                 <img src= "${desserts.product_image}" alt= "${desserts.product_name}">
                 <div class="description">
                     <p>${desserts.product_description}</p>
+                    <span class = "allergen_products_span"></span>
                 </div>
                     <div class="botones">
                         <button class="orange-button">+</button>
@@ -170,13 +214,19 @@ const printDessertsData = (dessertsData) =>
                     </div>
                 </div>
             `
+            const allergen_span = container.getElementsByClassName('allergen_products_span')[0]
+
+            Array.from(allergenProductData.filter(product=>product.product_id===desserts.product_id)).forEach(allergen_product => {
+                allergen_span.innerText +=
+                `${allergen_product.allergen_id} `
+            })
         })
     }
 
-const printDrinksData = (drinksData) =>
+const printDrinksData = (drinksData, allergenProductData) =>
     {
         const category = document.getElementsByClassName('categories')[4]
-        Array.from(drinksData).forEach(drinks => {
+        Array.from(drinksData).forEach((drinks, i) => {
             const container = document.createElement("div")
             container.classList.add("container")
             container.classList.add("drinks")
@@ -190,8 +240,7 @@ const printDrinksData = (drinksData) =>
                 <img src= "${drinks.product_image}" alt= "${drinks.product_name}">
                 <div class="description">
                     <p>${drinks.product_description}</p>
-                    
-                    
+                    <span class = "allergen_products_span"></span>
                 </div>
                     <div class="botones">
                         <button class="orange-button">+</button>
@@ -199,6 +248,12 @@ const printDrinksData = (drinksData) =>
                     </div>
                 </div>
             `
+            const allergen_span = container.getElementsByClassName('allergen_products_span')[0]
+
+            Array.from(allergenProductData.filter(product=>product.product_id===drinks.product_id)).forEach(allergen_product => {
+                allergen_span.innerText +=
+                `${allergen_product.allergen_id} `
+            })
         })
     }
 fetchData()

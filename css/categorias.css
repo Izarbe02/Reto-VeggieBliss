@@ -29,6 +29,36 @@ button{
     font-size: 50px;
 }
 
+.allergens
+{
+    display: flex;
+    justify-content: center;
+}
+
+.allergens table 
+{
+    background-color: #e2be9ad0;
+    border-collapse: collapse;
+    border-radius: 10px;
+    border-style: hidden; 
+    box-shadow: 3px 2px 2px 3px #24412d;
+    width: 40%;
+}
+
+.allergens th
+{
+    border: solid 2px #90e7add5;
+    padding: 1%;
+}
+
+.allergens td
+{
+    border: solid 2px #90e7add5;
+    padding: 1%;
+    padding-left: 4%;
+    font-size: large;
+}
+
 @keyframes cart {
     0%{
         transform: scale(1);
@@ -160,6 +190,7 @@ button{
     flex-wrap: wrap;
     padding: 1%;
 }
+
 .allergen_products_span {
     float: right;
     font-weight: 900;
@@ -172,6 +203,7 @@ button{
     color: red;
     margin-bottom: 5px;
 }
+
 .container {
     padding: 2%;
     width: 29%;
@@ -213,6 +245,7 @@ button{
     padding: 5%;
     padding-bottom: 7%;
 }
+
 .precio{
     display: block;
     width: 100%;

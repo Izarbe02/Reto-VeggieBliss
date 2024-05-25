@@ -1,7 +1,8 @@
 package Model.IDAO;
 
-import Model.Categories;
+
 import Model.MotorSQL;
+
 import Model.Orders;
 
 import java.sql.ResultSet;
@@ -11,14 +12,53 @@ public class OrdersDao implements IDao<Orders, Integer> {
 
 
     private final String SQL_FIND_ALL = "select * from orders";
+
+
+    private final String SQL_ADD = "insert into order values (";
+    private final String SQL_DELETE = "delete from orders where order_id=";
+
     @Override
     public int add(Orders orders) {
-        return 0;
+        int response = 0;
+        MotorSQL motor = new MotorSQL();
+        try {
+            motor.connect();
+            String sql_add = SQL_ADD +
+            orders.getOrder_id()+","+
+            orders.getOrder_date()+","+
+            orders.getDirection()+","+
+            orders.getClient_id()+")";
+
+            response= motor.executeUpdate(sql_add);
+
+        } catch (Exception exception){
+            response= 0;
+        }
+        finally {
+            motor.disconnect();
+        }
+        return response;
     }
 
     @Override
-    public int delete(Integer i) {
-        return 0;
+    public int delete(Integer index) {
+        int response=0;
+        MotorSQL motor = new MotorSQL();
+
+        try{
+            motor.connect();
+            String sql = SQL_DELETE+index;
+            response = motor.executeUpdate(sql);
+
+        }catch ( Exception ex)
+        {
+            response=0;
+        }
+        finally {
+            motor.disconnect();
+        }
+
+        return response;
     }
 
     @Override
