@@ -14,6 +14,7 @@ public class OrderDetailsDao implements IDao <OrderDetails, Integer>{
         private final String SQL_ADD = "insert into order_details values (";
     private final String SQL_DELETE = "delete from orders where order_id=";
 
+    private final String SQL_UPDATE = "update orders set ";
         @Override
         public int add(OrderDetails orderDetails) {
             int response = 0;
@@ -57,11 +58,30 @@ public class OrderDetailsDao implements IDao <OrderDetails, Integer>{
 
         return response;
     }
+///////////update
+    @Override
+    public int update(OrderDetails orderDetails) {
+        int response = 0;
+        MotorSQL motor = new MotorSQL();
+        try {
+            motor.connect();
+            String sql_update = SQL_UPDATE +
+                    "order_detail_id = " + orderDetails.getOrder_detail_id()+
+                    ", quantity_product = " + orderDetails.getQuantity_product()+
+                    ",sales_price = " +  orderDetails.getSales_price()+
+                    ",employees_id = " + orderDetails.getEmployee_id()+
+                    ", order_id = " + orderDetails.getOrder_id()+" where order_detail_id = " + orderDetails.getOrder_detail_id();
 
-        @Override
-        public int update(OrderDetails orderDetails) {
-            return 0;
+            response= motor.executeUpdate(sql_update);
+
+        } catch (Exception exception){
+            response= 0;
         }
+        finally {
+            motor.disconnect();
+        }
+        return response;
+    }
 
         @Override
         public ArrayList<OrderDetails> findAll(OrderDetails object)

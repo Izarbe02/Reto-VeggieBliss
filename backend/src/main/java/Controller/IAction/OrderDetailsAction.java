@@ -30,6 +30,11 @@ public class OrderDetailsAction implements IAction{
                     result = add(request);
                     break;
                 }
+                case "update":
+                {
+                    result = update(request);
+                    break;
+                }
                 case "delete":{
                     result = delete(request);
                     break;
@@ -60,6 +65,16 @@ public class OrderDetailsAction implements IAction{
             int response = orderDetailsDao.add(orderDetail);
             return String.valueOf(response);
         }
+    private String update(HttpServletRequest request)
+    {
+        JsonParser parser = new JsonParser();
+        Gson gson = new Gson();
+
+        OrderDetails orderDetail = gson.fromJson(parser.parse(getBody(request)), OrderDetails.class);
+        OrderDetailsDao orderDetailsDao = new OrderDetailsDao();
+        int response = orderDetailsDao.update(orderDetail);
+        return String.valueOf(response);
+    }
     private String delete(HttpServletRequest request)
     {
         JsonParser parser = new JsonParser();

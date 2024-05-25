@@ -38,6 +38,27 @@ const allergenURL = "http://localhost:8080/VeggieBliss/Controller?action=allerge
 
 const allergenProductURL = "http://localhost:8080/VeggieBliss/Controller?action=allergens_products.find_all"
 
+const orderPostURL = "" // añadir 
+
+const detailsPostURL = ""// añadir  es . add cambia en java
+
+const orderPostFetch =  async(data) => {
+    await fetch(orderPostURL,
+        {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: { "Content-Type": "application/json" }
+            
+        })
+    }
+
+   
+
+const detailsPostFetch =  async() => 
+{}
+
+
+
 const fetchData = async() => 
     {
 
@@ -86,7 +107,7 @@ const printAllergenData = (allergenData) =>
             `
         })
     }
-
+    const orangeButton = container.getElementsByClassName("orange-button")[0]
 const printBurguerData = (burguerData, allergenProductData) =>
     {
         const category = document.getElementsByClassName('categories')[0]
@@ -118,6 +139,25 @@ const printBurguerData = (burguerData, allergenProductData) =>
                 allergen_span.innerText +=
                 `${allergen_product.allergen_id} `
             })
+        })
+        ///order listener
+        addToOrder. addEventListener("click" ,() => {
+            let currentOrder = 
+            {  order_id: 1,
+                order_date: new Date(),
+                direction: null,
+                client_id: 1
+
+            }
+            let CurrentDetail = 
+            {
+                order_detail_id : 1,
+                quantity_product: 0 ,
+                sales_price: 0 ,
+                product_id: null ,
+                employee_id: 1 ,
+                order_id: 1 ,
+            }
         })
     }
 
