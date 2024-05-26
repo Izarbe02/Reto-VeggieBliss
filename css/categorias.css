@@ -2,15 +2,18 @@ body {
     font-family: 'Courier New', Courier, monospace;
     font-size: medium;
 }
-h2{
+
+h2 {
     font-family: 'Courier New', Courier, monospace;
-    font-size:x-large;
+    font-size: x-large;
     font-weight: 600;
 }
-button{
+
+button {
     font-family: 'Courier New', Courier, monospace;
     font-weight: 500;
 }
+
 .main {
     background: url('../images/fondo2.jpg');
     background-size: cover;
@@ -29,53 +32,65 @@ button{
     font-size: 50px;
 }
 
-.allergens
-{
+.allergens {
     display: flex;
     justify-content: center;
 }
 
-.allergens table 
-{
+.allergens table {
     background-color: #e2be9ad0;
     border-collapse: collapse;
     border-radius: 10px;
-    border-style: hidden; 
+    border-style: hidden;
     box-shadow: 3px 2px 2px 3px #24412d;
     width: 40%;
 }
 
-.allergens th
-{
+.allergens th {
     border: solid 2px #90e7add5;
     padding: 1%;
 }
 
-.allergens td
-{
+.allergens td {
     border: solid 2px #90e7add5;
     padding: 1%;
     padding-left: 4%;
     font-size: large;
 }
 
+.order-total-price {}
+
 @keyframes cart {
-    0%{
+    0% {
         transform: scale(1);
     }
-    100%{
+
+    100% {
         transform: scale(1.2);
-    }    
+    }
 }
+
 @keyframes desplegable {
-    0%{width: 0%;}
-    100%{width: 30%;}
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 30%;
+    }
 }
+
 @keyframes desplegableInverso {
-    0%{width: 30%;}
-    100%{width: 0%;}
+    0% {
+        width: 30%;
+    }
+
+    100% {
+        width: 0%;
+    }
 }
-.cart-button{
+
+.cart-button {
     color: white;
     font-size: x-large;
     font-weight: 600;
@@ -90,11 +105,13 @@ button{
     border: none;
     border-radius: 15px;
 }
-.cart-button:hover{
+
+.cart-button:hover {
     animation: cart 1s;
     transform: scale(1.2);
 }
-.cart-display{
+
+.cart-display {
     display: none;
     flex-direction: column;
     align-items: center;
@@ -108,45 +125,51 @@ button{
     border-radius: 15px 0px 0px 15px;
     top: 16%;
 }
-.order-card{
+
+.order-card {
     align-content: space-around;
     align-items: center;
     text-align: center;
-    display:flex;
+    display: flex;
     margin-top: 25px;
     width: 93%;
     height: 13%;
     background-color: rgb(255, 255, 255);
     border-radius: 15px;
 }
-.card-photo img{ 
-    margin-left: 10px;;
+
+.card-photo img {
+    margin-left: 10px;
+    ;
     height: 45px;
 }
-.card-price{
-    background-color: #eec8a5; 
+
+.card-price {
+    background-color: #eec8a5;
 }
 
-.order-card{
+.order-card {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-.card-info{
+
+.card-info {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     width: 80%;
 }
-.price-quantity{
+
+.price-quantity {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 80%;
 }
 
-.cart-order{
+.cart-order {
     opacity: 1;
     font-size: x-large;
     font-weight: 600;
@@ -156,20 +179,25 @@ button{
     border-radius: 15px;
     padding: 2% 3%;
     bottom: 3%;
+    right: 33%
 }
-.cart-order:hover{
+
+.cart-order:hover {
     animation: cart 1s;
     transform: scale(1.2);
 }
-.cart-text{
+
+.cart-text {
     padding-top: 2%;
 }
-.cart-title{
+
+.cart-title {
     font-size: x-large;
     font-weight: 600;
     font-size: x-large;
     padding-top: 3%;
 }
+
 .category-title {
     text-align: center;
     font-size: 36px;
@@ -199,7 +227,7 @@ button{
     padding: 1%;
     font-weight: 900;
     border-width: 1.5px;
-   border-radius: 25%;
+    border-radius: 25%;
     color: red;
     margin-bottom: 5px;
 }
@@ -246,7 +274,7 @@ button{
     padding-bottom: 7%;
 }
 
-.precio{
+.precio {
     display: block;
     width: 100%;
     height: 50px;
@@ -273,6 +301,40 @@ button{
     transition: transform 0.3s ease-in-out;
 }
 
+.cart-bottom {
+    position: relative;
+    bottom: 0px;
+}
+
+.clean-order {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15%;
+    margin-bottom: 2%;
+    padding: 8%;
+    color: white;
+    background-color: rgb(221, 14, 7);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    border: none;
+    border-radius: 20%;
+}
+
+.order-total-price {
+    margin-top: 25%;
+    margin-bottom: 2%;
+    padding: 8%;
+    color: white;
+    background-color: rgb(241, 154, 40);
+    border: none;
+    border-radius: 20%;
+}
+
+.clean-order:hover {
+    background-color: rgb(160, 32, 1);
+    transform: scale(1.05);
+}
+
 .orange-button:hover {
     background-color: rgb(199, 40, 0);
     transform: scale(1.05);
@@ -283,17 +345,18 @@ button{
         flex-wrap: wrap;
         justify-content: center;
     }
-button{
-    padding: 50px
-}
+
+    button {
+        padding: 50px
+    }
+
     .container {
         width: 45%;
-        margin: 2.5%; 
+        margin: 2.5%;
     }
-    
-.card-photo img{ 
-    height: 35px
-    
-  
+
+    .card-photo img {
+        height: 35px
+    }
 }
-}
+
