@@ -141,4 +141,4 @@ public class ProductsAction implements IAction {
                 int response = productsDao.update(products);
                 return String.valueOf(response);
             }
-        }s
+        }
