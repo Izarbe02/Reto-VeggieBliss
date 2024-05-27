@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import static Controller.Controller.getBody;
 
 
-public class ClientsAction implements IAction{
+public class  ClientsAction implements IAction{
 
     @Override
     public String execute(HttpServletResponse response, HttpServletRequest request, String action) {
