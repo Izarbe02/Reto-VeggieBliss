@@ -1,0 +1,17 @@
+0:0:0:0:0:0:0:1 - - [25/May/2024:11:26:21 +0200] "GET /VeggieBliss HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [25/May/2024:11:26:21 +0200] "GET /VeggieBliss/ HTTP/1.1" 200 57
+0:0:0:0:0:0:0:1 - - [25/May/2024:11:26:21 +0200] "GET /favicon.ico HTTP/1.1" 404 611
+0:0:0:0:0:0:0:1 - - [25/May/2024:13:33:55 +0200] "GET /VeggieBliss/Controller?action=allergens.find_all HTTP/1.1" 200 570
+0:0:0:0:0:0:0:1 - - [25/May/2024:13:33:55 +0200] "GET /VeggieBliss/Controller?action=products.burgers HTTP/1.1" 200 2585
+0:0:0:0:0:0:0:1 - - [25/May/2024:13:33:55 +0200] "GET /VeggieBliss/Controller?action=products.drinks HTTP/1.1" 200 1971
+0:0:0:0:0:0:0:1 - - [25/May/2024:13:33:55 +0200] "GET /VeggieBliss/Controller?action=products.salads HTTP/1.1" 200 2013
+0:0:0:0:0:0:0:1 - - [25/May/2024:13:33:55 +0200] "GET /VeggieBliss/Controller?action=products.razziones HTTP/1.1" 200 2439
+0:0:0:0:0:0:0:1 - - [25/May/2024:13:33:55 +0200] "GET /VeggieBliss/Controller?action=products.desserts HTTP/1.1" 200 1332
+0:0:0:0:0:0:0:1 - - [25/May/2024:13:33:57 +0200] "GET /VeggieBliss/Controller?action=allergens_products.find_all HTTP/1.1" 200 1399
+0:0:0:0:0:0:0:1 - - [25/May/2024:13:37:30 +0200] "GET /VeggieBliss/Controller?action=products.razziones HTTP/1.1" 200 2439
+0:0:0:0:0:0:0:1 - - [25/May/2024:13:37:30 +0200] "GET /VeggieBliss/Controller?action=products.salads HTTP/1.1" 200 2013
+0:0:0:0:0:0:0:1 - - [25/May/2024:13:37:31 +0200] "GET /VeggieBliss/Controller?action=products.drinks HTTP/1.1" 200 1971
+0:0:0:0:0:0:0:1 - - [25/May/2024:13:37:31 +0200] "GET /VeggieBliss/Controller?action=products.desserts HTTP/1.1" 200 1332
+0:0:0:0:0:0:0:1 - - [25/May/2024:13:37:31 +0200] "GET /VeggieBliss/Controller?action=products.burgers HTTP/1.1" 200 2585
+0:0:0:0:0:0:0:1 - - [25/May/2024:13:37:31 +0200] "GET /VeggieBliss/Controller?action=allergens.find_all HTTP/1.1" 200 570
+0:0:0:0:0:0:0:1 - - [25/May/2024:13:37:32 +0200] "GET /VeggieBliss/Controller?action=allergens_products.find_all HTTP/1.1" 200 1399

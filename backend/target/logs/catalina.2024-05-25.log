@@ -1,0 +1,34 @@
+25-May-2024 11:24:09.564 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Nombre de la versión del servidor: Apache Tomcat/8.5.100
+25-May-2024 11:24:09.568 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:                      Mar 19 2024 13:54:42 UTC
+25-May-2024 11:24:09.568 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Número de versión de servidor:     8.5.100.0
+25-May-2024 11:24:09.568 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:                           Windows 10
+25-May-2024 11:24:09.568 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Versión de Systema Operativo:      10.0
+25-May-2024 11:24:09.568 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Arquitectura:                      amd64
+25-May-2024 11:24:09.568 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:                         C:\Users\Izarbe\.jdks\corretto-17.0.11
+25-May-2024 11:24:09.569 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:                       17.0.11+9-LTS
+25-May-2024 11:24:09.569 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Vededor JVM:                       Amazon.com Inc.
+25-May-2024 11:24:09.570 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:                     C:\Users\Izarbe\Desktop\Ramadeveloper\backend\target
+25-May-2024 11:24:09.570 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:                     C:\Users\Izarbe\Desktop\tomcat\apache-tomcat-8.5.100
+25-May-2024 11:24:09.571 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.lang=ALL-UNNAMED
+25-May-2024 11:24:09.571 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.io=ALL-UNNAMED
+25-May-2024 11:24:09.571 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util=ALL-UNNAMED
+25-May-2024 11:24:09.571 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+25-May-2024 11:24:09.571 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+25-May-2024 11:24:09.571 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.home=C:\Users\Izarbe\Desktop\tomcat\apache-tomcat-8.5.100
+25-May-2024 11:24:09.571 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dcatalina.base=C:\Users\Izarbe\Desktop\Ramadeveloper\backend\target
+25-May-2024 11:24:09.572 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.io.tmpdir=C:\Users\Izarbe\Desktop\Ramadeveloper\backend\target\temp
+25-May-2024 11:24:09.572 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.config.file=C:\Users\Izarbe\Desktop\Ramadeveloper\backend\target\conf\logging.properties
+25-May-2024 11:24:09.572 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-May-2024 11:24:09.572 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -javaagent:C:\Users\Izarbe\AppData\Local\JetBrains\IntelliJ IDEA Community Edition 2023.2.4\lib\idea_rt.jar=52637:C:\Users\Izarbe\AppData\Local\JetBrains\IntelliJ IDEA Community Edition 2023.2.4\bin
+25-May-2024 11:24:09.572 INFORMACIÓN [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument:             -Dfile.encoding=UTF-8
+25-May-2024 11:24:09.572 INFORMACIÓN [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La biblioteca nativa de Apache Tomcat basada en ARP que permite un rendimiento óptimo en entornos de desarrollo no ha sido hallada en java.library.path: [C:\Users\Izarbe\.jdks\corretto-17.0.11\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\dotnet\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\PuTTY\;C:\Users\Izarbe\AppData\Local\Microsoft\WindowsApps;C:\Users\Izarbe\AppData\Local\Programs\Git\cmd;C:\Users\Izarbe\AppData\Local\GitHubDesktop\bin;.]
+25-May-2024 11:24:09.634 INFORMACIÓN [main] org.apache.coyote.AbstractProtocol.init Inicializando el manejador de protocolo ["http-nio-8080"]
+
+25-May-2024 11:24:09.651 INFORMACIÓN [main] org.apache.catalina.startup.Catalina.load Initialization processed in 685 ms
+25-May-2024 11:24:09.736 INFORMACIÓN [main] org.apache.catalina.core.StandardService.startInternal Arrancando servicio [Catalina]
+25-May-2024 11:24:09.736 INFORMACIÓN [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/8.5.100]
+25-May-2024 11:24:09.748 INFORMACIÓN [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Desplieque del descriptor de configuración [C:\Users\Izarbe\Desktop\Ramadeveloper\backend\target\conf\Catalina\localhost\VeggieBliss.xml]
+25-May-2024 11:24:11.201 INFORMACIÓN [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars Al menos un JAR, que se ha explorado buscando TLDs, aún no contenía TLDs. Activar historial de depuración para este historiador para una completa lista de los JARs que fueron explorados y de los que nos se halló TLDs. Saltarse JARs no necesarios durante la exploración puede dar lugar a una mejora de tiempo significativa en el arranque y compilación de JSP .
+25-May-2024 11:24:11.307 INFORMACIÓN [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDescriptor Deployment of deployment descriptor [C:\Users\Izarbe\Desktop\Ramadeveloper\backend\target\conf\Catalina\localhost\VeggieBliss.xml] has finished in [1.558] ms
+25-May-2024 11:24:11.309 INFORMACIÓN [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+25-May-2024 11:24:11.377 INFORMACIÓN [main] org.apache.catalina.startup.Catalina.start Server startup in 1725 ms

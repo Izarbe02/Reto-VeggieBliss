@@ -1,3 +1,9 @@
+a{font-family: 'Courier New', Courier, monospace;
+    font-size:larger;
+    font-weight: 600;
+    text-decoration: none;
+}
+
 body {
     font-family: 'Courier New', Courier, monospace;
     font-size: medium;
@@ -5,208 +11,11 @@ body {
 
 .main {
     padding: 20px;
-    background: url('images/fondo.png');
+    background: url('../images/fondo.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0.8;
-}
-
-header {
-    background-color: #90e7ad;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    width: 60px;
-    height: 60px;
-    margin-right: 10px;
-}
-
-.logo span {
-    text-shadow: 2px 2px 2px rgb(89, 126, 121);
-    font-family: "Jaro", sans-serif;
-    font-size: 65px;
-    font-weight: 400;
-    font-style: normal;
-    color: white;
-}
-
-.title {
-    margin-left: 20px;
-    color: aliceblue;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: bolder;
-}
-
-nav.menu {
-    display: flex;
-    align-items: center;
-}
-
-nav.menu ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav.menu ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav.menu ul li:last-child {
-    margin-right: 0;
-}
-
-nav.menu ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-    transition: color 0.3s;
-    position: relative; 
-}
-
-nav.menu ul li a:hover {
-    color: #5eb58f;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #90e7ad;
-    padding: 5px 0;
-    border: 1px solid #ddd;
-    z-index: 1;
-}
-.dropdown-toggle:hover+.dropdown-menu{
-    display: block;
-}
-nav.menu ul li a:hover {
-    color: #f8911c;
-}
-.dropdown-menu:hover{
-    display: block;
-}
-
-.dropdown-menu li {
-    display: block;
-}
-.dropdown-menu li a {
-    display: block;
-    padding: 5px 10px;
-    color: white;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.dropdown-menu li a:hover {
-    background-color: #5eb58f;
-}
-
-.secondary-menu {
-    display: none;
-}
-
-.menu-toggle {
-    display: none;
-}
-
-.buttons {
-    display: flex;
-}
-
-.buttons button {
-    background-color: #fff;
-    color: #5eb58f;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 50px;
-    margin-left: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.buttons button:hover {
-    background-color: #9ddf9f;
-}
-
-.signup-container {
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
-.signup-container h2 {
-    font-weight: 800;
-    font-size: x-large;
-    color: #1d1d1d;
-}
-
-.signup-container form {
-    margin-top: 30px;
-}
-
-.signup-container input[type="text"],
-.signup-container input[type="email"],
-.signup-container input[type="tel"],
-.signup-container input[type="password"],
-.signup-container select,
-.signup-container textarea {
-    width: 300px;
-    height: 40px;
-    margin-bottom: 20px;
-    padding: 0 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.signup-container button {
-    width: 200px;
-    height: 50px;
-    background-color: #75ee6a;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-.signup-container button:hover {
-    background-color: #f1c461;
-}
-
-.signup-container p {
-    font-weight: 600;
-    margin-top: 20px;
-    font-size: 20px;
-}
-
-.signup-container a {
-    color: #AFF1A9;
-    text-decoration: none;
-}
-
-.signup-container a:hover {
-    text-decoration: underline;
-}
-
-.signup-container label {
-    font-size: 20px;
-    font-weight: 800;
-    display: block;
-    margin-top: 10px;
 }
 
 .contact-link{

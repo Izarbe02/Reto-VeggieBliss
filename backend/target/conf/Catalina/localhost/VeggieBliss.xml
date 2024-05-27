@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Context docBase="C:\Users\Izarbe\Desktop\Ramadeveloper\backend\src\main\webapp">
+  <Resources cacheMaxSize="10240">
+    <PreResources base="C:/Users/Izarbe/Desktop/Ramadeveloper/backend/target/classes" className="org.apache.catalina.webresources.DirResourceSet" webAppMount="/WEB-INF/classes"/>
+    <PostResources base="C:/Users/Izarbe/Desktop/Ramadeveloper/backend/lib/gson-2.10.1.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/gson-2.10.1.jar"/>
+    <PostResources base="C:/Users/Izarbe/Desktop/Ramadeveloper/backend/lib/gson-2.10.1-javadoc.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/gson-2.10.1-javadoc.jar"/>
+    <PostResources base="C:/Users/Izarbe/Desktop/Ramadeveloper/backend/lib/ojdbc10-19.15.0.0.1.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/ojdbc10-19.15.0.0.1.jar"/>
+    <PostResources base="C:/Users/Izarbe/Desktop/Ramadeveloper/backend/lib/javax.servlet-api-4.0.1.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/javax.servlet-api-4.0.1.jar"/>
+    <PostResources base="C:/Users/Izarbe/Desktop/Ramadeveloper/backend/lib/ojdbc10-19.15.0.0.1-javadoc.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/ojdbc10-19.15.0.0.1-javadoc.jar"/>
+    <PostResources base="C:/Users/Izarbe/Desktop/Ramadeveloper/backend/lib/javax.servlet-api-4.0.1-javadoc.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/javax.servlet-api-4.0.1-javadoc.jar"/>
+  </Resources>
+</Context>

@@ -5,58 +5,77 @@ body {
 
 .main {
     padding: 20px;
-    background: url('images/fondo.png');
+    background: url('../images/fondo.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0.8;
 }
+h1
+{
+    font-size: x-large;
+    font-family: "Jaro", sans-serif;
+    margin-top: 3%;
+    margin-bottom: 3%;
+ }
 
-header {
+header 
+{
     background-color: #90e7ad;
     color: white;
+    display: grid;
+    grid-template-columns: 40% 35% 25%;
+    grid-template-areas: 
+    "logo menu buttons";
+    padding: 1%;
+}
+
+* a{
+    text-decoration: none;
+}
+
+.logo
+{
+    grid-area: logo;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-areas: 
+    "logo title";
+}
+
+.logo-image 
+{
+    grid-area: logo;
+    width: 40%;
+    padding-left: 15%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-}
-
-.logo-container {
-    display: flex;
     align-items: center;
 }
 
-.logo img {
-    width: 60px;
-    height: 60px;
-    margin-right: 10px;
-}
+.logo-image img {width: 100%;}
 
-.logo span {
-    text-shadow: 2px 2px 2px rgb(89, 126, 121);
-    font-family: "Jaro", sans-serif;
-    font-size: 65px;
-    font-weight: 400;
-    font-style: normal;
+.title {grid-area: title;}
+
+.title h1
+{  
+    font-size: 450%;
     color: white;
+    text-shadow: 2px 2px 2px rgb(89, 126, 121);
 }
 
-.title {
-    margin-left: 20px;
-    color: aliceblue;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: bolder;
-}
-
-nav.menu {
+.menu
+{
+    grid-area: menu;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-nav.menu ul {
+.primary-menu {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
 }
 
 nav.menu ul li {
@@ -73,11 +92,7 @@ nav.menu ul li a {
     text-decoration: none;
     font-size: 20px;
     transition: color 0.3s;
-    position: relative; 
-}
-
-nav.menu ul li a:hover {
-    color: #5eb58f;
+    position: relative;
 }
 
 .dropdown-menu {
@@ -89,7 +104,13 @@ nav.menu ul li a:hover {
     z-index: 1;
 }
 
-.dropdown-toggle:hover + .dropdown-menu {
+.dropdown-toggle:hover+.dropdown-menu{
+    display: block;
+}
+nav.menu ul li a:hover {
+    color: #f8911c;
+}
+.dropdown-menu:hover{
     display: block;
 }
 
@@ -118,11 +139,48 @@ nav.menu ul li a:hover {
 }
 
 .buttons {
+    grid-area: buttons;
     display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .buttons button {
     background-color: #fff;
+    color: #5eb58f;
+    border: none;
+    width: 25%;
+    height: 30px;
+    border-radius: 50px;
+    padding: 1%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buttons button:hover {
+    background-color: #9ddf9f;
+}
+
+nav.menu ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: orange;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+nav.menu ul li a:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.buttons button {
+    background-color: #ffffff;
     color: #5eb58f;
     border: none;
     padding: 10px 20px;

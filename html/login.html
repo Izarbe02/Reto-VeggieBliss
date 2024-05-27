@@ -10,95 +10,61 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/reset.css">
+  
   <link rel="stylesheet" href="../css/login.css">
-  <script src="main.js"></script>
+  <script src="../js/base.js"></script>
 </head>
 
 <body>
   <header>
     <div class="logo">
-      <img src="images\logo.png" alt="Logo">
-      <span>Veggie Bliss</span>
+      <div class="logo-image">
+        <a href="../html/home.html"> <img src="../images/logo.png" alt="Logo"></a>
+     </div>
+      <div class="titulo">
+        <h1>Veggie Bliss</h1>
+      </div>
     </div>
-
-    <nav class="menu">
-      <ul class="primary-menu">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle">About Us</a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Who we are</a></li>
-            <li><a href="#">What do we do??</a></li>
-            <li><a href="#">Who we work with</a></li>
-            <li><a href="#">Ethical delivery</a></li>
-            <li><a href="#">Ethical delivery</a></li>
-            <li><a href="#">What makes us special?</a></li>
-            <li><a href="#">Work with us!!</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle">Chart</a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Burguers!!</a></li>
-            <li><a href="#">Razziones</a></li>
-            <li><a href="#">Sweety desserts</a></li>
-            <li><a href="#">Drinks</a></li>
-            <li><a href="#">Menus</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-    <div class="buttons">
-      <button>Log In</button>
-      <button>Order Now!</button>
-    </div>
-    <button class="menu-toggle">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </button>
   </header>
   <main class="main">
     <div class="login-container">
       <h2>Login to Your Account</h2>
-      <form action="#" method="post">
+      <form action="..//html/categorias.html" method="post">
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
         <button type="submit">Login</button>
       </form>
-      <p>Don't have an account? <a href="#">Sign up here</a></p>
+     <p>Don't have an account? <a href="..//html/signup.html">Sign up here</a></p>
+     <p>Are you an employee? <a href="..//html/loginemp.html">Log in!</a></p>
     </div>
   </main>
   <footer>
     <div class="resources">
-      <h2>Resources</h2><br>
-      <p>Privacy Policy</p>
+        <h2>Resources</h2><br>
+        <p>Privacy Policy</p>
     </div>
     <div class="company">
-      <h2>The Company</h2><br>
-      <p>Contact us</p><br>
-      <p>Work with us</p>
+      <a href="../html/aboutus.html"><h2>The Company</h2><br></a>
+      <a href="../html/contactus.html"><p>Contact us</p><br></a>
+    <a href="../html/workwithus.html">  <p>Work with us</p></a>
+  </div>
+  <div class="social">
+        <div class="logo-footer">
+            <a target="_blank" href="../html/home.html"><img src="../images/logo.png" alt="logo"></a>
+        </div>
+        <div class="tiktok">
+           <a target="_blank" href="https://www.tiktok.com/upload?lang=es"><img src="../images/tik-tok.png" alt="tiktok"></a>
+        </div>
+        <div class="insta">
+            <a target="_blank" href="https://www.instagram.com/accounts/login/?next=https%3A%2F%2Fwww.instagram.com%2F&hl=es-es&aa_click=8891933284028179&aa_click=8891933284028179"><img src="../images/instagram.png" alt="instagram"></a>
+        </div>
+        <div class="twitter">
+            <a target="_blank" href="https://twitter.com/iniciarsesion?lang=es"><img src="../images\twitter.png" alt="twitter"></a>
+        </div>
+        <div class="linkedin"><a target="_blank" href="https://www.google.com/aclk?sa=l&ai=DChcSEwie9s_R1ZKGAxUWr4MHHS07BqgYABAAGgJlZg&ase=2&gclid=Cj0KCQjw3ZayBhDRARIsAPWzx8oG78Pat--oGIxz4Jyjai3r6WngQmU89ua2mWwXswcJeZGIEropKPMaAlIEEALw_wcB&sig=AOD64_0RuxaCLwoLsL2Sja1zon90KeoGWg&q&nis=4&adurl&ved=2ahUKEwjZ_cfR1ZKGAxVV8gIHHbxxDNUQ0Qx6BAgHEAE"><img src="../images/linkedin.png" alt="linkedin"></a>
+        
+        </div>
     </div>
-    <div class="social">
-      <div class="logo-footer">
-        <img src="images\logo.png" alt="logo">
-      </div>
-      <div class="tiktok">
-        <img src="images\tik-tok.png" alt="tiktok">
-      </div>
-      <div class="insta">
-        <img src="images\instagram.png" alt="instagram">
-      </div>
-      <div class="twitter">
-        <img src="images\twitter.png" alt="twitter">
-      </div>
-      <div class="linkedin">
-        <img src="images\linkedin.png" alt="linkedin">
-      </div>
-    </div>
-  </footer>
-</body>
-
-</html>
-</body>
-
+</footer>
+</body>-
 </html>
