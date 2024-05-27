@@ -39,6 +39,7 @@ public class OrderDetailsDao implements IDao <OrderDetails, Integer>{
             }
             return response;
         }
+    @Override
     public int delete(Integer index) {
         int response=0;
         MotorSQL motor = new MotorSQL();
@@ -114,6 +115,16 @@ public class OrderDetailsDao implements IDao <OrderDetails, Integer>{
 
             return orderDetails;
         }
-    }
+        /*
+public int deleteCart(){
+            int respuesta = 0 ;
+            MotorSQL motor = new MotorSQL();
+
+            try{
+                motor.connect();
+
+            }*/
+}
+
 
 

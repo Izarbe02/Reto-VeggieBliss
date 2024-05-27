@@ -2,10 +2,12 @@
 let cartDisplay
 let cartButton
 let totalPriceContainer
+let cleanUp
 
 document.addEventListener("DOMContentLoaded", (event) => {
     cartDisplay = document.getElementsByClassName("cart-display")[0]
     cartButton = document.getElementsByClassName("cart-button")[0]
+    cleanUp = document.getElementsByClassName("clean-order")[0]
 totalPriceContainer = document.getElementsByClassName("order-total-price")
     cartButton.addEventListener("click", () => {
         if (cartDisplay.style.display != "flex") {
@@ -15,6 +17,12 @@ totalPriceContainer = document.getElementsByClassName("order-total-price")
             cartDisplay.style.animation = "none"
             cartDisplay.style.display = "none"
         }
+    })
+    cleanUp.addEventListener("click", () => {
+        let deleteDetails = cartDisplay.getElementsByClassName("order-card")
+        Array.from(deleteDetails).forEach(detail => {
+            detail.remove()
+        })
     })
 })
 

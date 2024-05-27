@@ -25,6 +25,11 @@ public class OrderDetailsAction implements IAction{
 
             switch (action)
             {
+               /* case "delete_cart" :
+                {
+                    result = deleteCart();
+                    break;
+                }*/
                 case "add":
                 {
                     result = add(request);
@@ -85,6 +90,13 @@ public class OrderDetailsAction implements IAction{
         int response = orderDetailsDao.delete(Integer.parseInt(orderDetails.getOrder_id()));
         return String.valueOf(response);
     }
+    /*private String deleteCart()
+    {
 
-}
+        OrderDetailsDao orderDetailsDao = new OrderDetailsDao();
+        int response = orderDetailsDao.deleteCart();
+        return String.valueOf(response);*/
+    }
+
+
 
