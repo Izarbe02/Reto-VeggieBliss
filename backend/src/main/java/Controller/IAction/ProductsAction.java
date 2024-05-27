@@ -1,11 +1,18 @@
 package Controller.IAction;
 
+import Model.IDAO.OrderDetailsDao;
+import Model.MotorSQL;
+import Model.OrderDetails;
 import Model.Products;
 import Model.IDAO.ProductsDao;
+import com.google.gson.Gson;
+import com.google.gson.JsonParser;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
+
+import static Controller.Controller.getBody;
 
 public class ProductsAction implements IAction {
     @Override
@@ -15,6 +22,14 @@ public class ProductsAction implements IAction {
 
         switch (action)
         {
+            case "delete":{
+            result = delete(request);
+            break;
+
+            case "add":
+                result = add(request);
+                break;
+
             case "burgers":
                 result = findBurger();
                 break;
@@ -81,4 +96,26 @@ public class ProductsAction implements IAction {
         ArrayList<Products> products = productsDao.findAll(null);
         return Products.toArrayJson(products);
     }
+    private String add(HttpServletRequest request)
+    {
+        JsonParser parser = new JsonParser();
+        Gson gson = new Gson();
+
+        Products products = gson.fromJson(parser.parse(getBody(request)), Products.class);
+        ProductsDao productsDao = new Products();
+        int response = productsDao.add(productsDao);
+        return String.valueOf(response);
+    }
+
+    private String delete(HttpServletRequest request)
+        {
+            JsonParser parser = new JsonParser();
+            Gson gson = new Gson();
+
+            Products products = gson.fromJson(parser.parse(getBody(request)), Products.class);
+            ProductsDao productsDao = new ProductsDao();
+            int response = productsDao.delete(Integer.parseInt(productsDao.getProduct_id()));
+            return String.valueOf(response);
+        }
+}
 }
