@@ -2,6 +2,7 @@ package Model.IDAO;
 
 import Model.Clients;
 import Model.MotorSQL;
+import Model.OrderDetails;
 import Model.Products;
 
 import java.sql.ResultSet;
@@ -9,6 +10,8 @@ import java.util.ArrayList;
 
 public class ProductsDao implements IDao <Products, Integer> {
     private String SQL_ADD = "insert into products values (";
+
+    private String SQL_UPDATE = "update products set";
 
     private final String SQL_DELETE = "delete from orders where product_id=";
     private final String SQL_FIND_ALL = "select * from products";
@@ -22,7 +25,7 @@ public class ProductsDao implements IDao <Products, Integer> {
     private final String SQL_FIND_DESSERT = "select * from products where category_id = 3";
 
     private final String SQL_FIND_DRINK = "select * from products where category_id = 1";
-
+//add
     @Override
     public int add(Products products) {
         int response = 0;
@@ -48,7 +51,7 @@ public class ProductsDao implements IDao <Products, Integer> {
         }
         return response;
     }
-
+//delete
     @Override
     public int delete(Integer index) {
         int response=0;
@@ -69,12 +72,34 @@ public class ProductsDao implements IDao <Products, Integer> {
 
         return response;
     }
+//update
+@Override
+public int update(Products products) {
+    int response = 0;
+    MotorSQL motor = new MotorSQL();
+    try {
+        motor.connect();
+        String sql_update = SQL_UPDATE +
+                "product_id = " + products.getProduct_id()+
+                ", product_image = " + products.getProduct_image()+
+                ",products_name = " +  products.getProduct_name()+
+                ",products_description = " + products.getProduct_description()+
+                ",price = " + products.getPrice()+
+                ", category_id = " + products.getCategory_id()+" where products_id = " + products.getProduct_id();
 
-    @Override
-    public int update(Products products) {
-        return 0;
+        response= motor.executeUpdate(sql_update);
+
+    } catch (Exception exception){
+        response= 0;
     }
+    finally {
+        motor.disconnect();
+    }
+    return response;
+}
 
+
+//find
     public ArrayList<Products> findBurger(Products object) {
 
         ArrayList<Products> products = new ArrayList<>();

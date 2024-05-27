@@ -8,6 +8,11 @@ import java.util.ArrayList;
 public class Products {
 
     private String product_id;
+
+    public Products() {
+
+    }
+
     public void setProduct_id(String sProduct_id) {
         product_id = sProduct_id;
     }
@@ -64,8 +69,6 @@ public class Products {
         price = fPrice;
         category_id = sCategory_id;
     }
-
-    public Products(){}
 
     public static String toArrayJson(ArrayList<Products> products) {
         GsonBuilder builder = new GsonBuilder();
