@@ -1,5 +1,5 @@
 package Controller.IAction;
-
+//allergen_id , allergen_name
 import Model.Allergens;
 import Model.Categories;
 import Model.IDAO.AllergensDao;
