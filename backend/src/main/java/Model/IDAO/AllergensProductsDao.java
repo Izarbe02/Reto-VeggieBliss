@@ -25,8 +25,8 @@ public class AllergensProductsDao implements IDao <AllergensProducts, Integer> {
         try {
             motor.connect();
             String sql_add = SQL_ADD +
-                    AllergensProducts.getProduct_id()+","+
-                    AllergensProducts.getAllergen_id()+")";
+                    allergensProducts.getProduct_id()+","+
+                    allergensProducts.getAllergen_id()+")";
 
             response= motor.executeUpdate(sql_add);
 

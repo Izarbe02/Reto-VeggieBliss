@@ -15,63 +15,65 @@ import java.util.ArrayList;
 
 import static Controller.Controller.getBody;
 
-public class OrderDetailsAction implements IAction{
+public class OrderDetailsAction implements IAction {
 
-        @Override
-        public String execute(HttpServletResponse response, HttpServletRequest request, String action) {
+    @Override
+    public String execute(HttpServletResponse response, HttpServletRequest request, String action) {
 
-            String result = "";
+        String result = "";
 
 
-            switch (action)
-            {
+        switch (action) {
                /* case "delete_cart" :
                 {
                     result = deleteCart();
                     break;
                 }*/
-                case "add":
-                {
-                    result = add(request);
-                    break;
-                }
-                case "update":
-                {
-                    result = update(request);
-                    break;
-                }
-                case "delete":{
-                    result = delete(request);
-                    break;
-                }
-                case "find_all":
-                    result = findAll();
-                    break;
-                default:
-                    result = "ERROR.Invalid Action";
+            case "add": {
+                result = add(request);
+                break;
             }
-
-            return result;
+            case "update": {
+                result = update(request);
+                break;
+            }
+            case "delete": {
+                result = delete(request);
+                break;
+            }
+            case "find_all":
+                result = findAll();
+                break;
+            default:
+                result = "ERROR.Invalid Action";
         }
 
-        private String findAll()
-        {
-            OrderDetailsDao orderDetailsDao = new OrderDetailsDao();
-            ArrayList<OrderDetails> orderDetails = orderDetailsDao.findAll(null);
-            return OrderDetails.toArrayJson(orderDetails);
-        }
-        private String add(HttpServletRequest request)
-        {
-            JsonParser parser = new JsonParser();
-            Gson gson = new Gson();
+        return result;
+    }
 
-            OrderDetails orderDetail = gson.fromJson(parser.parse(getBody(request)), OrderDetails.class);
-            OrderDetailsDao orderDetailsDao = new OrderDetailsDao();
-            int response = orderDetailsDao.add(orderDetail);
-            return String.valueOf(response);
-        }
-    private String update(HttpServletRequest request)
-    {
+
+    ///findall
+    private String findAll() {
+        OrderDetailsDao orderDetailsDao = new OrderDetailsDao();
+        ArrayList<OrderDetails> orderDetails = orderDetailsDao.findAll(null);
+        return OrderDetails.toArrayJson(orderDetails);
+    }
+
+
+    //add
+    private String add(HttpServletRequest request) {
+        JsonParser parser = new JsonParser();
+        Gson gson = new Gson();
+
+        OrderDetails orderDetail = gson.fromJson(parser.parse(getBody(request)), OrderDetails.class);
+        OrderDetailsDao orderDetailsDao = new OrderDetailsDao();
+        int response = orderDetailsDao.add(orderDetail);
+        return String.valueOf(response);
+    }
+
+
+    ////update
+    private String update(HttpServletRequest request) {
         JsonParser parser = new JsonParser();
         Gson gson = new Gson();
 
@@ -80,8 +82,9 @@ public class OrderDetailsAction implements IAction{
         int response = orderDetailsDao.update(orderDetail);
         return String.valueOf(response);
     }
-    private String delete(HttpServletRequest request)
-    {
+
+    //delete
+    private String delete(HttpServletRequest request) {
         JsonParser parser = new JsonParser();
         Gson gson = new Gson();
 
@@ -90,13 +93,14 @@ public class OrderDetailsAction implements IAction{
         int response = orderDetailsDao.delete(Integer.parseInt(orderDetails.getOrder_id()));
         return String.valueOf(response);
     }
+}
     /*private String deleteCart()
     {
 
         OrderDetailsDao orderDetailsDao = new OrderDetailsDao();
         int response = orderDetailsDao.deleteCart();
         return String.valueOf(response);*/
-    }
+
 
 
 

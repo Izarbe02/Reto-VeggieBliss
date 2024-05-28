@@ -78,7 +78,7 @@ public class AllergensProductsAction implements IAction {
         JsonParser parser = new JsonParser();
         Gson gson = new Gson();
 
-        AllergensProducts = gson.fromJson(parser.parse(getBody(request)), AllergensProducts.class);
+        AllergensProducts allergensProducts = gson.fromJson(parser.parse(getBody(request)), AllergensProducts.class);
         AllergensProductsDao allergensProductsDao = new AllergensProductsDao();
         int response = allergensProductsDao.delete(Integer.parseInt(allergensProducts.getProduct_id()));
         return String.valueOf(response);
