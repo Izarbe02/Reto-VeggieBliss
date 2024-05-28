@@ -1,4 +1,6 @@
-
+a{
+    text-decoration: none;
+}
 body {
     font-family: 'Courier New', Courier, monospace;
     font-size: medium;
@@ -36,7 +38,6 @@ header {
 }
 
 .logo h1 {
- 
     text-shadow: 2px 2px 2px rgb(89, 126, 121);
     font-family: "Jaro", sans-serif;
     font-size: 65px;
