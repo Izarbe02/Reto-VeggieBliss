@@ -14,7 +14,7 @@ public class OrdersDao implements IDao<Orders, Integer> {
     private final String SQL_FIND_ALL = "select * from orders";
 
 
-    private final String SQL_ADD = "insert into order values (";
+    private final String SQL_ADD = "insert into orders values (";
     private final String SQL_DELETE = "delete from orders where order_id=";
 
     @Override

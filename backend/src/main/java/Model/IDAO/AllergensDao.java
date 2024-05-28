@@ -64,7 +64,7 @@ public class AllergensDao implements IDao<Allergens, Integer> {
             motor.connect();
             String sql_update = SQL_UPDATE +
                     "allergen_id = " + allergens.getAllergen_id()+
-                    ", allergen_name = " + allergens.getAllergen_name()+" where allergen_id = " + allergens.getAllergen_id();
+                    ", 'allergen_name = " + allergens.getAllergen_name()+"' where allergen_id = " + allergens.getAllergen_id();
 
             response= motor.executeUpdate(sql_update);
 

@@ -1,16 +1,11 @@
-JS
 
-//fetch
 const productsURL = "http://localhost:8080/VeggieBliss/Controller?action=products.find_all"
 
 const productsDeleteURL = "http://localhost:8080/VeggieBliss/Controller?action=products.delete"
 
 const productsAddURL = "http://localhost:8080/VeggieBliss/Controller?action=products.add"
 
-
 const productsUpdateURL = "http://localhost:8080/VeggieBliss/Controller?action=products.update"
-
-
 
 const burgerURL = "http://localhost:8080/VeggieBliss/Controller?action=products.burgers"
 

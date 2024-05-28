@@ -67,11 +67,11 @@ public class OrderDetailsDao implements IDao <OrderDetails, Integer>{
         try {
             motor.connect();
             String sql_update = SQL_UPDATE +
-                    "order_detail_id = " + orderDetails.getOrder_detail_id()+
-                    ", quantity_product = " + orderDetails.getQuantity_product()+
+                    "order_detail_id = '" + orderDetails.getOrder_detail_id()+
+                    "', quantity_product = " + orderDetails.getQuantity_product()+
                     ",sales_price = " +  orderDetails.getSales_price()+
-                    ",employees_id = " + orderDetails.getEmployee_id()+
-                    ", order_id = " + orderDetails.getOrder_id()+" where order_detail_id = " + orderDetails.getOrder_detail_id();
+                    ",employees_id = '" + orderDetails.getEmployee_id()+
+                    "', order_id = '" + orderDetails.getOrder_id()+"' where order_detail_id = '" + orderDetails.getOrder_detail_id() + "'";
 
             response= motor.executeUpdate(sql_update);
 

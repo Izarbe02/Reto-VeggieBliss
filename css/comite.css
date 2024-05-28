@@ -16,6 +16,156 @@ h2 {
 }
 
 strong{ font-weight: 600;}
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-large;
+    font-weight: 600;
+}
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+    font-weight: 600;
+}
+
+strong{ font-weight: 600;}
+
+.main {
+    background: url('../images/fondo2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+}
+
+.comite {
+    text-align: center;
+    padding-top: 3%;
+    padding: 1%;
+}
+
+.comite h1 {
+    font-size: 50px;
+    text-shadow: 2px 2px 2px whitesmoke;
+}
+
+.committee-employees {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 1%;
+    width: 100%;
+}
+
+.committee-employees-card {
+    transition: transform 0.3s ease-in-out;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.753);
+    width: 90%;
+    margin: 1%;
+    background-color: antiquewhite;
+}
+
+.committee-employees-card img {
+    width: 100%;
+    height: 200px;
+}
+
+.committee-employees-card:hover {
+    transform: scale(1.05);
+}
+
+.employee-header {
+    background-color: #f3851e;
+    padding: 3%;
+    text-align: center;
+}
+
+.employee-header h2 {
+    color: white;
+    font-size: 18px;
+}
+
+.description {
+    padding: 2%;
+    padding-left: 5%;
+    padding-bottom: 4%;
+}
+
+.description h4 {
+    font-size: 20px;
+    padding-bottom: 1%;
+}
+
+.sindicato, .obligaciones, .derechos
+{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3%;
+}
+
+.text-container {
+    text-align: center;
+    padding: 20px;
+    width: 60%;
+    background-color: #ffca99;
+    border-radius: 15px;
+}
+
+@media (width < 1055px) 
+{    
+    .comite h1 { font-size: 40px; }
+    
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .committee-employees-card { width: 35%; }
+
+    .text-container { width: 70%; }
+    
+}
+
+@media (width < 785px) 
+{    
+    .comite h1 { font-size: 45px; }
+    
+    .committee-employees-card { width: 45%; }
+
+    .text-container { width: 80%; }
+    
+}
+
+@media (width <= 590px) 
+{
+    .container { flex-direction: column; }
+
+    .committee-employees-card { width: 75%; }
+
+    .text-container { width: 75%; }
+}
+
+@media (width <= 320px) 
+{
+    .container { flex-direction: column;}
+
+    .committee-employees-card { width: 95%; }
+
+    .text-container { width: 83%; }
+}
+
 
 .main {
     background: url('../images/fondo2.jpg');
