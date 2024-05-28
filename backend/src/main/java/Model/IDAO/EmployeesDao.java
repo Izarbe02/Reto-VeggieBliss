@@ -3,25 +3,94 @@ package Model.IDAO;
 
 import Model.Employees;
 import Model.MotorSQL;
+import Model.OrderDetails;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class EmployeesDao implements IDao <Employees, Integer> {
     private final String SQL_FIND_ALL = "select * from employees";
+
+    private final String SQL_ADD = "insert into employees values (";
+    private final String SQL_DELETE = "delete from employees where employee_id =";
+
+    private final String SQL_UPDATE = "update employees set ";
     @Override
     public int add(Employees employees) {
-        return 0;
-    }
+        int response = 0;
+        MotorSQL motor = new MotorSQL();
+        try {
+/* employee_ID,first_name,last_name,mail,employee_password,phone_number,department_id,job_id*/
 
+            motor.connect();
+            String sql_add = SQL_ADD +
+                    employees.getEmployee_ID()+","+
+                    employees.getFirst_name()+","+
+                    employees.getLast_name()+","+
+                    employees.getMail()+","+
+                    employees.getEmployee_password()+","+
+                    employees.getPhone_number()+","+
+                    employees.getDepartment_id()+","+
+                    employees.getJob_id()+")";
+
+            response= motor.executeUpdate(sql_add);
+
+        } catch (Exception exception){
+            response= 0;
+        }
+        finally {
+            motor.disconnect();
+        }
+        return response;
+    }
     @Override
-    public int delete(Integer i) {
-        return 0;
-    }
+    public int delete(Integer index) {
+        int response=0;
+        MotorSQL motor = new MotorSQL();
 
+        try{
+            motor.connect();
+            String sql = SQL_DELETE+index;
+            response = motor.executeUpdate(sql);
+
+        }catch ( Exception ex)
+        {
+            response=0;
+        }
+        finally {
+            motor.disconnect();
+        }
+
+        return response;
+    }
+    ///////////update
     @Override
     public int update(Employees employees) {
-        return 0;
+        int response = 0;
+        MotorSQL motor = new MotorSQL();
+        try {
+ /* employee_ID,first_name,last_name=sLast_name,mail,employee_password,phone_number,department_id,job_id*/
+
+            motor.connect();
+            String sql_update = SQL_UPDATE +
+                    "employee_id = " + employees.getEmployee_ID()+
+                    ", first_name = " + employees.getLast_name()+
+                    ",last_name = " + employees.getLast_name()+
+                    ",mail = " + employees.getMail()+
+                    ",employee_password = " + employees.getEmployee_password()+
+                    ",phone_number = " + employees.getPhone_number()+
+                    ",department_id = " + employees.getDepartment_id()+
+                    ", job_id = " + employees.getJob_id()+" where employee_id = " + employees.getEmployee_ID();
+
+            response= motor.executeUpdate(sql_update);
+
+        } catch (Exception exception){
+            response= 0;
+        }
+        finally {
+            motor.disconnect();
+        }
+        return response;
     }
 
     @Override
