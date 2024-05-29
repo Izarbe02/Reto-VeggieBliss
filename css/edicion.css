@@ -162,14 +162,14 @@ strong { font-weight: 600;}
     background-color: rgba(245, 245, 245, 0.904);
     box-shadow:3px 3px 3px 3px lightgoldenrodyellow;
     width: 50%;
-    height: 200px;
+    height: 300px;
     border-radius: 20px;
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: fixed;
-    top: 50%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%);
 
@@ -185,7 +185,7 @@ strong { font-weight: 600;}
 
 .formedit-button button
 {
-    width: 10%;
+    width: 50%;
     height: 30px;
     border-radius: 20px;
     border: none;

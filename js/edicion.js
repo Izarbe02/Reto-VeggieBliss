@@ -120,7 +120,7 @@ const editProductFetch = async (object) => {
             headers: { "Content-Type": "application/json" }
         })
 }
-
+//burger
 const printBurguerData = (burguerData) => {
     const category = document.getElementsByClassName('categories')[0].getElementsByTagName("table")[0]
     Array.from(burguerData).forEach(burguer => {
@@ -168,7 +168,7 @@ const printBurguerData = (burguerData) => {
             addProductFetch(burger).then(console.log("added"))
 
             
-            printBurguerData()
+            fetchData()
         })
 
         formEdit[0].getElementsByTagName("form")[0].addEventListener("submit", async() => {
@@ -190,8 +190,7 @@ const printBurguerData = (burguerData) => {
 
             editProductFetch(burger).then(console.log("edited"))
 
-            
-            printBurguerData()
+            fetchData()
         })
 
         deleteAcceptButton[0].getElementsByTagName("button")[0].addEventListener("click", async() => {
@@ -202,111 +201,99 @@ const printBurguerData = (burguerData) => {
 
             addProductFetch(burger).then(console.log("deleted"))
 
-            
-            printBurguerData()
+            fetchData()
         })
-        /*
-        const deleteButton = container.getElementsByClassName("delete")
+    })
+}
 
-        Array.from(deleteButton).forEach((button, index) => {
-            button.addEventListener("click", () => {
-                const deleteDiv = document.getElementsByClassName("suredelete")[0]
-                deleteDiv.style.display = "flex"
-            })
+
+//razzion
+const printRazzionesData = (razzionesData) => {
+    const category = document.getElementsByClassName('categories')[0].getElementsByTagName("table")[0]
+    Array.from(razzionesData).forEach(razziones => {
+        const container = document.createElement("tr")
+        category.appendChild(container)
+        container.innerHTML =
+            `
+            <td class ="id">${razziones.product_id}</td>
+            <td class ="name">${razziones.product_name}</td>
+            <td class ="image">${razziones.product_image}</td>
+            <td class ="des">${razziones.product_description}</td>
+            <td class ="price">${razziones.price}</td>
+            <td class ="edit"><img src = "../images/editar.png" alt="edit"></td>
+            <td class ="delete"><img src = "../images/eliminar.png" alt="delete"></td>
+            `
+          
+        const editButton = container.getElementsByClassName("edit")[0]
+        editButton.addEventListener("click", () => {
+            document.body.style.overflow = "hidden"
+            document.body.style.pointerEvents = "none"
+            editDiv[0].style.display = "flex"
+            editDiv[0].style.pointerEvents = "all"
+        })
+        const deleteButton = container.getElementsByClassName("delete")[0]
+        deleteButton.addEventListener("click", () => {
+            document.body.style.overflow = "hidden"
+            document.body.style.pointerEvents = "none"
+            deleteDiv[0].style.display = "flex"
+            deleteDiv[0].style.pointerEvents = "all"
         })
 
-        const editForm = document.getElementById("formedit")
-        editForm.addEventListener("submit", () => {
-            const burger =
-            {
-                product_id: document.getElementById("edit_product_id").value,
-                product_image: document.getElementById("edit_product_image").value,
-                product_name: document.getElementById("edit_product_name").value,
-                product_description: document.getElementById("edit_product_description").value,
-                price: document.getElementById("edit_price").value
-            }
-
-            editProductFetch(burger)
-        })
-
-        const addForm = document.getElementById("formadd")
-        addForm.addEventListener("submit", () => {
+        
+        formAdd[0].getElementsByTagName("form")[0].addEventListener("submit", async() => {
             const burger =
             {
                 product_id: document.getElementById("add_product_id").value,
                 product_image: document.getElementById("add_product_image").value,
                 product_name: document.getElementById("add_product_name").value,
                 product_description: document.getElementById("add_product_description").value,
-                price: document.getElementById("add_price").value
+                price: document.getElementById("add_price").value,
+                category_id: razziones.category_id
+            }
+            console.log(burger)
+
+            addProductFetch(burger).then(console.log("added"))
+
+            
+            fetchData()
+        })
+
+        formEdit[0].getElementsByTagName("form")[0].addEventListener("submit", async() => {
+            document.getElementById("add_product_id").value = razziones.product_id
+            document.getElementById("add_product_image").value = razziones.product_image
+            document.getElementById("add_product_name").value = razziones.product_name
+            document.getElementById("add_product_description").value = razziones.product_description
+            document.getElementById("add_price").value = razziones.price
+            
+            const burger =
+            {
+                product_id: document.getElementById("add_product_id").value,
+                product_image: document.getElementById("add_product_image").value,
+                product_name: document.getElementById("add_product_name").value,
+                product_description: document.getElementById("add_product_description").value,
+                price: document.getElementById("add_price").value,
+                category_id: "2"
             }
 
-            addProductFetch(burger)
-        })*/
+            editProductFetch(burger).then(console.log("edited"))
+
+            fetchData()
+        })
+
+        deleteAcceptButton[0].getElementsByTagName("button")[0].addEventListener("click", async() => {
+            const burger =
+            {
+                product_id: razziones.product_id
+            }
+
+            addProductFetch(burger).then(console.log("deleted"))
+
+            fetchData()
+        })
     })
 }
 
-const printRazzionData = (razzionData) =>
-    {
-        const category = document.getElementsByClassName('categories')[1].getElementsByTagName("table")[0]
-        Array.from(razzionData).forEach(razzion => {
-            const container = document.createElement("tr")
-            category.appendChild(container)
-            container.innerHTML = 
-            `
-            <td class ="id">${razzion.product_id}</td>
-            <td class ="name">${razzion.product_name}</td>
-            <td class ="image">${razzion.product_image}</td>
-            <td class ="des">${razzion.product_description}</td>
-            <td class ="price">${razzion.price}</td>
-            <td class ="edit"><img src = "../images/editar.png" alt="edit"></td>
-            <td class ="delete"><img src = "../images/eliminar.png" alt="delete"></td>
-
-            `
-            const editButton = container.getElementsByClassName("edit")
-/*
-            Array.from(addButton).forEach((button, index) => {
-            button.addEventListener("click", () => {
-            const editDiv = document.getElementsByClassName("formedit")[0]
-            editDiv.style.display = "flex"
-                })
-            })
-            const deleteButton = container.getElementsByClassName("delete")
-
-            Array.from(deleteButton).forEach((button, index) => {
-            button.addEventListener("click", () => {
-            const deleteDiv = document.getElementsByClassName("suredelete")[0]
-            deleteDiv.style.display = "flex"
-                })
-            })
-
-            const editForm = document.getElementById("formedit_razziones")
-            editForm.addEventListener("submit", () => {
-                const razzion = {
-                    product_id: document.getElementById("edit_product_id_razziones").value,
-                    product_image : document.getElementById("edit_product_image_razziones").value,
-                    product_name : document.getElementById("edit_product_name_razziones").value,
-                    product_description : document.getElementById("edit_product_description_razziones").value,
-                    price : document.getElementById("edit_price_razziones").value
-                }
-
-                editProductFetch(razzion)
-            })
-
-            const addForm = document.getElementById("formadd_razziones")
-            addForm.addEventListener("submit", () => {
-                const razzion = {
-                    product_id: document.getElementById("add_product_id_razziones").value,
-                    product_image : document.getElementById("add_product_image_razziones").value,
-                    product_name : document.getElementById("add_product_name_razziones").value,
-                    product_description : document.getElementById("add_product_description_razziones").value,
-                    price : document.getElementById("add_price_razziones").value
-                }
-
-                addProductFetch(razzion)
-            })*/
-        })
-    }
-
+//salad
 const printSaladData = (saladData) =>
     {
         const category = document.getElementsByClassName('categories')[2].getElementsByTagName("table")[0]
@@ -369,7 +356,7 @@ const printSaladData = (saladData) =>
             })*/
         })
     }
-
+//desssert
 const printDessertData = (dessertData) =>
     {
         const category = document.getElementsByClassName('categories')[3].getElementsByTagName("table")[0]
@@ -432,7 +419,7 @@ const printDessertData = (dessertData) =>
             })*/
         })
     }
-
+//drink
 const printDrinkData = (drinkData) =>
     {
         const category = document.getElementsByClassName('categories')[4].getElementsByTagName("table")[0]
@@ -493,62 +480,6 @@ const printDrinkData = (drinkData) =>
 
                 addProductFetch(drink)
             })*/
-        })
-    }
-
-const printAllergenData = (allergenData) =>
-    {
-        const category = document.getElementsByClassName('categories')[5].getElementsByTagName("table")[0]
-        Array.from(allergenData).forEach(allergen => {
-            const container = document.createElement("tr")
-            category.appendChild(container)
-            container.innerHTML = 
-            `
-            <td class ="id">${allergen.allergen_id}</td>
-            <td class ="name">${allergen.allergen_name}</td>
-            <td class ="edit"><img src = "../images/editar.png" alt="edit"></td>
-            <td class ="delete"><img src = "../images/eliminar.png" alt="delete"></td>
-
-            `
-        })
-    }
-
-const printAllergenProductData = (allergenProductData) =>
-    {
-        const category = document.getElementsByClassName('categories')[6].getElementsByTagName("table")[0]
-        Array.from(allergenProductData).forEach(allergenProduct => {
-            const container = document.createElement("tr")
-            category.appendChild(container)
-            container.innerHTML = 
-            `
-            <td class ="id">${allergenProduct.allergen_id}</td>
-            <td class ="id">${allergenProduct.product_id}</td>
-            <td class ="edit"><img src = "../images/editar.png" alt="edit"></td>
-            <td class ="delete"><img src = "../images/eliminar.png" alt="delete"></td>
-
-            `
-        })
-    }
-
-const printEmployeeData = (employeeData) =>
-    {
-        const category = document.getElementsByClassName('categories')[7].getElementsByTagName("table")[0]
-        Array.from(employeeData).forEach(employee => {
-            const container = document.createElement("tr")
-            category.appendChild(container)
-            container.innerHTML = 
-            `
-            <td class ="id">${employee.employee_ID}</td>
-            <td class ="name">${employee.first_name}</td>
-            <td class ="name">${employee.last_name}</td>
-            <td class ="mail">${employee.mail}</td>
-            <td class ="phone">${employee.phone_number}</td>
-            <td class ="id">${employee.department_id}</td>
-            <td class ="id">${employee.job_id}</td>
-            <td class ="edit"><img src = "../images/editar.png" alt="edit"></td>
-            <td class ="delete"><img src = "../images/eliminar.png" alt="delete"></td>
-
-            `
         })
     }
 
