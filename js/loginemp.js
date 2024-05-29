@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded",  (event)=> {
         }
         const  loginResp = empLoginFetch(emp)
         if (loginResp != 1) {
-            alert("Failed to log in!")
+            alert("Logged in!")
             console.error(new Error ("Failed to log in! "));
         }  
 
