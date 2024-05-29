@@ -2,15 +2,15 @@
 
 let form 
 document.addEventListener("DOMContentLoaded",  (event)=> {
-    form = document.getElementsByClassName("emp-form")[0];
+    form = document.getElementsByClassName("client-form")[0];
 
     form.addEventListener("submit", () =>{
-        //objeto empleado
-        const emp = {
+        //objeto cliente
+        const client = {
             mail: document.getElementById("mail").value ,
             password: document.getElementById("password").value
         }
-        const  loginResp = empLoginFetch(emp)
+        const  loginResp = clientLoginFetch(emp)
         if (loginResp != 1) {
             alert("Failed to log in!")
             console.error(new Error ("Failed to log in! "));
@@ -19,9 +19,9 @@ document.addEventListener("DOMContentLoaded",  (event)=> {
     })
 })
 
-//envnio de datos
-const  empURL = "http://localhost:8080/VeggieBliss/Controller?action=employees.login" 
-const empLoginFetch = async(object) => {
+//enviar datos 
+const  empURL = "http://localhost:8080/VeggieBliss/Controller?action=clients.login" 
+const clientLoginFetch = async(object) => {
     const response = await fetch(empURL,
     {
     method: "get",
@@ -32,5 +32,4 @@ const empLoginFetch = async(object) => {
     console.log("login data = ", data)
     return data;
     } 
-    
     
