@@ -1,0 +1,356 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+}
+h2{
+    font-family: 'Courier New', Courier, monospace;
+    font-size:larger;
+    font-weight: 600;
+}
+
+video { width: 100%;}
+
+.paragraph
+{
+    padding: 2%;
+    width: 50%;
+    border-radius: 20px;
+    background-color: #AFF1A9;
+}
+
+.paragraph h2 
+{ 
+    padding-bottom: 3%;
+    padding-left: 3%;
+}
+
+.paragraph p { padding-left: 5%;}
+
+.who-we
+{
+    padding-top: 3%;
+    padding-left: 10%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+    "first-text image";
+    align-items: center;
+}
+
+.first-text { grid-area: first-text;}
+
+.ligth { grid-area: image; }
+
+.ligth img
+ {
+    width: 60%;
+    border-radius: 20px;
+}
+
+.what-do
+{
+    padding-top: 3%;
+    padding-left: 10%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+    "second-text image";
+    align-items: center;
+}
+
+.second-text { grid-area: second-text; }
+
+.letters { grid-area: image; }
+
+.letters img
+{
+    width: 60%;
+    border-radius: 20px;
+}
+
+.who-work
+{
+    padding-top: 3%;
+    padding-left: 10%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+    "third-text image";
+    align-items: center;
+}
+
+.third-text { grid-area: third-text; }
+
+.fruit { grid-area: image; }
+
+.fruit img
+{
+    grid-area: image;
+    width: 60%;
+    border-radius: 20px;
+}
+
+.ethical
+{
+    padding-top: 3%;
+    padding-left: 10%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+    "fourth-text image";
+    align-items: center;
+}
+
+.fourth-text { grid-area: fourth-text; }
+
+.bike { grid-area: image; }
+
+.bike img
+{
+    width: 60%;
+    border-radius: 20px;
+}
+
+.why-us
+{
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 10%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+    "fifth-text image";
+    align-items: center;
+}
+
+.fifth-text { grid-area: fifth-text; }
+
+.frog { grid-area: image;}
+
+.frog img
+{
+    width: 60%;
+    border-radius: 20px;
+    max-height: 450px;
+}
+
+@media (width <= 1523px)
+{
+    .paragraph { width: 70%; }
+
+    .explanation img { width: 70%; }
+
+}
+
+@media (width <= 1005px)
+{
+    .paragraph p { font-size: 80%; }
+}
+
+@media (width < 920px)
+{
+    .paragraph { width: 90%; }
+
+    .paragraph p { font-size: medium;}
+
+    .explanation img { width: 90%; }
+
+    .who-we { padding-left: 5%;}
+
+    .what-do { padding-left: 5%;}
+
+    .who-work { padding-left: 5%;}
+
+    .ethical { padding-left: 5%;}
+
+    .why-us { padding-left: 5%;}
+}
+
+@media (width < 660px)
+{
+    .paragraph p {font-size: small;}
+
+    .who-we
+    {
+        padding-top: 1%;
+        grid-template-columns: 20% 55%;
+        grid-template-rows: 50% 60%;
+        grid-template-areas:
+        ". first-text"  
+        ". image";
+    }
+
+    .ligth 
+    {
+        padding-left: 3%; 
+        padding-bottom: 5%;
+    }
+
+    .ligth img { width: 90%; }
+
+    .what-do
+    {
+        padding-top: 5%;
+        grid-template-columns: 20% 55%;
+        grid-template-rows: 60% 50%;
+        grid-template-areas:
+        ". second-text"  
+        ". image";
+    }
+
+    .letters 
+    {
+        padding-left: 3%; 
+        padding-bottom: 5%;
+    }
+
+    .letters img { width: 90%; }
+
+    .who-work
+    {
+        padding-top: 5%;
+        grid-template-columns: 20% 55%;
+        grid-template-rows: 50% 60%;
+        grid-template-areas:
+        ". third-text"  
+        ". image";
+    }
+    
+    .fruit 
+    {
+        padding-left: 3%; 
+        padding-bottom: 5%;
+    }
+
+    .fruit img { width: 90%; }
+
+    .ethical
+    {
+        padding-top: 5%;
+        grid-template-columns: 20% 55%;
+        grid-template-rows: 50% 60%;
+        grid-template-areas:
+        ". fourth-text"  
+        ". image";
+    }
+    
+    .bike 
+    {
+        padding-left: 3%; 
+        padding-bottom: 5%;
+    }
+
+    .bike img { width: 90%; }
+
+    .why-us
+    {
+        padding-top: 5%;
+        grid-template-columns: 20% 55%;
+        grid-template-rows: 50% 60%;
+        grid-template-areas:
+        ". fifth-text"  
+        ". image";
+    }
+    
+    .frog 
+    {
+        padding-left: 3%; 
+        padding-bottom: 5%;
+    }
+
+    .frog img { width: 90%; }
+}
+
+@media (width <= 500px)
+{
+    video { display: none;}
+
+    .video-background 
+    { 
+        background-color: #24412d44;
+        height: 120px;
+    }
+
+    .who-we { padding-top: 5%; }
+
+    .paragraph { width: 100%; }
+
+    .ligth img { width: 100%; }
+
+    .letters img { width: 100%; }
+
+    .fruit img { width: 100%; }
+
+    .bike img { width: 100%; }
+
+    .frog img { width: 100%; }
+}
+
+@media (width < 405px)
+{
+    .paragraph { width: 100%; }
+
+    .paragraph h2 { font-size: 17px;}
+
+    .paragraph p {font-size: 15px;}
+
+    .who-we 
+    {
+        padding-top: 5%;
+        grid-template-columns: 90%;
+        grid-template-rows: 50% 60%;
+        grid-template-areas:
+            "first-text"
+            "image";
+    }
+
+    .ligth img { width: 100%; }
+
+    .what-do 
+    {
+        padding-top: 15%;
+        grid-template-columns: 90%;
+        grid-template-rows: 50% 60%;
+        grid-template-areas:
+            "second-text"
+            "image";
+    }
+
+    .letters img { width: 100%; }
+
+    .who-work
+    {
+        padding-top: 2%;
+        grid-template-columns: 90%;
+        grid-template-rows: 50% 60%;
+        grid-template-areas:
+            "third-text"
+            "image";
+    }
+
+    .fruit img { width: 100%; }
+
+    .ethical
+    {
+        padding-top: 8%;
+        grid-template-columns: 90%;
+        grid-template-rows: 50% 60%;
+        grid-template-areas:
+            "fourth-text"
+            "image";
+    }
+
+    .bike img { width: 100%; }
+
+    .why-us 
+    {
+        padding-top: 8%;
+        grid-template-columns: 90%;
+        grid-template-rows: 50% 60%;
+        grid-template-areas:
+            "fifth-text"
+            "image";
+    }
+
+    .frog img { width: 100%; }
+}

@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veggie Bliss</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/employeesbase.css">
+    <link rel="stylesheet" href="../css/edicion.css">
+    <script src="../js/edicion.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="../html/home.html">
+            <div class="logo">
+                <img src="../images/logo.png" alt="Logo">
+                <span>Veggie Bliss</span>
+            </div>
+        </a>
+        <div class="buttons">
+            <a href="../html/comite.html"><button>Company Info</button></a>
+            <a href="../html/empleados.html"><button>Employee zone</button></a>
+        </div>
+    </header>
+    <main class="main">
+        <div class="edicion-title">
+            <h1>Bienvenido a la zona de edición.</h1>
+        </div>
+        
+          <!-- Hamburguesas -->
+          <div class="category-section">
+            <h2 class="category-title" id="hamburguesa">Burguers</h2>
+            <div class="categories">
+              <div class="add">
+                <button><strong>Add</strong></button>
+              </div>
+              <table>
+                <tr>
+                  <th> <h2>product_id</h2> </th>
+                  <th> <h2>product_name</h2> </th>
+                  <th> <h2>product_image</h2> </th>
+                  <th> <h2>product_description</h2> </th>
+                  <th> <h2>price</h2> </th>
+                  <th> <h2>edit</h2> </th>
+                  <th> <h2>delete</h2> </th>
+                </tr>
+                <!--<tr>
+                  <td>Allergen Number example</td>
+                  <td>Allergen Name example</td>
+                </tr>-->
+              </table>
+              <hr class="category-divider">
+
+              <div class="suredelete">
+                <div class="close">
+                  <img src="../images/cerrar.png" alt="close">
+                </div>
+                <p>Are you sure you want to delete?</p>
+                <div class="suredelete-button">
+                  <button>Delete</button>
+                </div>
+              </div>
+
+              <div class="formadd">
+                <div class="close">
+                  <img src="../images/cerrar.png" alt="close">
+                </div>
+                
+                <form action="#" id="formadd">
+                  <label for="add_product_id">
+                    <p>Product ID</p>
+                  </label>
+                  <input type="text" id="add_product_id">
+
+                  <label for="add_product_name">
+                    <p>Product Name</p>
+                  </label>
+                  <input type="text" id="add_product_name">
+
+                  <label for="add_product_image">
+                    <p>Product Image</p>
+                  </label>
+                  <input type="text" id="add_product_image">
+
+                  <label for="add_product_description">
+                    <p>Product Description</p>
+                  </label>
+                  <input type="text" id="add_product_description">
+
+                  <label for="add_price">
+                    <p>Product Price</p>
+                  </label>
+                  <input type="text" id="add_price">
+
+                  <div class="formadd-button">
+                    <button type="submit">Add</button>
+                  </div>
+                </form>
+
+              </div>
+
+              <div class="formedit">
+                <div class="close">
+                  <img src="../images/cerrar.png" alt="close">
+                </div>
+                <form action="#" id="formedit">
+                  <label for="edit_product_id">
+                    <p>Product ID</p>
+                  </label>
+                  <input type="text" id="edit_product_id">
+
+                  <label for="edit_product_name">
+                    <p>Product Name</p>
+                  </label>
+                  <input type="text" id="edit_product_name">
+
+                  <label for="edit_product_image">
+                    <p>Product Image</p>
+                  </label>
+                  <input type="text" id="edit_product_image">
+
+                  <label for="edit_product_description">
+                    <p>Product Description</p>
+                  </label>
+                  <input type="text" id="edit_product_description">
+
+                  <label for="edit_price">
+                    <p>Product Price</p>
+                  </label>
+                  <input type="text" id="edit_price">
+
+                  <div class="formedit-button">
+                    <button type="submit">Edit</button>
+                  </div>
+                </form>
+                
+              </div>
+            </div>
+          </div>
+      
+          <!-- Rzziones-->
+          <div class="category-section">
+            <h2 class="category-title" id="raciones">Razziones</h2>
+            <div class="categories">
+              <div class="add">
+                <button><strong>Add</strong></button>
+              </div>
+              <table>
+                <tr>
+                  <th> <h2>product_id</h2> </th>
+                  <th> <h2>product_name</h2> </th>
+                  <th> <h2>product_image</h2> </th>
+                  <th> <h2>product_description</h2> </th>
+                  <th> <h2>price</h2> </th>
+                  <th> <h2>edit</h2> </th>
+                  <th> <h2>delete</h2> </th>
+                </tr>
+                <!--<tr>
+                  <td>Allergen Number example</td>
+                  <td>Allergen Name example</td>
+                </tr>-->
+              </table>
+              <hr class="category-divider">
+
+              <div class="suredelete">
+                <div class="close">
+                  <img src="../images/cerrar.png" alt="close">
+                </div>
+                <p>Are you sure you want to delete?</p>
+                <div class="suredelete-button">
+                  <button>Delete</button>
+                </div>
+              </div>
+
+              <div class="formadd">
+                <div class="close">
+                  <img src="../images/cerrar.png" alt="close">
+                </div>
+                <form action="#" id="formadd_razziones">
+                  <label for="add_product_id_raziones">
+                    <p>Product ID</p>
+                  </label>
+                  <input type="text" id="add_product_id_raziones">
+
+                  <label for="add_product_name_razziones">
+                    <p>Product Name</p>
+                  </label>
+                  <input type="text" id="add_product_name_razziones">
+
+                  <label for="add_product_image_razziones">
+                    <p>Product Image</p>
+                  </label>
+                  <input type="text" id="add_product_image_razziones">
+
+                  <label for="add_product_description_razziones">
+                    <p>Product Description</p>
+                  </label>
+                  <input type="text" id="add_product_description_razziones">
+
+                  <label for="add_price_razziones">
+                    <p>Product Price</p>
+                  </label>
+                  <input type="text" id="add_price_razziones">
+
+                  <div class="formadd-button">
+                    <button type="submit">Add</button>
+                  </div>
+                </form>
+
+              </div>
+
+              <div class="formedit">
+                <div class="close">
+                  <img src="../images/cerrar.png" alt="close">
+                </div>
+                <form action="#" id="formedit_razziones">
+                  <label for="edit_product_id_razziones">
+                    <p>Product ID</p>
+                  </label>
+                  <input type="text" id="edit_product_id_razziones">
+
+                  <label for="edit_product_name_razziones">
+                    <p>Product Name</p>
+                  </label>
+                  <input type="text" id="edit_product_name_razziones">
+
+                  <label for="edit_product_image_razziones">
+                    <p>Product Image</p>
+                  </label>
+                  <input type="text" id="edit_product_image_razziones">
+
+                  <label for="edit_product_description_razziones">
+                    <p>Product Description</p>
+                  </label>
+                  <input type="text" id="edit_product_description_razziones">
+
+                  <label for="edit_price_razziones">
+                    <p>Product Price</p>
+                  </label>
+                  <input type="text" id="edit_price_razziones">
+
+                  <div class="formedit-button">
+                    <button type="submit">Edit</button>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+          </div>
+      
+          <!-- Ensaladas -->
+          <div class="category-section">
+            <h2 class="category-title" id="salads">Salads</h2>
+            <div class="categories">
+              <div class="add">
+                <button><strong>Add</strong></button>
+              </div>
+              <table>
+                <tr>
+                  <th> <h2>product_id</h2> </th>
+                  <th> <h2>product_name</h2> </th>
+                  <th> <h2>product_image</h2> </th>
+                  <th> <h2>product_description</h2> </th>
+                  <th> <h2>price</h2> </th>
+                  <th> <h2>edit</h2> </th>
+                  <th> <h2>delete</h2> </th>
+                </tr>
+                <!--<tr>
+                  <td>Allergen Number example</td>
+                  <td>Allergen Name example</td>
+                </tr>-->
+              </table>
+              <hr class="category-divider">
+
+              <div class="suredelete">
+                <div class="close">
+                  <img src="../images/cerrar.png" alt="close">
+                </div>
+
+                <p>Are you sure you want to delete?</p>
+                <div class="suredelete-button">
+                  <button>Delete</button>
+                </div>
+              </div>
+
+              <div class="formadd">
+                <div class="close">
+                  <img src="../images/cerrar.png" alt="close">
+                </div>
+                
+                <form action="#" id="formadd_salads">
+                  <label for="add_product_id_salads">
+                    <p>Product ID</p>
+                  </label>
+                  <input type="text" id="add_product_id_salads">
+
+                  <label for="add_product_name_salads">
+                    <p>Product Name</p>
+                  </label>
+                  <input type="text" id="add_product_name_salads">
+
+                  <label for="add_product_image_salads">
+                    <p>Product Image</p>
+                  </label>
+                  <input type="text" id="add_product_image_salads">
+
+                  <label for="add_product_description_salads">
+                    <p>Product Description</p>
+                  </label>
+                  <input type="text" id="add_product_description_salads">
+
+                  <label for="add_price_salads">
+                    <p>Product Price</p>
+                  </label>
+                  <input type="text" id="add_price_salads">
+
+                  <div class="formadd-button">
+                    <button type="submit">Add</button>
+                  </div>
+                </form>
+
+              </div>
+
+              <div class="formedit">
+                <div class="close">
+                  <img src="../images/cerrar.png" alt="close">
+                </div>
+                <form action="#" id="formedit_salads">
+                  <label for="edit_product_id_salads">
+                    <p>Product ID</p>
+                  </label>
+                  <input type="text" id="edit_product_id_salads">
+
+                  <label for="edit_product_name_salads">
+                    <p>Product Name</p>
+                  </label>
+                  <input type="text" id="edit_product_name_salads">
+
+                  <label for="edit_product_image_salads">
+                    <p>Product Image</p>
+                  </label>
+                  <input type="text" id="edit_product_image_salads">
+
+                  <label for="edit_product_description_salads">
+                    <p>Product Description</p>
+                  </label>
+                  <input type="text" id="edit_product_description_salads">
+
+                  <label for="edit_price_salads">
+                    <p>Product Price</p>
+                  </label>
+                  <input type="text" id="edit_price_salads">
+
+                  <div class="formedit-button">
+                    <button type="submit">Edit</button>
+                  </div>
+                </form>
+            </div>
+          </div>
+      
+          <!-- Postres -->
+          <div class="category-section">
+            <h2 class="category-title" id="desserts">Desserts</h2>
+            <div class="categories">
+              <div class="add">
+                <button><strong>Add</strong></button>
+              </div>
+              <table>
+                <tr>
+                  <th> <h2>product_id</h2> </th>
+                  <th> <h2>product_name</h2> </th>
+                  <th> <h2>product_image</h2> </th>
+                  <th> <h2>product_description</h2> </th>
+                  <th> <h2>price</h2> </th>
+                  <th> <h2>edit</h2> </th>
+                  <th> <h2>delete</h2> </th>
+                </tr>
+                <!--<tr>
+                  <td>Allergen Number example</td>
+                  <td>Allergen Name example</td>
+                </tr>-->
+              </table>
+              <hr class="category-divider">
+
+              <div class="suredelete">
+                <div class="close">
+                  <img src="../images/cerrar.png" alt="close">
+                </div>
+                <p>Are you sure you want to delete?</p>
+                <div class="suredelete-button">
+                  <button>Delete</button>
+                </div>
+              </div>
+
+              <div class="formadd">
+                <div class="close">
+                  <img src="../images/cerrar.png" alt="close">
+                </div>
+                <form action="#" id="formadd_dessert">
+                  <label for="add_product_id_dessert">
+                    <p>Product ID</p>
+                  </label>
+                  <input type="text" id="add_product_id_dessert">
+
+                  <label for="add_product_name_dessert">
+                    <p>Product Name</p>
+                  </label>
+                  <input type="text" id="add_product_name_dessert">
+
+                  <label for="add_product_image_dessert">
+                    <p>Product Image</p>
+                  </label>
+                  <input type="text" id="add_product_image_dessert">
+
+                  <label for="add_product_description_dessert">
+                    <p>Product Description</p>
+                  </label>
+                  <input type="text" id="add_product_description_dessert">
+
+                  <label for="add_price_dessert">
+                    <p>Product Price</p>
+                  </label>
+                  <input type="text" id="add_price_dessert">
+
+                  <div class="formadd-button">
+                    <button type="submit">Add</button>
+                  </div>
+                </form>
+
+              </div>
+
+              <div class="formedit">
+                <div class="close">
+                  <img src="../images/cerrar.png" alt="close">
+                </div>
+                <form action="#" id="formedit_dessert">
+                  <label for="edit_product_id_dessert">
+                    <p>Product ID</p>
+                  </label>
+                  <input type="text" id="edit_product_id_dessert">
+
+                  <label for="edit_product_name_dessert">
+                    <p>Product Name</p>
+                  </label>
+                  <input type="text" id="edit_product_name_dessert">
+
+                  <label for="edit_product_image_dessert">
+                    <p>Product Image</p>
+                  </label>
+                  <input type="text" id="edit_product_image_dessert">
+
+                  <label for="edit_product_description_dessert">
+                    <p>Product Description</p>
+                  </label>
+                  <input type="text" id="edit_product_description_dessert">
+
+                  <label for="edit_price_dessert">
+                    <p>Product Price</p>
+                  </label>
+                  <input type="text" id="edit_price_dessert">
+
+                  <div class="formedit-button">
+                    <button type="submit">Edit</button>
+                  </div>
+                </form>
+            </div>
+          </div>
+      
+          <!-- Bebidas -->
+          <div class="category-section">
+            <h2 class="category-title" id="drinks">Drinks</h2>
+            <div class="categories">
+              <div class="add">
+                <button><strong>Add</strong></button>
+              </div>
+              <table>
+                <tr>
+                  <th> <h2>product_id</h2> </th>
+                  <th> <h2>product_name</h2> </th>
+                  <th> <h2>product_image</h2> </th>
+                  <th> <h2>product_description</h2> </th>
+                  <th> <h2>price</h2> </th>
+                  <th> <h2>edit</h2> </th>
+                  <th> <h2>delete</h2> </th>
+                </tr>
+                <!--<tr>
+                  <td>Allergen Number example</td>
+                  <td>Allergen Name example</td>
+                </tr>-->
+              </table>
+              <hr class="category-divider">
+
+              <div class="suredelete">
+                <div class="close">
+                  <img src="../images/cerrar.png" alt="close">
+                </div>
+                <p>Are you sure you want to delete?</p>
+                <div class="suredelete-button">
+                  <button>Delete</button>
+                </div>
+              </div>
+
+              <div class="formadd">
+                <div class="close">
+                  <img src="../images/cerrar.png" alt="close">
+                </div>
+                <form action="#" id="formadd_drink">
+                  <label for="add_product_id_drink">
+                    <p>Product ID</p>
+                  </label>
+                  <input type="text" id="add_product_id_drink">
+
+                  <label for="add_product_name_drink">
+                    <p>Product Name</p>
+                  </label>
+                  <input type="text" id="add_product_name_drink">
+
+                  <label for="add_product_image_drink">
+                    <p>Product Image</p>
+                  </label>
+                  <input type="text" id="add_product_image_drink">
+
+                  <label for="add_product_description_drink">
+                    <p>Product Description</p>
+                  </label>
+                  <input type="text" id="add_product_description_drink">
+
+                  <label for="add_price_drink">
+                    <p>Product Price</p>
+                  </label>
+                  <input type="text" id="add_price_drink">
+
+                  <div class="formadd-button">
+                    <button type="submit">Add</button>
+                  </div>
+                </form>
+
+              </div>
+
+              <div class="formedit">
+                <div class="close">
+                  <img src="../images/cerrar.png" alt="close">
+                </div>
+                <form action="#" id="formedit_drink">
+                  <label for="edit_product_id_drink">
+                    <p>Product ID</p>
+                  </label>
+                  <input type="text" id="edit_product_id_drink">
+
+                  <label for="edit_product_name_drink">
+                    <p>Product Name</p>
+                  </label>
+                  <input type="text" id="edit_product_name_drink">
+
+                  <label for="edit_product_image_drink">
+                    <p>Product Image</p>
+                  </label>
+                  <input type="text" id="edit_product_image_drink">
+
+                  <label for="edit_product_description_drink">
+                    <p>Product Description</p>
+                  </label>
+                  <input type="text" id="edit_product_description_drink">
+
+                  <label for="edit_price_drink">
+                    <p>Product Price</p>
+                  </label>
+                  <input type="text" id="edit_price_drink">
+
+                  <div class="formedit-button">
+                    <button type="submit">Edit</button>
+                  </div>
+                </form>
+            </div>
+          </div>
+          
+          <!--Alergenos-->
+          <div class="category-section">
+            <h2 class="category-title">Allergen</h2>
+            <div class="categories">
+              <div class="add">
+                <button><strong>Add</strong></button>
+              </div>
+              <table>
+                <tr>
+                  <th> <h2>allergen_id</h2> </th>
+                  <th> <h2>allergen_name</h2> </th>
+                  <th> <h2>edit</h2> </th>
+                  <th> <h2>delete</h2> </th>
+                </tr>
+                <!--<tr>
+                  <td>Allergen Number example</td>
+                  <td>Allergen Name example</td>
+                </tr>-->
+              </table>
+              <hr class="category-divider">
+            </div>
+          </div>  
+          
+          <!--AllergenProduct-->
+          <div class="category-section">
+            <h2 class="category-title">Allergen Product</h2>
+            <div class="categories">
+              <div class="add">
+                <button><strong>Add</strong></button>
+              </div>
+              <table>
+                <tr>
+                  <th> <h2>allergen_id</h2> </th>
+                  <th> <h2>product_id</h2> </th>
+                  <th> <h2>edit</h2> </th>
+                  <th> <h2>delete</h2> </th>
+                </tr>
+                <!--<tr>
+                  <td>Allergen Number example</td>
+                  <td>Allergen Name example</td>
+                </tr>-->
+              </table>
+              <hr class="category-divider">
+            </div>
+          </div> 
+
+          <!--Employees-->
+          <div class="category-section">
+            <h2 class="category-title">Employees</h2>
+            <div class="categories employee">
+              <div class="add">
+                <button><strong>Add</strong></button>
+              </div>
+              <table>
+                <tr>
+                  <th> <h2>employee_id</h2> </th>
+                  <th> <h2>first_name</h2> </th>
+                  <th> <h2>last_name</h2> </th>
+                  <th> <h2>mail</h2> </th>
+                  <th> <h2>phone_number</h2> </th>
+                  <th> <h2>deparment_id</h2> </th>
+                  <th> <h2>job_id</h2> </th>
+                  <th> <h2>edit</h2> </th>
+                  <th> <h2>delete</h2> </th>
+                </tr>
+                <!--<tr>
+                  <td>Allergen Number example</td>
+                  <td>Allergen Name example</td>
+                </tr>-->
+              </table>
+            </div>
+          </div> 
+    </main>
+</body>
+
+</html>

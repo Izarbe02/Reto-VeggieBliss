@@ -92,7 +92,13 @@ strong { font-weight: 600;}
 
 }
 
-.close { width: 4%; }
+.close
+{
+    width: 20px;
+    position: absolute;
+    top: 4%;
+    right: 3%;
+}
 
 .close img { width: 100%;}
 

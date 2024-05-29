@@ -1,0 +1,236 @@
+a{font-family: 'Courier New', Courier, monospace;
+    font-size:larger;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+}
+
+.main {
+    padding: 20px;
+    background: url('../images/fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+}
+
+.contact-link{
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+    padding: 15px;
+    background-color: #e95116;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+.contact-link:hover {
+    background-color: rgb(238, 151, 52);
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #24412d;
+    color: #c5a78c;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.resources,
+.company,
+.social {
+    margin-bottom: 20px;
+}
+
+.resources h2,
+.company h2 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.resources p,
+.company p {
+    color: #daf3d9;
+    margin-bottom: 5px;
+}
+
+.social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.social img {
+    width: 30px;
+    margin: 0 5px;
+}
+
+nav.menu ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: orange;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+nav.menu ul li a:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.contact {
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.contact h2 {
+    font-size: xx-large;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #252525; 
+}
+.contact p{
+    margin-top: 50px;
+    font-weight: 600;
+    font-size: large;
+    color: #161616;
+}
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 50px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #5eb58f; 
+    color: #fff; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #9ddf9f; 
+}
+
+
+footer p a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: orange;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+footer p a:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+@media only screen and (max-width: 860px) {
+    .logo img {
+        display: inline;
+        width: 50px;
+        height: 50px;
+    }
+
+    .logo span {
+        font-size: 35px;
+    }
+
+    .primary-menu {
+        display: none;
+    }
+
+    .secondary-menu {
+        display: block;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #90e7ad;
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 24px;
+        color: white;
+    }
+
+    .menu-toggle:hover {
+        color: #ddd;
+    }
+
+    .menu-toggle:focus {
+        outline: none;
+    }
+
+    .menu-toggle .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+
+    .menu-toggle.open .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-toggle.open .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.open .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .menu-toggle.open + .secondary-menu {
+        display: block;
+    }
+}

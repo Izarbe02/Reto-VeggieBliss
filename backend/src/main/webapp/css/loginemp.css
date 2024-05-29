@@ -1,0 +1,189 @@
+a{
+    text-decoration: none;
+}
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+}
+
+.main {
+    padding: 20px;
+    background: url('../images/fondo2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+}
+
+header {
+    background-color: #90e7ad;
+    color: white;
+    display: flex;
+    padding: 2%;
+}
+
+.logo {
+    display: flex;
+    align-items: flex-start;
+}
+
+.logo h1 {
+  justify-content: center;
+  margin-left: -15%;
+}
+
+.logo-image img {
+   width: 16%;
+    margin: 0%; 
+}
+
+.logo h1 {
+ 
+    text-shadow: 2px 2px 2px rgb(89, 126, 121);
+    font-family: "Jaro", sans-serif;
+    font-size: 65px;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+}
+.login-container {
+    text-align: center;
+    margin-top: 190px;
+    margin-bottom: 190px;
+}
+
+.login-container h2 {
+    font-weight: 800;
+    font-size: x-large;
+    color: #1d1d1d;
+}
+
+.login-container form {
+    margin-top: 30px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 300px;
+    height: 40px;
+    margin-bottom: 30px;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.login-container button {
+    width: 200px;
+    height: 40px;
+    background-color: #ff7707;
+    color: white;
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s; 
+}
+
+.login-container button:hover {
+    background-color: #f1c461;
+}
+
+.login-container p {
+    font-weight: 600;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.login-container a {
+    color: #a34900;
+    text-decoration: none;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+footer {
+    background-color: #24412d;
+    color: #c5a78c;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.resources,
+.company,
+.social {
+    margin-bottom: 20px;
+}
+
+.resources h2,
+.company h2 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.resources p,
+.company p {
+    color: #daf3d9;
+    margin-bottom: 5px;
+}
+
+.social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.social img {
+    width: 30px;
+    margin: 0 5px;
+}
+
+nav.menu ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: orange;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+nav.menu ul li a:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+footer p a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: orange;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+footer p a:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+}
+@media (width < 969px)
+{
+    .title h1 { font-size: 300%; }
+    .logo-image { width: 50%; }
+}
+
+@media (width <= 540px)
+{
+    .logo-image { width: 50%; }
+
+}

@@ -1,10 +1,33 @@
+let deleteDiv
+let editDiv
+let formAdd
+let formEdit
+let deleteAcceptButton
+
 document.addEventListener("DOMContentLoaded", (event) => {
+    deleteDiv = document.getElementsByClassName("suredelete")
+    editDiv = document.getElementsByClassName("formedit")
+    formAdd = document.getElementsByClassName("formadd")
+    formEdit = document.getElementsByClassName("formedit")
+    deleteAcceptButton = document.getElementsByClassName("suredelete-button")
+
     const addButton = document.getElementsByClassName("add")
-    
+    const closeButton = document.getElementsByClassName("close")
+    Array.from(closeButton).forEach(e => {
+        e.addEventListener("click", () => {
+            document.body.style.overflow = "visible"
+            document.body.style.pointerEvents = "all"
+            e.parentElement.style.display = "none"
+        })
+    })
+
     Array.from(addButton).forEach((button, index) => {
-    button.addEventListener("click", () => {
-    const addDiv = document.getElementsByClassName("formadd")[0]
-    addDiv.style.display = "flex"
+        button.getElementsByTagName("button")[0].addEventListener("click", () => {
+            const addDiv = formAdd[index]
+            document.body.style.overflow = "hidden"
+            document.body.style.pointerEvents = "none"
+            addDiv.style.display = "flex"
+            addDiv.style.pointerEvents = "all"
         })
     })
 })
@@ -33,45 +56,44 @@ const allergenProductURL = "http://localhost:8080/VeggieBliss/Controller?action=
 
 const employeeURL = "http://localhost:8080/VeggieBliss/Controller?action=employees.find_all"
 
-const fetchData = async() => 
-    {
-        const [burgerRes, saladRes, razzionRes, dessertRes, drinkRes, allergenRes, allergenProductRes, employeeRes] = await Promise.all([fetch(burgerURL), fetch(saladURL), fetch(razzionURL), fetch(dessertURL), fetch(drinkURL), fetch(allergenURL), fetch(allergenProductURL), fetch(employeeURL)])
+const fetchData = async () => {
+    const [burgerRes, saladRes, razzionRes, dessertRes, drinkRes, allergenRes, allergenProductRes, employeeRes] = await Promise.all([fetch(burgerURL), fetch(saladURL), fetch(razzionURL), fetch(dessertURL), fetch(drinkURL), fetch(allergenURL), fetch(allergenProductURL), fetch(employeeURL)])
 
-        const burgerData = await burgerRes.json()
-        console.log("Data --> ", burgerData)
-    
-        const saladData = await saladRes.json()
-        console.log("Data --> ", saladData)
-    
-        const razzionData = await razzionRes.json()
-        console.log("Data --> ", razzionData)
-    
-        const dessertData = await dessertRes.json()
-        console.log("Data --> ", dessertData)
-    
-        const drinkData = await drinkRes.json()
-        console.log("Data --> ", drinkData)
-    
-        const allergenData = await allergenRes.json()
-        console.log("Data --> ", allergenData)
-    
-        const allergenProductData = await allergenProductRes.json()
-        console.log("Data --> ", allergenProductData)
+    const burgerData = await burgerRes.json()
+    console.log("Data --> ", burgerData)
 
-        const employeeData = await employeeRes.json()
-        console.log("Data --> ", employeeData)
-    
-        printBurguerData(burgerData)
-        printRazzionData(razzionData)
-        printSaladData(saladData)
-        printDessertData(dessertData)
-        printDrinkData(drinkData)
-        printAllergenData(allergenData)
-        printAllergenProductData(allergenProductData)
-        printEmployeeData(employeeData)
-    }
+    const saladData = await saladRes.json()
+    console.log("Data --> ", saladData)
 
-const deleteProductFetch = async(object) => {
+    const razzionData = await razzionRes.json()
+    console.log("Data --> ", razzionData)
+
+    const dessertData = await dessertRes.json()
+    console.log("Data --> ", dessertData)
+
+    const drinkData = await drinkRes.json()
+    console.log("Data --> ", drinkData)
+
+    const allergenData = await allergenRes.json()
+    console.log("Data --> ", allergenData)
+
+    const allergenProductData = await allergenProductRes.json()
+    console.log("Data --> ", allergenProductData)
+
+    const employeeData = await employeeRes.json()
+    console.log("Data --> ", employeeData)
+
+    printBurguerData(burgerData)
+    printRazzionData(razzionData)
+    printSaladData(saladData)
+    printDessertData(dessertData)
+    printDrinkData(drinkData)
+    printAllergenData(allergenData)
+    printAllergenProductData(allergenProductData)
+    printEmployeeData(employeeData)
+}
+
+const deleteProductFetch = async (object) => {
     await fetch(productsDeleteURL,
         {
             method: "post",
@@ -80,16 +102,17 @@ const deleteProductFetch = async(object) => {
         })
 }
 
-const addProductFetch = async(object) => {
-    await fetch(productsAddURL,
+const addProductFetch = async (object) => {
+    const res = await fetch(productsAddURL,
         {
             method: "post",
             body: JSON.stringify(object),
             headers: { "Content-Type": "application/json" }
         })
+    console.log(res)
 }
 
-const editProductFetch = async(object) => {
+const editProductFetch = async (object) => {
     await fetch(productsEditURL,
         {
             method: "post",
@@ -98,13 +121,12 @@ const editProductFetch = async(object) => {
         })
 }
 
-const printBurguerData = (burguerData) =>
-    {
-        const category = document.getElementsByClassName('categories')[0].getElementsByTagName("table")[0]
-        Array.from(burguerData).forEach(burguer => {
-            const container = document.createElement("tr")
-            category.appendChild(container)
-            container.innerHTML = 
+const printBurguerData = (burguerData) => {
+    const category = document.getElementsByClassName('categories')[0].getElementsByTagName("table")[0]
+    Array.from(burguerData).forEach(burguer => {
+        const container = document.createElement("tr")
+        category.appendChild(container)
+        container.innerHTML =
             `
             <td class ="id">${burguer.product_id}</td>
             <td class ="name">${burguer.product_name}</td>
@@ -113,52 +135,115 @@ const printBurguerData = (burguerData) =>
             <td class ="price">${burguer.price}</td>
             <td class ="edit"><img src = "../images/editar.png" alt="edit"></td>
             <td class ="delete"><img src = "../images/eliminar.png" alt="delete"></td>
-
             `
-            const editButton = container.getElementsByClassName("edit")
+          
+        const editButton = container.getElementsByClassName("edit")[0]
+        editButton.addEventListener("click", () => {
+            document.body.style.overflow = "hidden"
+            document.body.style.pointerEvents = "none"
+            editDiv[0].style.display = "flex"
+            editDiv[0].style.pointerEvents = "all"
+        })
+        const deleteButton = container.getElementsByClassName("delete")[0]
+        deleteButton.addEventListener("click", () => {
+            document.body.style.overflow = "hidden"
+            document.body.style.pointerEvents = "none"
+            deleteDiv[0].style.display = "flex"
+            deleteDiv[0].style.pointerEvents = "all"
+        })
 
-            Array.from(addButton).forEach((button, index) => {
+        
+        formAdd[0].getElementsByTagName("form")[0].addEventListener("submit", async() => {
+            const burger =
+            {
+                product_id: document.getElementById("add_product_id").value,
+                product_image: document.getElementById("add_product_image").value,
+                product_name: document.getElementById("add_product_name").value,
+                product_description: document.getElementById("add_product_description").value,
+                price: document.getElementById("add_price").value,
+                category_id: burguer.category_id
+            }
+            console.log(burger)
+
+            addProductFetch(burger).then(console.log("added"))
+
+            
+            printBurguerData()
+        })
+
+        formEdit[0].getElementsByTagName("form")[0].addEventListener("submit", async() => {
+            document.getElementById("add_product_id").value = burguer.product_id
+            document.getElementById("add_product_image").value = burguer.product_image
+            document.getElementById("add_product_name").value = burguer.product_name
+            document.getElementById("add_product_description").value = burguer.product_description
+            document.getElementById("add_price").value = burguer.price
+            
+            const burger =
+            {
+                product_id: document.getElementById("add_product_id").value,
+                product_image: document.getElementById("add_product_image").value,
+                product_name: document.getElementById("add_product_name").value,
+                product_description: document.getElementById("add_product_description").value,
+                price: document.getElementById("add_price").value,
+                category_id: "2"
+            }
+
+            editProductFetch(burger).then(console.log("edited"))
+
+            
+            printBurguerData()
+        })
+
+        deleteAcceptButton[0].getElementsByTagName("button")[0].addEventListener("click", async() => {
+            const burger =
+            {
+                product_id: burguer.product_id
+            }
+
+            addProductFetch(burger).then(console.log("deleted"))
+
+            
+            printBurguerData()
+        })
+        /*
+        const deleteButton = container.getElementsByClassName("delete")
+
+        Array.from(deleteButton).forEach((button, index) => {
             button.addEventListener("click", () => {
-            const editDiv = document.getElementsByClassName("formedit")[0]
-            editDiv.style.display = "flex"
-                })
-            })
-            const deleteButton = container.getElementsByClassName("delete")
-
-            Array.from(deleteButton).forEach((button, index) => {
-            button.addEventListener("click", () => {
-            const deleteDiv = document.getElementsByClassName("suredelete")[0]
-            deleteDiv.style.display = "flex"
-                })
-            })
-
-            const editForm = document.getElementById("formedit")
-            editForm.addEventListener("submit", () => {
-                const burger = {
-                    product_id: document.getElementById("edit_product_id").value,
-                    product_image : document.getElementById("edit_product_image").value,
-                    product_name : document.getElementById("edit_product_name").value,
-                    product_description : document.getElementById("edit_product_description").value,
-                    price : document.getElementById("edit_price").value
-                }
-
-                editProductFetch(burger)
-            })
-
-            const addForm = document.getElementById("formadd")
-            addForm.addEventListener("submit", () => {
-                const burger = {
-                    product_id: document.getElementById("add_product_id").value,
-                    product_image : document.getElementById("add_product_image").value,
-                    product_name : document.getElementById("add_product_name").value,
-                    product_description : document.getElementById("add_product_description").value,
-                    price : document.getElementById("add_price").value
-                }
-
-                addProductFetch(burger)
+                const deleteDiv = document.getElementsByClassName("suredelete")[0]
+                deleteDiv.style.display = "flex"
             })
         })
-    }
+
+        const editForm = document.getElementById("formedit")
+        editForm.addEventListener("submit", () => {
+            const burger =
+            {
+                product_id: document.getElementById("edit_product_id").value,
+                product_image: document.getElementById("edit_product_image").value,
+                product_name: document.getElementById("edit_product_name").value,
+                product_description: document.getElementById("edit_product_description").value,
+                price: document.getElementById("edit_price").value
+            }
+
+            editProductFetch(burger)
+        })
+
+        const addForm = document.getElementById("formadd")
+        addForm.addEventListener("submit", () => {
+            const burger =
+            {
+                product_id: document.getElementById("add_product_id").value,
+                product_image: document.getElementById("add_product_image").value,
+                product_name: document.getElementById("add_product_name").value,
+                product_description: document.getElementById("add_product_description").value,
+                price: document.getElementById("add_price").value
+            }
+
+            addProductFetch(burger)
+        })*/
+    })
+}
 
 const printRazzionData = (razzionData) =>
     {
@@ -178,7 +263,7 @@ const printRazzionData = (razzionData) =>
 
             `
             const editButton = container.getElementsByClassName("edit")
-
+/*
             Array.from(addButton).forEach((button, index) => {
             button.addEventListener("click", () => {
             const editDiv = document.getElementsByClassName("formedit")[0]
@@ -218,7 +303,7 @@ const printRazzionData = (razzionData) =>
                 }
 
                 addProductFetch(razzion)
-            })
+            })*/
         })
     }
 
@@ -241,7 +326,7 @@ const printSaladData = (saladData) =>
             `
 
             const editButton = container.getElementsByClassName("edit")
-
+/*
             Array.from(addButton).forEach((button, index) => {
             button.addEventListener("click", () => {
             const editDiv = document.getElementsByClassName("formedit")[0]
@@ -281,7 +366,7 @@ const printSaladData = (saladData) =>
                 }
 
                 addProductFetch(salad)
-            })
+            })*/
         })
     }
 
@@ -304,7 +389,7 @@ const printDessertData = (dessertData) =>
             `
 
             const editButton = container.getElementsByClassName("edit")
-
+/*
             Array.from(addButton).forEach((button, index) => {
             button.addEventListener("click", () => {
             const editDiv = document.getElementsByClassName("formedit")[0]
@@ -344,7 +429,7 @@ const printDessertData = (dessertData) =>
                 }
 
                 addProductFetch(dessert)
-            })
+            })*/
         })
     }
 
@@ -367,7 +452,7 @@ const printDrinkData = (drinkData) =>
             `
 
             const editButton = container.getElementsByClassName("edit")
-
+/*
             Array.from(addButton).forEach((button, index) => {
             button.addEventListener("click", () => {
             const editDiv = document.getElementsByClassName("formedit")[0]
@@ -407,7 +492,7 @@ const printDrinkData = (drinkData) =>
                 }
 
                 addProductFetch(drink)
-            })
+            })*/
         })
     }
 

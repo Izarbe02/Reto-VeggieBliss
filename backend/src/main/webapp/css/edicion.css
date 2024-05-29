@@ -1,0 +1,235 @@
+body {
+
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+}
+a{color: black;
+    text-decoration: none;
+}
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+    font-weight: 600;
+}
+
+h1 {
+    
+    font-size: x-large;
+    font-weight: 600;
+    text-align: center;
+}
+
+strong { font-weight: 600;}
+
+.main {
+    background: url('../images/fondo2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+}
+
+.edicion-title h1
+{
+    font-size: 50px;
+    padding-top: 1%;
+    text-shadow: 3px 3px 3px #90e7ad;
+}
+
+.category-title {
+    text-align: center;
+    font-size: 45px;
+    padding: 1%;
+    color: #f3851e;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.808);
+}
+
+.category-divider {
+    border: 0;
+    height: 2px;
+    background: green;
+}
+
+.categories {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1%;
+}
+
+.add
+{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2%;
+}
+
+.add button
+{
+    width: 7%;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    background-color: lightgreen;
+    box-shadow: 3px 3px 3px darkgreen;
+}
+
+.formadd
+{
+    background-color: rgba(245, 245, 245, 0.904);
+    box-shadow:3px 3px 3px 3px lightgreen;
+    width: 35%;
+    height: 300px;
+    border-radius: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%);
+
+}
+
+.close
+{
+    width: 20px;
+    position: absolute;
+    top: 4%;
+    right: 3%;
+}
+
+.close img { width: 100%;}
+
+.formadd-button
+{
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+    width: 100%;
+}
+
+.formadd-button button
+{
+    width: 35%;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    background-color: lightgreen;
+    box-shadow: 3px 3px 3px darkgreen;
+}
+
+.suredelete
+{
+    background-color: rgba(245, 245, 245, 0.904);
+    box-shadow:3px 3px 3px 3px lightcoral;
+    width: 20%;
+    height: 100px;
+    border-radius: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+
+
+}
+
+.suredelete-button
+{
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+    width: 100%;
+}
+
+.suredelete-button button
+{
+    width: 30%;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    background-color: lightcoral;
+    box-shadow: 3px 3px 3px red;
+}
+
+.formedit
+{
+    background-color: rgba(245, 245, 245, 0.904);
+    box-shadow:3px 3px 3px 3px lightgoldenrodyellow;
+    width: 50%;
+    height: 200px;
+    border-radius: 20px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+
+}
+
+.formedit-button
+{
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+    width: 100%;
+}
+
+.formedit-button button
+{
+    width: 10%;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    background-color: lightgoldenrodyellow;
+    box-shadow: 3px 3px 3px goldenrod;
+}
+
+table {
+    background-color: #e2be9ad0;
+    border-collapse: collapse;
+    border-radius: 5px;
+    border-style: hidden;
+    box-shadow: 3px 2px 2px 3px #24412d;
+    width: 100%;
+}
+
+table th {
+    border: solid 2px #90e7add5;
+    padding: 1%;
+}
+
+.categories td 
+{
+    border: solid 2px #90e7add5;
+    padding: 1%;
+    text-align: center;
+    font-size: large;
+    vertical-align: middle;
+}
+
+.id{ width: 9%;}
+
+.name{width: 20%;}
+
+.image{width: 20%;}
+
+.des{width: 25%;}
+
+.edit{width: 9%;}
+
+.edit img {width: 45%;}
+
+.delete{width: 9%;}
+
+.delete img {width: 45%;}
+
+.employee .name{width: 10%;}
