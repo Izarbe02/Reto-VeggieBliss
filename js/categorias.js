@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     cartDisplay = document.getElementsByClassName("cart-display")[0]
     cartButton = document.getElementsByClassName("cart-button")[0]
     cleanUp = document.getElementsByClassName("clean-order")[0]
-totalPriceContainer = document.getElementsByClassName("order-total-price")
+    totalPriceContainer = document.getElementsByClassName("order-total-price")
     cartButton.addEventListener("click", () => {
         if (cartDisplay.style.display != "flex") {
             cartDisplay.style.animation = "desplegable 1.5s"
@@ -21,13 +21,13 @@ totalPriceContainer = document.getElementsByClassName("order-total-price")
     cleanUp.addEventListener("click", () => {
         let deleteDetails = cartDisplay.getElementsByClassName("order-card")
         Array.from(deleteDetails).forEach(detail => {
-            detail.remove()            
+            detail.remove()
         })
     })
 })
 
 let orderTotalPrice = 0
- 
+
 
 //
 //fetch
@@ -132,7 +132,7 @@ const printBurguerData = (burguerData, allergenProductData) => {
         container.classList.add("burgers")
         category.appendChild(container)
         container.innerHTML =
-        
+
             `
                 <div class="category-card">
                 <div class="category-header">
@@ -146,8 +146,8 @@ const printBurguerData = (burguerData, allergenProductData) => {
                 <button class="orange-button">+</button>
                 <button class="precio">${burguer.price.toFixed(2)}€</button>
                 </div>
-            ` 
-        
+            `
+
         const orangeButton = container.getElementsByClassName("orange-button")[0]
         const allergen_span = container.getElementsByClassName('allergen_products_span')[0]
 
@@ -155,46 +155,46 @@ const printBurguerData = (burguerData, allergenProductData) => {
             allergen_span.innerText +=
                 `${allergen_product.allergen_id} `
         })
-        
-    let currentdetail = {
-        existence: false,
-        product_name: null,
-        product_quantity: 0,
-        unitPrice: 0,
-        totalPrice: 0
-    }
-    
 
-    //order listener
-    orangeButton.addEventListener("click", () => {
-        /*let currentOrder = 
-        {  order_id: 1,
-            order_date: new Date(),
-            direction: null,
-            client_id: 1
-
+        let currentdetail = {
+            existence: false,
+            product_name: null,
+            product_quantity: 0,
+            unitPrice: 0,
+            totalPrice: 0
         }
-        let CurrentDetail = 
-        {
-            order_detail_id : 1,
-            quantity_product: 0 ,
-            sales_price: 0 ,
-            product_id: null ,
-            employee_id: 1 ,
-            order_id: 1 ,
-        }*/
 
-        if (currentdetail.existence != true) {
-            currentdetail.existence = true
-            currentdetail.product_name = burguer.product_name
-            currentdetail.product_quantity = 1
-            currentdetail.unitPrice = burguer.price
-            currentdetail.totalPrice = currentdetail.unitPrice * currentdetail.product_quantity
 
-            const detail = document.createElement("div")
-            detail.classList.add("order-card")
-            cartDisplay.appendChild(detail)  
-            detail.innerHTML = `
+        //order listener
+        orangeButton.addEventListener("click", () => {
+            /*let currentOrder = 
+            {  order_id: 1,
+                order_date: new Date(),
+                direction: null,
+                client_id: 1
+    
+            }
+            let CurrentDetail = 
+            {
+                order_detail_id : 1,
+                quantity_product: 0 ,
+                sales_price: 0 ,
+                product_id: null ,
+                employee_id: 1 ,
+                order_id: 1 ,
+            }*/
+
+            if (currentdetail.existence != true) {
+                currentdetail.existence = true
+                currentdetail.product_name = burguer.product_name
+                currentdetail.product_quantity = 1
+                currentdetail.unitPrice = burguer.price
+                currentdetail.totalPrice = currentdetail.unitPrice * currentdetail.product_quantity
+
+                const detail = document.createElement("div")
+                detail.classList.add("order-card")
+                cartDisplay.appendChild(detail)
+                detail.innerHTML = `
                     <div class="card-photo">
                     <img src="../images/flor.png" alt="order-image">
                 </div>
@@ -206,27 +206,26 @@ const printBurguerData = (burguerData, allergenProductData) => {
                 </div>
             </div>
             `
-        }
-        else {
-            currentdetail.product_quantity += 1
-            currentdetail.totalPrice = currentdetail.unitPrice * currentdetail.product_quantity
+            }
+            else {
+                currentdetail.product_quantity += 1
+                currentdetail.totalPrice = currentdetail.unitPrice * currentdetail.product_quantity
 
-            const orderCards = document.getElementsByClassName("order-card")
+                const orderCards = document.getElementsByClassName("order-card")
 
                 Array.from(orderCards).forEach(card => {
-                if (burguer.productName === card.getElementsByClassName("cart-text")[0].innerText)
-                {
-                card.getElementsByClassName("card-price")[0].innerText = currentdetail.totalPrice.toFixed(2)+"€"
-                card.getElementsByClassName("product-quantity")[0] = currentdetail.product_quantity
-                }
+                    if (burguer.productName === card.getElementsByClassName("cart-text")[0].innerText) {
+                        card.getElementsByClassName("card-price")[0].innerText = currentdetail.totalPrice.toFixed(2) + "€"
+                        card.getElementsByClassName("product-quantity")[0].innerText = currentdetail.product_quantity
+                    }
                 })
-        }
-        
+            }
+
+        })
     })
-})
 
 } //burguer
-    
+
 //razziones
 const printRazzionesData = (razzionesData, allergenProductData) => {
     const category = document.getElementsByClassName('categories')[1]
@@ -236,7 +235,7 @@ const printRazzionesData = (razzionesData, allergenProductData) => {
         container.classList.add("razziones")
         category.appendChild(container)
         container.innerHTML =
-        
+
             `
                 <div class="category-card">
                 <div class="category-header">
@@ -250,8 +249,8 @@ const printRazzionesData = (razzionesData, allergenProductData) => {
                 <button class="orange-button">+</button>
                 <button class="precio">${razziones.price.toFixed(2)}€</button>
                 </div>
-            ` 
-        
+            `
+
         const orangeButton = container.getElementsByClassName("orange-button")[0]
         const allergen_span = container.getElementsByClassName('allergen_products_span')[0]
 
@@ -259,30 +258,30 @@ const printRazzionesData = (razzionesData, allergenProductData) => {
             allergen_span.innerText +=
                 `${allergen_product.allergen_id} `
         })
-        
-    let currentdetail = {
-        existence: false,
-        product_name: null,
-        product_quantity: 0,
-        unitPrice: 0,
-        totalPrice: 0
-    }
-    
 
-    //order listener
-    orangeButton.addEventListener("click", () => {
+        let currentdetail = {
+            existence: false,
+            product_name: null,
+            product_quantity: 0,
+            unitPrice: 0,
+            totalPrice: 0
+        }
 
-        if (currentdetail.existence != true) {
-            currentdetail.existence = true
-            currentdetail.product_name = razziones.product_name
-            currentdetail.product_quantity = 1
-            currentdetail.unitPrice = razziones.price
-            currentdetail.totalPrice = currentdetail.unitPrice * currentdetail.product_quantity
 
-            const detail = document.createElement("div")
-            detail.classList.add("order-card")
-            cartDisplay.appendChild(detail)  
-            detail.innerHTML = `
+        //order listener
+        orangeButton.addEventListener("click", () => {
+
+            if (currentdetail.existence != true) {
+                currentdetail.existence = true
+                currentdetail.product_name = razziones.product_name
+                currentdetail.product_quantity = 1
+                currentdetail.unitPrice = razziones.price
+                currentdetail.totalPrice = currentdetail.unitPrice * currentdetail.product_quantity
+
+                const detail = document.createElement("div")
+                detail.classList.add("order-card")
+                cartDisplay.appendChild(detail)
+                detail.innerHTML = `
                     <div class="card-photo">
                     <img src="../images/flor.png" alt="order-image">
                 </div>
@@ -294,17 +293,22 @@ const printRazzionesData = (razzionesData, allergenProductData) => {
                 </div>
             </div>
             `
-        }
-        else {
-            currentdetail.product_quantity += 1
-            currentdetail.totalPrice = currentdetail.unitPrice * currentdetail.product_quantity
+            }
+            else {
+                currentdetail.product_quantity += 1
+                currentdetail.totalPrice = currentdetail.unitPrice * currentdetail.product_quantity
+                const orderCards = document.getElementsByClassName("order-card")
 
-            cartDisplay.getElementsByClassName("card-price")[index].innerText = currentdetail.totalPrice.toFixed(2) + "€"
-            cartDisplay.getElementsByClassName("product-quantity")[index].innerText = currentdetail.product_quantity
-        }
-        
+                Array.from(orderCards).forEach(card => {
+                    if (razziones.productName === card.getElementsByClassName("cart-text")[0].innerText) {
+                        card.getElementsByClassName("card-price")[0].innerText = currentdetail.totalPrice.toFixed(2) + "€"
+                        card.getElementsByClassName("product-quantity")[0].innerText = currentdetail.product_quantity
+                    }
+                })
+
+            }
+        })
     })
-})
 }
 
 
@@ -320,7 +324,7 @@ const printSaladsData = (saladsData, allergenProductData) => {
         container.classList.add("burgers")
         category.appendChild(container)
         container.innerHTML =
-        
+
             `
                 <div class="category-card">
                 <div class="category-header">
@@ -334,8 +338,8 @@ const printSaladsData = (saladsData, allergenProductData) => {
                 <button class="orange-button">+</button>
                 <button class="precio">${salads.price.toFixed(2)}€</button>
                 </div>
-            ` 
-        
+            `
+
         const orangeButton = container.getElementsByClassName("orange-button")[0]
         const allergen_span = container.getElementsByClassName('allergen_products_span')[0]
 
@@ -343,30 +347,30 @@ const printSaladsData = (saladsData, allergenProductData) => {
             allergen_span.innerText +=
                 `${allergen_product.allergen_id} `
         })
-        
-    let currentdetail = {
-        existence: false,
-        product_name: null,
-        product_quantity: 0,
-        unitPrice: 0,
-        totalPrice: 0
-    }
-    
 
-    //order listener
-    orangeButton.addEventListener("click", () => {
-        
-        if (currentdetail.existence != true) {
-            currentdetail.existence = true
-            currentdetail.product_name = salads.product_name
-            currentdetail.product_quantity = 1
-            currentdetail.unitPrice = salads.price
-            currentdetail.totalPrice = currentdetail.unitPrice * currentdetail.product_quantity
+        let currentdetail = {
+            existence: false,
+            product_name: null,
+            product_quantity: 0,
+            unitPrice: 0,
+            totalPrice: 0
+        }
 
-            const detail = document.createElement("div")
-            detail.classList.add("order-card")
-            cartDisplay.appendChild(detail)  
-            detail.innerHTML = `
+
+        //order listener
+        orangeButton.addEventListener("click", () => {
+
+            if (currentdetail.existence != true) {
+                currentdetail.existence = true
+                currentdetail.product_name = salads.product_name
+                currentdetail.product_quantity = 1
+                currentdetail.unitPrice = salads.price
+                currentdetail.totalPrice = currentdetail.unitPrice * currentdetail.product_quantity
+
+                const detail = document.createElement("div")
+                detail.classList.add("order-card")
+                cartDisplay.appendChild(detail)
+                detail.innerHTML = `
                     <div class="card-photo">
                     <img src="../images/flor.png" alt="order-image">
                 </div>
@@ -378,20 +382,26 @@ const printSaladsData = (saladsData, allergenProductData) => {
                 </div>
             </div>
             `
-        }
-        else {
-            currentdetail.product_quantity += 1
-            currentdetail.totalPrice = currentdetail.unitPrice * currentdetail.product_quantity
+            }
+            else {
+                currentdetail.product_quantity += 1
+                currentdetail.totalPrice = currentdetail.unitPrice * currentdetail.product_quantity
 
-            cartDisplay.getElementsByClassName("card-price")[index].innerText = currentdetail.totalPrice.toFixed(2) + "€"
-            cartDisplay.getElementsByClassName("product-quantity")[index].innerText = currentdetail.product_quantity
-        }
-        
+                const orderCards = document.getElementsByClassName("order-card")
+
+                Array.from(orderCards).forEach(card => {
+                    if (salads.productName === card.getElementsByClassName("cart-text")[0].innerText) {
+                        card.getElementsByClassName("card-price")[0].innerText = currentdetail.totalPrice.toFixed(2) + "€"
+                        card.getElementsByClassName("product-quantity")[0].innerText = currentdetail.product_quantity
+                    }
+                })
+            }
+
+        })
     })
-})
 
-} 
-    
+}
+
 
 
 
@@ -405,7 +415,7 @@ const printDessertsData = (dessertsData, allergenProductData) => {
         container.classList.add("burgers")
         category.appendChild(container)
         container.innerHTML =
-        
+
             `
                 <div class="category-card">
                 <div class="category-header">
@@ -419,8 +429,8 @@ const printDessertsData = (dessertsData, allergenProductData) => {
                 <button class="orange-button">+</button>
                 <button class="precio">${desserts.price.toFixed(2)}€</button>
                 </div>
-            ` 
-        
+            `
+
         const orangeButton = container.getElementsByClassName("orange-button")[0]
         const allergen_span = container.getElementsByClassName('allergen_products_span')[0]
 
@@ -428,31 +438,31 @@ const printDessertsData = (dessertsData, allergenProductData) => {
             allergen_span.innerText +=
                 `${allergen_product.allergen_id} `
         })
-        
-    let currentdetail = {
-        existence: false,
-        product_name: null,
-        product_quantity: 0,
-        unitPrice: 0,
-        totalPrice: 0
-    }
-    
 
-    //order listener
-    orangeButton.addEventListener("click", () => {
-       
+        let currentdetail = {
+            existence: false,
+            product_name: null,
+            product_quantity: 0,
+            unitPrice: 0,
+            totalPrice: 0
+        }
 
-        if (currentdetail.existence != true) {
-            currentdetail.existence = true
-            currentdetail.product_name = desserts.product_name
-            currentdetail.product_quantity = 1
-            currentdetail.unitPrice = desserts.price
-            currentdetail.totalPrice = currentdetail.unitPrice * currentdetail.product_quantity
 
-            const detail = document.createElement("div")
-            detail.classList.add("order-card")
-            cartDisplay.appendChild(detail)  
-            detail.innerHTML = `
+        //order listener
+        orangeButton.addEventListener("click", () => {
+
+
+            if (currentdetail.existence != true) {
+                currentdetail.existence = true
+                currentdetail.product_name = desserts.product_name
+                currentdetail.product_quantity = 1
+                currentdetail.unitPrice = desserts.price
+                currentdetail.totalPrice = currentdetail.unitPrice * currentdetail.product_quantity
+
+                const detail = document.createElement("div")
+                detail.classList.add("order-card")
+                cartDisplay.appendChild(detail)
+                detail.innerHTML = `
                     <div class="card-photo">
                     <img src="../images/flor.png" alt="order-image">
                 </div>
@@ -464,19 +474,25 @@ const printDessertsData = (dessertsData, allergenProductData) => {
                 </div>
             </div>
             `
-        }
-        else {
-            currentdetail.product_quantity += 1
-            currentdetail.totalPrice = currentdetail.unitPrice * currentdetail.product_quantity
+            }
+            else {
+                currentdetail.product_quantity += 1
+                currentdetail.totalPrice = currentdetail.unitPrice * currentdetail.product_quantity
+                const orderCards = document.getElementsByClassName("order-card")
 
-            cartDisplay.getElementsByClassName("card-price")[index].innerText = currentdetail.totalPrice.toFixed(2) + "€"
-            cartDisplay.getElementsByClassName("product-quantity")[index].innerText = currentdetail.product_quantity
-        }
-        
+                Array.from(orderCards).forEach(card => {
+                    if (desserts.productName === card.getElementsByClassName("cart-text")[0].innerText) {
+                        card.getElementsByClassName("card-price")[0].innerText = currentdetail.totalPrice.toFixed(2) + "€"
+                        card.getElementsByClassName("product-quantity")[0].innerText = currentdetail.product_quantity
+                    }
+
+                })
+            }
+
+        })
     })
-})
 
-} 
+}
 
 
 //Drinks
@@ -488,7 +504,7 @@ const printDrinksData = (drinksData, allergenProductData) => {
         container.classList.add("burgers")
         category.appendChild(container)
         container.innerHTML =
-        
+
             `
                 <div class="category-card">
                 <div class="category-header">
@@ -502,8 +518,8 @@ const printDrinksData = (drinksData, allergenProductData) => {
                 <button class="orange-button">+</button>
                 <button class="precio">${drinks.price.toFixed(2)}€</button>
                 </div>
-            ` 
-        
+            `
+
         const orangeButton = container.getElementsByClassName("orange-button")[0]
         const allergen_span = container.getElementsByClassName('allergen_products_span')[0]
 
@@ -511,30 +527,30 @@ const printDrinksData = (drinksData, allergenProductData) => {
             allergen_span.innerText +=
                 `${allergen_product.allergen_id} `
         })
-        
-    let currentdetail = {
-        existence: false,
-        product_name: null,
-        product_quantity: 0,
-        unitPrice: 0,
-        totalPrice: 0
-    }
-    
 
-    //order listener
-    orangeButton.addEventListener("click", () => {
-       
-        if (currentdetail.existence != true) {
-            currentdetail.existence = true
-            currentdetail.product_name = drinks.product_name
-            currentdetail.product_quantity = 1
-            currentdetail.unitPrice = drinks.price
-            currentdetail.totalPrice = currentdetail.unitPrice * currentdetail.product_quantity
+        let currentdetail = {
+            existence: false,
+            product_name: null,
+            product_quantity: 0,
+            unitPrice: 0,
+            totalPrice: 0
+        }
 
-            const detail = document.createElement("div")
-            detail.classList.add("order-card")
-            cartDisplay.appendChild(detail)  
-            detail.innerHTML = `
+
+        //order listener
+        orangeButton.addEventListener("click", () => {
+
+            if (currentdetail.existence != true) {
+                currentdetail.existence = true
+                currentdetail.product_name = drinks.product_name
+                currentdetail.product_quantity = 1
+                currentdetail.unitPrice = drinks.price
+                currentdetail.totalPrice = currentdetail.unitPrice * currentdetail.product_quantity
+
+                const detail = document.createElement("div")
+                detail.classList.add("order-card")
+                cartDisplay.appendChild(detail)
+                detail.innerHTML = `
                     <div class="card-photo">
                     <img src="../images/flor.png" alt="order-image">
                 </div>
@@ -546,18 +562,24 @@ const printDrinksData = (drinksData, allergenProductData) => {
                 </div>
             </div>
             `
-        }
-        else {
-            currentdetail.product_quantity += 1
-            currentdetail.totalPrice = currentdetail.unitPrice * currentdetail.product_quantity
+            }
+            else {
+                currentdetail.product_quantity += 1
+                currentdetail.totalPrice = currentdetail.unitPrice * currentdetail.product_quantity
+                const orderCards = document.getElementsByClassName("order-card")
 
-            cartDisplay.getElementsByClassName("card-price")[index].innerText = currentdetail.totalPrice.toFixed(2) + "€"
-            cartDisplay.getElementsByClassName("product-quantity")[index].innerText = currentdetail.product_quantity
-        }
-        
+                Array.from(orderCards).forEach(card => {
+                    if (drinks.productName === card.getElementsByClassName("cart-text")[0].innerText) {
+                        card.getElementsByClassName("card-price")[0].innerText = currentdetail.totalPrice.toFixed(2) + "€"
+                        card.getElementsByClassName("product-quantity")[0].innerText = currentdetail.product_quantity
+                    }
+
+                })
+            }
+
+        })
     })
-})
 
-} 
+}
 
 fetchData()
