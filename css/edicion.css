@@ -78,14 +78,23 @@ strong { font-weight: 600;}
 {
     background-color: rgba(245, 245, 245, 0.904);
     box-shadow:3px 3px 3px 3px lightgreen;
-    width: 50%;
-    height: 200px;
+    width: 35%;
+    height: 300px;
     border-radius: 20px;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%);
+
 }
+
+.close { width: 4%; }
+
+.close img { width: 100%;}
 
 .formadd-button
 {
@@ -97,7 +106,7 @@ strong { font-weight: 600;}
 
 .formadd-button button
 {
-    width: 10%;
+    width: 35%;
     height: 30px;
     border-radius: 20px;
     border: none;
@@ -112,10 +121,16 @@ strong { font-weight: 600;}
     width: 20%;
     height: 100px;
     border-radius: 20px;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+
+
 }
 
 .suredelete-button
@@ -143,10 +158,15 @@ strong { font-weight: 600;}
     width: 50%;
     height: 200px;
     border-radius: 20px;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+
 }
 
 .formedit-button

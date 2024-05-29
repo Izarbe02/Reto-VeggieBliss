@@ -1,3 +1,13 @@
+document.addEventListener("DOMContentLoaded", (event) => {
+    const addButton = document.getElementsByClassName("add")
+    
+    Array.from(addButton).forEach((button, index) => {
+    button.addEventListener("click", () => {
+    const addDiv = document.getElementsByClassName("formadd")[0]
+    addDiv.style.display = "flex"
+        })
+    })
+})
 
 const productsURL = "http://localhost:8080/VeggieBliss/Controller?action=products.find_all"
 
@@ -5,7 +15,7 @@ const productsDeleteURL = "http://localhost:8080/VeggieBliss/Controller?action=p
 
 const productsAddURL = "http://localhost:8080/VeggieBliss/Controller?action=products.add"
 
-const productsUpdateURL = "http://localhost:8080/VeggieBliss/Controller?action=products.update"
+const productsEditURL = "http://localhost:8080/VeggieBliss/Controller?action=products.update"
 
 const burgerURL = "http://localhost:8080/VeggieBliss/Controller?action=products.burgers"
 
@@ -79,15 +89,14 @@ const addProductFetch = async(object) => {
         })
 }
 
-const updateProductFetch = async(object) => {
-    await fetch(productsUpdateURL,
+const editProductFetch = async(object) => {
+    await fetch(productsEditURL,
         {
             method: "post",
             body: JSON.stringify(object),
             headers: { "Content-Type": "application/json" }
         })
 }
-
 
 const printBurguerData = (burguerData) =>
     {
@@ -106,22 +115,47 @@ const printBurguerData = (burguerData) =>
             <td class ="delete"><img src = "../images/eliminar.png" alt="delete"></td>
 
             `
-            const deleteButton = container.getElementsByClassName("delete")[0]
-            deleteButton.addEventListener("click", () => {
-                deleteDiv.style.display = "flex"
-                //deleteProductFetch(burguer)
+            const editButton = container.getElementsByClassName("edit")
+
+            Array.from(addButton).forEach((button, index) => {
+            button.addEventListener("click", () => {
+            const editDiv = document.getElementsByClassName("formedit")[0]
+            editDiv.style.display = "flex"
+                })
             })
-            
-            const editButton = container.getElementsByClassName("edit")[0]
-            editButton.addEventListener("click", () => {
-                editDiv.style.display = "flex"
-                //updateProductFetch(burguer)
+            const deleteButton = container.getElementsByClassName("delete")
+
+            Array.from(deleteButton).forEach((button, index) => {
+            button.addEventListener("click", () => {
+            const deleteDiv = document.getElementsByClassName("suredelete")[0]
+            deleteDiv.style.display = "flex"
+                })
             })
 
-            const addButton = container.getElementsByClassName("add")[0]
-            addButton.addEventListener("click", () => {
-                addDiv.style.display = "flex"
-                //addProductFetch(burguer)
+            const editForm = document.getElementById("formedit")
+            editForm.addEventListener("submit", () => {
+                const burger = {
+                    product_id: document.getElementById("edit_product_id").value,
+                    product_image : document.getElementById("edit_product_image").value,
+                    product_name : document.getElementById("edit_product_name").value,
+                    product_description : document.getElementById("edit_product_description").value,
+                    price : document.getElementById("edit_price").value
+                }
+
+                editProductFetch(burger)
+            })
+
+            const addForm = document.getElementById("formadd")
+            addForm.addEventListener("submit", () => {
+                const burger = {
+                    product_id: document.getElementById("add_product_id").value,
+                    product_image : document.getElementById("add_product_image").value,
+                    product_name : document.getElementById("add_product_name").value,
+                    product_description : document.getElementById("add_product_description").value,
+                    price : document.getElementById("add_price").value
+                }
+
+                addProductFetch(burger)
             })
         })
     }
@@ -143,6 +177,48 @@ const printRazzionData = (razzionData) =>
             <td class ="delete"><img src = "../images/eliminar.png" alt="delete"></td>
 
             `
+            const editButton = container.getElementsByClassName("edit")
+
+            Array.from(addButton).forEach((button, index) => {
+            button.addEventListener("click", () => {
+            const editDiv = document.getElementsByClassName("formedit")[0]
+            editDiv.style.display = "flex"
+                })
+            })
+            const deleteButton = container.getElementsByClassName("delete")
+
+            Array.from(deleteButton).forEach((button, index) => {
+            button.addEventListener("click", () => {
+            const deleteDiv = document.getElementsByClassName("suredelete")[0]
+            deleteDiv.style.display = "flex"
+                })
+            })
+
+            const editForm = document.getElementById("formedit_razziones")
+            editForm.addEventListener("submit", () => {
+                const razzion = {
+                    product_id: document.getElementById("edit_product_id_razziones").value,
+                    product_image : document.getElementById("edit_product_image_razziones").value,
+                    product_name : document.getElementById("edit_product_name_razziones").value,
+                    product_description : document.getElementById("edit_product_description_razziones").value,
+                    price : document.getElementById("edit_price_razziones").value
+                }
+
+                editProductFetch(razzion)
+            })
+
+            const addForm = document.getElementById("formadd_razziones")
+            addForm.addEventListener("submit", () => {
+                const razzion = {
+                    product_id: document.getElementById("add_product_id_razziones").value,
+                    product_image : document.getElementById("add_product_image_razziones").value,
+                    product_name : document.getElementById("add_product_name_razziones").value,
+                    product_description : document.getElementById("add_product_description_razziones").value,
+                    price : document.getElementById("add_price_razziones").value
+                }
+
+                addProductFetch(razzion)
+            })
         })
     }
 
@@ -163,6 +239,49 @@ const printSaladData = (saladData) =>
             <td class ="delete"><img src = "../images/eliminar.png" alt="delete"></td>
 
             `
+
+            const editButton = container.getElementsByClassName("edit")
+
+            Array.from(addButton).forEach((button, index) => {
+            button.addEventListener("click", () => {
+            const editDiv = document.getElementsByClassName("formedit")[0]
+            editDiv.style.display = "flex"
+                })
+            })
+            const deleteButton = container.getElementsByClassName("delete")
+
+            Array.from(deleteButton).forEach((button, index) => {
+            button.addEventListener("click", () => {
+            const deleteDiv = document.getElementsByClassName("suredelete")[0]
+            deleteDiv.style.display = "flex"
+                })
+            })
+
+            const editForm = document.getElementById("formedit_salads")
+            editForm.addEventListener("submit", () => {
+                const salad = {
+                    product_id: document.getElementById("edit_product_id_salads").value,
+                    product_image : document.getElementById("edit_product_image_salads").value,
+                    product_name : document.getElementById("edit_product_name_salads").value,
+                    product_description : document.getElementById("edit_product_description_salads").value,
+                    price : document.getElementById("edit_price_salads").value
+                }
+
+                editProductFetch(salad)
+            })
+
+            const addForm = document.getElementById("formadd_salads")
+            addForm.addEventListener("submit", () => {
+                const salad = {
+                    product_id: document.getElementById("add_product_id_salads").value,
+                    product_image : document.getElementById("add_product_image_salads").value,
+                    product_name : document.getElementById("add_product_name_salads").value,
+                    product_description : document.getElementById("add_product_description_salads").value,
+                    price : document.getElementById("add_price_salads").value
+                }
+
+                addProductFetch(salad)
+            })
         })
     }
 
@@ -183,6 +302,49 @@ const printDessertData = (dessertData) =>
             <td class ="delete"><img src = "../images/eliminar.png" alt="delete"></td>
 
             `
+
+            const editButton = container.getElementsByClassName("edit")
+
+            Array.from(addButton).forEach((button, index) => {
+            button.addEventListener("click", () => {
+            const editDiv = document.getElementsByClassName("formedit")[0]
+            editDiv.style.display = "flex"
+                })
+            })
+            const deleteButton = container.getElementsByClassName("delete")
+
+            Array.from(deleteButton).forEach((button, index) => {
+            button.addEventListener("click", () => {
+            const deleteDiv = document.getElementsByClassName("suredelete")[0]
+            deleteDiv.style.display = "flex"
+                })
+            })
+
+            const editForm = document.getElementById("formedit_dessert")
+            editForm.addEventListener("submit", () => {
+                const dessert = {
+                    product_id: document.getElementById("edit_product_id_dessert").value,
+                    product_image : document.getElementById("edit_product_image_dessert").value,
+                    product_name : document.getElementById("edit_product_name_dessert").value,
+                    product_description : document.getElementById("edit_product_description_dessert").value,
+                    price : document.getElementById("edit_price_dessert").value
+                }
+
+                editProductFetch(dessert)
+            })
+
+            const addForm = document.getElementById("formadd_dessert")
+            addForm.addEventListener("submit", () => {
+                const dessert = {
+                    product_id: document.getElementById("add_product_id_dessert").value,
+                    product_image : document.getElementById("add_product_image_dessert").value,
+                    product_name : document.getElementById("add_product_name_dessert").value,
+                    product_description : document.getElementById("add_product_description_dessert").value,
+                    price : document.getElementById("add_price_dessert").value
+                }
+
+                addProductFetch(dessert)
+            })
         })
     }
 
@@ -203,6 +365,49 @@ const printDrinkData = (drinkData) =>
             <td class ="delete"><img src = "../images/eliminar.png" alt="delete"></td>
 
             `
+
+            const editButton = container.getElementsByClassName("edit")
+
+            Array.from(addButton).forEach((button, index) => {
+            button.addEventListener("click", () => {
+            const editDiv = document.getElementsByClassName("formedit")[0]
+            editDiv.style.display = "flex"
+                })
+            })
+            const deleteButton = container.getElementsByClassName("delete")
+
+            Array.from(deleteButton).forEach((button, index) => {
+            button.addEventListener("click", () => {
+            const deleteDiv = document.getElementsByClassName("suredelete")[0]
+            deleteDiv.style.display = "flex"
+                })
+            })
+
+            const editForm = document.getElementById("formedit_drink")
+            editForm.addEventListener("submit", () => {
+                const drink = {
+                    product_id: document.getElementById("edit_product_id_drink").value,
+                    product_image : document.getElementById("edit_product_image_drink").value,
+                    product_name : document.getElementById("edit_product_name_drink").value,
+                    product_description : document.getElementById("edit_product_description_drink").value,
+                    price : document.getElementById("edit_price_drink").value
+                }
+
+                editProductFetch(drink)
+            })
+
+            const addForm = document.getElementById("formadd_drink")
+            addForm.addEventListener("submit", () => {
+                const drink = {
+                    product_id: document.getElementById("add_product_id_drink").value,
+                    product_image : document.getElementById("add_product_image_drink").value,
+                    product_name : document.getElementById("add_product_name_drink").value,
+                    product_description : document.getElementById("add_product_description_drink").value,
+                    price : document.getElementById("add_price_drink").value
+                }
+
+                addProductFetch(drink)
+            })
         })
     }
 
