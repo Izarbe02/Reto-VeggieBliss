@@ -35,7 +35,7 @@ public class EmployeesAction implements IAction{
                 result = delete(request);
                 break;
             }
-            case "login" {
+            case "login": {
                 result = login(request);
                 break;
             }
@@ -96,7 +96,7 @@ public class EmployeesAction implements IAction{
         Gson gson = new Gson();
 
         Employees employees = gson.fromJson(parser.parse(getBody(request)), Employees.class);
-        EmployeesDao employeesDao = new EmployeesDao;
+        EmployeesDao employeesDao = new EmployeesDao();
         int response = employeesDao.login(employees);
         return String.valueOf(response);
     }

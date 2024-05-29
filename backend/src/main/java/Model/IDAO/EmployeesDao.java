@@ -133,7 +133,7 @@ public class EmployeesDao implements IDao <Employees, Integer> {
         ArrayList<Employees> all_employees = findAll (null);
 
         for ( int contador = 0 ; contador < all_employees.size(); contador ++ ){
-            if ((employees.mail == all_employees[contador].mail)&&(employees.employee_password == all_employees[contador].employees_password))
+            if ((employees.getMail() == all_employees.get(contador).getMail())&&(employees.getEmployee_password() == all_employees.get(contador).getEmployee_password()))
             {
                 response = 1 ;
 

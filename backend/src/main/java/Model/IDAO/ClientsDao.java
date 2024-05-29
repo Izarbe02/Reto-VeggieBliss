@@ -88,7 +88,7 @@ public ArrayList<Clients> findAll(Clients object)
         ArrayList<Clients> all_clients = findAll (null);
 
         for ( int contador = 0 ; contador < all_clients.size(); contador ++ ){
-                if ((clients.mail == all_clients[contador].mail)&&(clients.client_password == all_clients[contador].client_password))
+                if ((clients.getMail() == all_clients.get(contador).getMail())&&(clients.getClient_password() == all_clients.get(contador).getClient_password()))
                 {
                         response = 1 ;
                                 //client
