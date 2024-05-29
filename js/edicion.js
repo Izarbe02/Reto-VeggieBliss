@@ -241,52 +241,52 @@ const printRazzionesData = (razzionesData) => {
 
         
         formAdd[0].getElementsByTagName("form")[0].addEventListener("submit", async() => {
-            const burger =
+            const razzion =
             {
-                product_id: document.getElementById("add_product_id").value,
-                product_image: document.getElementById("add_product_image").value,
-                product_name: document.getElementById("add_product_name").value,
-                product_description: document.getElementById("add_product_description").value,
-                price: document.getElementById("add_price").value,
+                product_id: document.getElementById("add_product_id_razziones").value,
+                product_image: document.getElementById("add_product_image_razziones").value,
+                product_name: document.getElementById("add_product_name_razziones").value,
+                product_description: document.getElementById("add_product_description_razziones").value,
+                price: document.getElementById("add_price_razziones").value,
                 category_id: razziones.category_id
             }
-            console.log(burger)
+            console.log(razzion)
 
-            addProductFetch(burger).then(console.log("added"))
+            addProductFetch(razzion).then(console.log("added"))
 
             
             fetchData()
         })
 
         formEdit[0].getElementsByTagName("form")[0].addEventListener("submit", async() => {
-            document.getElementById("add_product_id").value = razziones.product_id
-            document.getElementById("add_product_image").value = razziones.product_image
-            document.getElementById("add_product_name").value = razziones.product_name
-            document.getElementById("add_product_description").value = razziones.product_description
-            document.getElementById("add_price").value = razziones.price
+            document.getElementById("add_product_id_razziones").value = razziones.product_id
+            document.getElementById("add_product_image_razziones").value = razziones.product_image
+            document.getElementById("add_product_name_razziones").value = razziones.product_name
+            document.getElementById("add_product_description_razziones").value = razziones.product_description
+            document.getElementById("add_price_razziones").value = razziones.price
             
-            const burger =
+            const razzion =
             {
-                product_id: document.getElementById("add_product_id").value,
-                product_image: document.getElementById("add_product_image").value,
-                product_name: document.getElementById("add_product_name").value,
-                product_description: document.getElementById("add_product_description").value,
-                price: document.getElementById("add_price").value,
+                product_id: document.getElementById("add_product_id_razziones").value,
+                product_image: document.getElementById("add_product_image_razziones").value,
+                product_name: document.getElementById("add_product_name_razziones").value,
+                product_description: document.getElementById("add_product_description_razziones").value,
+                price: document.getElementById("add_price_razziones").value,
                 category_id: "2"
             }
 
-            editProductFetch(burger).then(console.log("edited"))
+            editProductFetch(razzion).then(console.log("edited"))
 
             fetchData()
         })
 
         deleteAcceptButton[0].getElementsByTagName("button")[0].addEventListener("click", async() => {
-            const burger =
+            const razzion =
             {
                 product_id: razziones.product_id
             }
 
-            addProductFetch(burger).then(console.log("deleted"))
+            addProductFetch(razzion).then(console.log("deleted"))
 
             fetchData()
         })
@@ -294,193 +294,261 @@ const printRazzionesData = (razzionesData) => {
 }
 
 //salad
-const printSaladData = (saladData) =>
-    {
-        const category = document.getElementsByClassName('categories')[2].getElementsByTagName("table")[0]
-        Array.from(saladData).forEach(salad => {
-            const container = document.createElement("tr")
-            category.appendChild(container)
-            container.innerHTML = 
+    const printSaladasData = (saladsData) => {
+    const category = document.getElementsByClassName('categories')[0].getElementsByTagName("table")[0]
+    Array.from(saladsData).forEach(salads => {
+        const container = document.createElement("tr")
+        category.appendChild(container)
+        container.innerHTML =
             `
-            <td class ="id">${salad.product_id}</td>
-            <td class ="name">${salad.product_name}</td>
-            <td class ="image">${salad.product_image}</td>
-            <td class ="des">${salad.product_description}</td>
-            <td class ="price">${salad.price}</td>
+            <td class ="id">${salads.product_id}</td>
+            <td class ="name">${salads.product_name}</td>
+            <td class ="image">${salads.product_image}</td>
+            <td class ="des">${salads.product_description}</td>
+            <td class ="price">${salads.price}</td>
             <td class ="edit"><img src = "../images/editar.png" alt="edit"></td>
             <td class ="delete"><img src = "../images/eliminar.png" alt="delete"></td>
-
             `
-
-            const editButton = container.getElementsByClassName("edit")
-/*
-            Array.from(addButton).forEach((button, index) => {
-            button.addEventListener("click", () => {
-            const editDiv = document.getElementsByClassName("formedit")[0]
-            editDiv.style.display = "flex"
-                })
-            })
-            const deleteButton = container.getElementsByClassName("delete")
-
-            Array.from(deleteButton).forEach((button, index) => {
-            button.addEventListener("click", () => {
-            const deleteDiv = document.getElementsByClassName("suredelete")[0]
-            deleteDiv.style.display = "flex"
-                })
-            })
-
-            const editForm = document.getElementById("formedit_salads")
-            editForm.addEventListener("submit", () => {
-                const salad = {
-                    product_id: document.getElementById("edit_product_id_salads").value,
-                    product_image : document.getElementById("edit_product_image_salads").value,
-                    product_name : document.getElementById("edit_product_name_salads").value,
-                    product_description : document.getElementById("edit_product_description_salads").value,
-                    price : document.getElementById("edit_price_salads").value
-                }
-
-                editProductFetch(salad)
-            })
-
-            const addForm = document.getElementById("formadd_salads")
-            addForm.addEventListener("submit", () => {
-                const salad = {
-                    product_id: document.getElementById("add_product_id_salads").value,
-                    product_image : document.getElementById("add_product_image_salads").value,
-                    product_name : document.getElementById("add_product_name_salads").value,
-                    product_description : document.getElementById("add_product_description_salads").value,
-                    price : document.getElementById("add_price_salads").value
-                }
-
-                addProductFetch(salad)
-            })*/
+          
+        const editButton = container.getElementsByClassName("edit")[0]
+        editButton.addEventListener("click", () => {
+            document.body.style.overflow = "hidden"
+            document.body.style.pointerEvents = "none"
+            editDiv[0].style.display = "flex"
+            editDiv[0].style.pointerEvents = "all"
         })
-    }
+        const deleteButton = container.getElementsByClassName("delete")[0]
+        deleteButton.addEventListener("click", () => {
+            document.body.style.overflow = "hidden"
+            document.body.style.pointerEvents = "none"
+            deleteDiv[0].style.display = "flex"
+            deleteDiv[0].style.pointerEvents = "all"
+        })
+
+        
+        formAdd[0].getElementsByTagName("form")[0].addEventListener("submit", async() => {
+            const salad =
+            {
+                product_id: document.getElementById("add_product_id").value,
+                product_image: document.getElementById("add_product_image").value,
+                product_name: document.getElementById("add_product_name").value,
+                product_description: document.getElementById("add_product_description").value,
+                price: document.getElementById("add_price").value,
+                category_id: salads.category_id
+            }
+            console.log(salad)
+
+            addProductFetch(salad).then(console.log("added"))
+
+            
+            fetchData()
+        })
+
+        formEdit[0].getElementsByTagName("form")[0].addEventListener("submit", async() => {
+            document.getElementById("add_product_id_salads").value = salads.product_id
+            document.getElementById("add_product_image_salads").value = salads.product_image
+            document.getElementById("add_product_name_salads").value = salads.product_name
+            document.getElementById("add_product_description_salads").value = salads.product_description
+            document.getElementById("add_price_salads").value = salads.price
+            
+            const salad =
+            {
+                product_id: document.getElementById("add_product_id_salads").value,
+                product_image: document.getElementById("add_product_image_salads").value,
+                product_name: document.getElementById("add_product_name_salads").value,
+                product_description: document.getElementById("add_product_description_salads").value,
+                price: document.getElementById("add_price_salads").value,
+                category_id: "2"
+            }
+
+            editProductFetch(salad).then(console.log("edited"))
+
+            fetchData()
+        })
+
+        deleteAcceptButton[0].getElementsByTagName("button")[0].addEventListener("click", async() => {
+            const salad =
+            {
+                product_id: salads.product_id
+            }
+
+            addProductFetch(salad).then(console.log("deleted"))
+
+            fetchData()
+        })
+    })
+}
+
 //desssert
-const printDessertData = (dessertData) =>
-    {
-        const category = document.getElementsByClassName('categories')[3].getElementsByTagName("table")[0]
-        Array.from(dessertData).forEach(dessert => {
-            const container = document.createElement("tr")
-            category.appendChild(container)
-            container.innerHTML = 
+const printDessertsData = (dessertsData) => {
+    const category = document.getElementsByClassName('categories')[0].getElementsByTagName("table")[0]
+    Array.from(dessertsData).forEach(desserts => {
+        const container = document.createElement("tr")
+        category.appendChild(container)
+        container.innerHTML =
             `
-            <td class ="id">${dessert.product_id}</td>
-            <td class ="name">${dessert.product_name}</td>
-            <td class ="image">${dessert.product_image}</td>
-            <td class ="des">${dessert.product_description}</td>
-            <td class ="price">${dessert.price}</td>
+            <td class ="id">${desserts.product_id}</td>
+            <td class ="name">${desserts.product_name}</td>
+            <td class ="image">${desserts.product_image}</td>
+            <td class ="des">${desserts.product_description}</td>
+            <td class ="price">${desserts.price}</td>
             <td class ="edit"><img src = "../images/editar.png" alt="edit"></td>
             <td class ="delete"><img src = "../images/eliminar.png" alt="delete"></td>
-
             `
-
-            const editButton = container.getElementsByClassName("edit")
-/*
-            Array.from(addButton).forEach((button, index) => {
-            button.addEventListener("click", () => {
-            const editDiv = document.getElementsByClassName("formedit")[0]
-            editDiv.style.display = "flex"
-                })
-            })
-            const deleteButton = container.getElementsByClassName("delete")
-
-            Array.from(deleteButton).forEach((button, index) => {
-            button.addEventListener("click", () => {
-            const deleteDiv = document.getElementsByClassName("suredelete")[0]
-            deleteDiv.style.display = "flex"
-                })
-            })
-
-            const editForm = document.getElementById("formedit_dessert")
-            editForm.addEventListener("submit", () => {
-                const dessert = {
-                    product_id: document.getElementById("edit_product_id_dessert").value,
-                    product_image : document.getElementById("edit_product_image_dessert").value,
-                    product_name : document.getElementById("edit_product_name_dessert").value,
-                    product_description : document.getElementById("edit_product_description_dessert").value,
-                    price : document.getElementById("edit_price_dessert").value
-                }
-
-                editProductFetch(dessert)
-            })
-
-            const addForm = document.getElementById("formadd_dessert")
-            addForm.addEventListener("submit", () => {
-                const dessert = {
-                    product_id: document.getElementById("add_product_id_dessert").value,
-                    product_image : document.getElementById("add_product_image_dessert").value,
-                    product_name : document.getElementById("add_product_name_dessert").value,
-                    product_description : document.getElementById("add_product_description_dessert").value,
-                    price : document.getElementById("add_price_dessert").value
-                }
-
-                addProductFetch(dessert)
-            })*/
+          
+        const editButton = container.getElementsByClassName("edit")[0]
+        editButton.addEventListener("click", () => {
+            document.body.style.overflow = "hidden"
+            document.body.style.pointerEvents = "none"
+            editDiv[0].style.display = "flex"
+            editDiv[0].style.pointerEvents = "all"
         })
-    }
+        const deleteButton = container.getElementsByClassName("delete")[0]
+        deleteButton.addEventListener("click", () => {
+            document.body.style.overflow = "hidden"
+            document.body.style.pointerEvents = "none"
+            deleteDiv[0].style.display = "flex"
+            deleteDiv[0].style.pointerEvents = "all"
+        })
+
+        
+        formAdd[0].getElementsByTagName("form")[0].addEventListener("submit", async() => {
+            const dessert =
+            {
+                product_id: document.getElementById("add_product_id").value,
+                product_image: document.getElementById("add_product_image").value,
+                product_name: document.getElementById("add_product_name").value,
+                product_description: document.getElementById("add_product_description").value,
+                price: document.getElementById("add_price").value,
+                category_id: desserts.category_id
+            }
+            console.log(dessert)
+
+            addProductFetch(dessert).then(console.log("added"))
+
+            
+            fetchData()
+        })
+
+        formEdit[0].getElementsByTagName("form")[0].addEventListener("submit", async() => {
+            document.getElementById("add_product_id_dessert").value = desserts.product_id
+            document.getElementById("add_product_image_dessert").value = desserts.product_image
+            document.getElementById("add_product_name_dessert").value = desserts.product_name
+            document.getElementById("add_product_description_dessert").value = desserts.product_description
+            document.getElementById("add_price_dessert").value = desserts.price
+            
+            const dessert =
+            {
+                product_id: document.getElementById("add_product_id_dessert").value,
+                product_image: document.getElementById("add_product_image_dessert").value,
+                product_name: document.getElementById("add_product_name_dessert").value,
+                product_description: document.getElementById("add_product_description_dessert").value,
+                price: document.getElementById("add_price_dessert").value,
+                category_id: "2"
+            }
+
+            editProductFetch(dessert).then(console.log("edited"))
+
+            fetchData()
+        })
+
+        deleteAcceptButton[0].getElementsByTagName("button")[0].addEventListener("click", async() => {
+            const dessert =
+            {
+                product_id: desserts.product_id
+            }
+
+            addProductFetch(dessert).then(console.log("deleted"))
+
+            fetchData()
+        })
+    })
+}
+
 //drink
-const printDrinkData = (drinkData) =>
-    {
-        const category = document.getElementsByClassName('categories')[4].getElementsByTagName("table")[0]
-        Array.from(drinkData).forEach(drink => {
-            const container = document.createElement("tr")
-            category.appendChild(container)
-            container.innerHTML = 
+    const printDrinksData = (drinksData) => {
+    const category = document.getElementsByClassName('categories')[0].getElementsByTagName("table")[0]
+    Array.from(drinksData).forEach(drinks => {
+        const container = document.createElement("tr")
+        category.appendChild(container)
+        container.innerHTML =
             `
-            <td class ="id">${drink.product_id}</td>
-            <td class ="name">${drink.product_name}</td>
-            <td class ="image">${drink.product_image}</td>
-            <td class ="des">${drink.product_description}</td>
-            <td class ="price">${drink.price}</td>
+            <td class ="id">${drinks.product_id}</td>
+            <td class ="name">${drinks.product_name}</td>
+            <td class ="image">${drinks.product_image}</td>
+            <td class ="des">${drinks.product_description}</td>
+            <td class ="price">${drinks.price}</td>
             <td class ="edit"><img src = "../images/editar.png" alt="edit"></td>
             <td class ="delete"><img src = "../images/eliminar.png" alt="delete"></td>
-
             `
-
-            const editButton = container.getElementsByClassName("edit")
-/*
-            Array.from(addButton).forEach((button, index) => {
-            button.addEventListener("click", () => {
-            const editDiv = document.getElementsByClassName("formedit")[0]
-            editDiv.style.display = "flex"
-                })
-            })
-            const deleteButton = container.getElementsByClassName("delete")
-
-            Array.from(deleteButton).forEach((button, index) => {
-            button.addEventListener("click", () => {
-            const deleteDiv = document.getElementsByClassName("suredelete")[0]
-            deleteDiv.style.display = "flex"
-                })
-            })
-
-            const editForm = document.getElementById("formedit_drink")
-            editForm.addEventListener("submit", () => {
-                const drink = {
-                    product_id: document.getElementById("edit_product_id_drink").value,
-                    product_image : document.getElementById("edit_product_image_drink").value,
-                    product_name : document.getElementById("edit_product_name_drink").value,
-                    product_description : document.getElementById("edit_product_description_drink").value,
-                    price : document.getElementById("edit_price_drink").value
-                }
-
-                editProductFetch(drink)
-            })
-
-            const addForm = document.getElementById("formadd_drink")
-            addForm.addEventListener("submit", () => {
-                const drink = {
-                    product_id: document.getElementById("add_product_id_drink").value,
-                    product_image : document.getElementById("add_product_image_drink").value,
-                    product_name : document.getElementById("add_product_name_drink").value,
-                    product_description : document.getElementById("add_product_description_drink").value,
-                    price : document.getElementById("add_price_drink").value
-                }
-
-                addProductFetch(drink)
-            })*/
+          
+        const editButton = container.getElementsByClassName("edit")[0]
+        editButton.addEventListener("click", () => {
+            document.body.style.overflow = "hidden"
+            document.body.style.pointerEvents = "none"
+            editDiv[0].style.display = "flex"
+            editDiv[0].style.pointerEvents = "all"
         })
-    }
+        const deleteButton = container.getElementsByClassName("delete")[0]
+        deleteButton.addEventListener("click", () => {
+            document.body.style.overflow = "hidden"
+            document.body.style.pointerEvents = "none"
+            deleteDiv[0].style.display = "flex"
+            deleteDiv[0].style.pointerEvents = "all"
+        })
 
+        
+        formAdd[0].getElementsByTagName("form")[0].addEventListener("submit", async() => {
+            const drink =
+            {
+                product_id: document.getElementById("add_product_id").value,
+                product_image: document.getElementById("add_product_image").value,
+                product_name: document.getElementById("add_product_name").value,
+                product_description: document.getElementById("add_product_description").value,
+                price: document.getElementById("add_price").value,
+                category_id: drinks.category_id
+            }
+            console.log(drink)
+
+            addProductFetch(drink).then(console.log("added"))
+
+            
+            fetchData()
+        })
+
+        formEdit[0].getElementsByTagName("form")[0].addEventListener("submit", async() => {
+            document.getElementById("add_product_id_drink").value = drinks.product_id
+            document.getElementById("add_product_image_drink").value = drinks.product_image
+            document.getElementById("add_product_name_drink").value = drinks.product_name
+            document.getElementById("add_product_description_drink").value = drinks.product_description
+            document.getElementById("add_price_drink").value = drinks.price
+            
+            const drink =
+            {
+                product_id: document.getElementById("add_product_id_drink").value,
+                product_image: document.getElementById("add_product_image_drink").value,
+                product_name: document.getElementById("add_product_name_drink").value,
+                product_description: document.getElementById("add_product_description_drink").value,
+                price: document.getElementById("add_price_drink").value,
+                category_id: "2"
+            }
+
+            editProductFetch(drink).then(console.log("edited"))
+
+            fetchData()
+        })
+
+        deleteAcceptButton[0].getElementsByTagName("button")[0].addEventListener("click", async() => {
+            const drink =
+            {
+                product_id: drinks.product_id
+            }
+
+            addProductFetch(drink).then(console.log("deleted"))
+
+            fetchData()
+        })
+    })
+    
+}
 fetchData()
