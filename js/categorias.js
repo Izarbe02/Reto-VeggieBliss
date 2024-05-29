@@ -211,8 +211,15 @@ const printBurguerData = (burguerData, allergenProductData) => {
             currentdetail.product_quantity += 1
             currentdetail.totalPrice = currentdetail.unitPrice * currentdetail.product_quantity
 
-            cartDisplay.getElementsByClassName("card-price")[index].innerText = currentdetail.totalPrice.toFixed(2) + "€"
-            cartDisplay.getElementsByClassName("product-quantity")[index].innerText = currentdetail.product_quantity
+            const orderCards = document.getElementsByClassName("order-card")
+
+                Array.from(orderCards).forEach(card => {
+                if (burguer.productName === card.getElementsByClassName("cart-text")[0].innerText)
+                {
+                card.getElementsByClassName("card-price")[0].innerText = currentdetail.totalPrice.toFixed(2)+"€"
+                card.getElementsByClassName("product-quantity")[0] = currentdetail.product_quantity
+                }
+                })
         }
         
     })
