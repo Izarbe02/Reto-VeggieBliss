@@ -64,8 +64,9 @@ public ArrayList<Clients> findAll(Clients object)
             //  client_id ,first_name,last_name,mail,phone_number,client_password
         Clients client = new Clients();
             client.setClient_id (rs.getString("client_id"));
-            client.setFirst_name(rs.getString("last_name"));
-            client.setLast_name(rs.getString("mail"));
+            client.setFirst_name(rs.getString("first_name"));
+            client.setLast_name(rs.getString("last_name"));
+            client.setMail(rs.getString("mail"));
             client.setPhone_number(rs.getString("phone_number"));
             client.setClient_password(rs.getString("client_password"));
             clients.add(client);
@@ -78,5 +79,29 @@ public ArrayList<Clients> findAll(Clients object)
         motor.disconnect();
         }
         return clients;
+        }
+
+
+        public int login (Clients clients){
+
+        int response = 0;
+        ArrayList<Clients> all_clients = findAll (null);
+
+        for ( int contador = 0 ; contador < all_clients.size(); contador ++ ){
+                if ((clients.mail == all_clients[contador].mail)&&(clients.client_password == all_clients[contador].client_password))
+                {
+                        response = 1 ;
+                                //client
+                }
+        }
+
+               /* for ( int contador = 0 ; contador < all_employees.size(); contador ++ ){
+                        if ((clients.mail == all_employees[contador].mail)&&(clients.client_password == all_employees[contador].employee_password))
+                        {
+                                response = 1 ;
+                                //employee
+                        }
+                }*/
+                return response;
         }
 }

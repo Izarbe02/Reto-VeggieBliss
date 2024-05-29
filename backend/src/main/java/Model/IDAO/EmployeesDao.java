@@ -12,6 +12,7 @@ public class EmployeesDao implements IDao <Employees, Integer> {
     private final String SQL_FIND_ALL = "select * from employees";
 
     private final String SQL_ADD = "insert into employees values (";
+
     private final String SQL_DELETE = "delete from employees where employee_id =";
 
     private final String SQL_UPDATE = "update employees set ";
@@ -125,6 +126,21 @@ public class EmployeesDao implements IDao <Employees, Integer> {
         }
 
             return employees;
+        }
+    public int login (Employees employees){
 
+        int response = 0;
+        ArrayList<Employees> all_employees = findAll (null);
+
+        for ( int contador = 0 ; contador < all_employees.size(); contador ++ ){
+            if ((employees.mail == all_employees[contador].mail)&&(employees.employee_password == all_employees[contador].employees_password))
+            {
+                response = 1 ;
+
+            }
+        }
+
+        return response;
     }
+
 }

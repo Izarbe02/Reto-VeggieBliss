@@ -35,6 +35,10 @@ public class EmployeesAction implements IAction{
                 result = delete(request);
                 break;
             }
+            case "login" {
+                result = login(request);
+                break;
+            }
             case "find_all":
                 result = findAll();
                 break;
@@ -76,13 +80,26 @@ public class EmployeesAction implements IAction{
     }
 
     //delete
-    private String delete(HttpServletRequest request) {
+        private String delete(HttpServletRequest request) {
+            JsonParser parser = new JsonParser();
+            Gson gson = new Gson();
+
+            Employees employees = gson.fromJson(parser.parse(getBody(request)), Employees.class);
+            EmployeesDao employeesDao = new EmployeesDao();
+            int response = employeesDao.delete(Integer.parseInt(employees.getEmployee_ID()));
+            return String.valueOf(response);
+        }
+
+    private String login(HttpServletRequest request)
+    {
         JsonParser parser = new JsonParser();
         Gson gson = new Gson();
 
         Employees employees = gson.fromJson(parser.parse(getBody(request)), Employees.class);
-        EmployeesDao employeesDao = new EmployeesDao();
-        int response = employeesDao.delete(Integer.parseInt(employees.getEmployee_ID()));
+        EmployeesDao employeesDao = new EmployeesDao;
+        int response = employeesDao.login(employees);
         return String.valueOf(response);
     }
+
+
 }
